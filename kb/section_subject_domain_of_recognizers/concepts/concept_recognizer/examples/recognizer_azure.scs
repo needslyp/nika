@@ -1,0 +1,8 @@
+recognizer_azure
+<-concept_recognizer;
+=>nrel_main_idtf:
+	[распознаватель "Azure"] 
+	(* <- lang_ru;; *);
+	[Azyre recognizer]
+	(* <- lang_en;; *);
+<=nrel_recognizer: Myself;;

@@ -1,0 +1,9 @@
+concept_ru_synthesizer_voice
+<-sc_node_not_relation;
+=>nrel_main_idtf:
+	[голос синтезатора на русском языке] 
+	(* <- lang_ru;; *);
+	[synthesizer voice in Russian]
+	(* <- lang_en;; *);
+=>nrel_voice_language: lang_ru;;
+

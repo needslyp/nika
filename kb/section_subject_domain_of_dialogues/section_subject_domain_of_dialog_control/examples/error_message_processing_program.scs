@@ -1,0 +1,29 @@
+.._decomposition_tuple <- sc_node_tuple;;
+
+error_message_processing_program = [*
+_compound_action_message_processing
+    _<- action_process_message;
+    _<- question;
+    _-> rrel_1:: _message;
+    _<= nrel_decomposition_of_action:: .._decomposition_tuple;;
+
+.._decomposition_tuple
+    _-> rrel_1:: .._standard_message_reply;
+    _-> .._synthesize_speech;;
+
+.._standard_message_reply
+    _=> nrel_goto:: .._synthesize_speech;
+    _<- action_standard_message_reply;
+    _<- question;
+    _-> rrel_1:: _message;
+    _-> rrel_2:: rrel_dynamic_argument:: _answer_message;;
+
+.._synthesize_speech
+    _<- action_synthesize_speech;
+    _<- question;
+    _-> rrel_1:: rrel_dynamic_argument:: _answer_message;;
+*];;
+
+error_message_processing_program
+    -> rrel_key_sc_element: _compound_action_message_processing;
+    <- concept_message_processing_program;;

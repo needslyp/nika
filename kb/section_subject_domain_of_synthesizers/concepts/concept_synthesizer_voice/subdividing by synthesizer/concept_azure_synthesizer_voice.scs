@@ -1,0 +1,7 @@
+concept_azure_synthesizer_voice
+<-concept_synthesizer;
+=>nrel_main_idtf:
+	[голос синтезатора "Azure"] 
+	(* <- lang_ru;; *);
+	[Azyre synthesizer voice]
+	(* <- lang_en;; *);;

@@ -1,0 +1,49 @@
+/*
+* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
+* Author Nikiforov Sergei
+*/
+
+#pragma once
+
+#include "sc-memory/kpm/sc_agent.hpp"
+#include "sc-agents-common/keynodes/coreKeynodes.hpp"
+
+#include "MessageReplyAgent.generated.hpp"
+
+namespace messageReplyModule
+{
+
+class MessageReplyAgent : public ScAgent
+{
+  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
+  SC_GENERATED_BODY()
+
+private:
+  int WAIT_TIME = 50000;
+
+  bool checkActionClass(ScAddr const & actionAddr);
+
+  ScAddr getMessageProcessingProgram();
+
+  ScAddr generateMessage(ScAddr const & authorAddr, ScAddr const & linkAddr);
+
+  ScAddr generateErrorMessage(ScAddr const & authorAddr);
+
+  ScAddr callErrorMessageReplyAgent(ScAddr const & authorAddr);
+
+  ScAddr generateNonAtomicActionArgsSet(ScAddr const & messageAddr);
+
+  ScAddr generateAnswer(ScAddr const & messageAddr);
+
+  bool linkIsValid(ScAddr const & linkAddr);
+
+  bool soundLinkIsValid(ScAddr const & linkAddr);
+
+  bool textLinkIsValid(ScAddr const & linkAddr);
+
+  bool hasLanguage(ScAddr const & linkAddr);
+
+  bool waitForActionSuccessfulFinish(ScAddr const & actionAddr);
+};
+
+} // namespace messageReplyModule

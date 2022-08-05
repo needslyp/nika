@@ -1,0 +1,11 @@
+ui_start_sc_element 
+<- sc_node_not_relation;
+=> nrel_main_idtf: 
+    [База знаний AIde]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf: 
+    [AIde knowledge base]
+    (* <- lang_en;; *);
+<= nrel_section_decomposition: {
+	section_subject_domain_of_enterprise
+};;

@@ -1,0 +1,11 @@
+answer_structure = [*
+	IDESA <- concept_study_system;;
+*];;
+
+concept_study_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[обучающая система]
+	(* <- lang_ru;; *);
+	[study system]
+	(* <- lang_en;; *);;

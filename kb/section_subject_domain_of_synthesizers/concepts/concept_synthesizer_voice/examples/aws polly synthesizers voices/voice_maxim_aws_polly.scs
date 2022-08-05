@@ -1,0 +1,12 @@
+voice_maxim_aws_polly
+<-sc_node_not_relation;
+<-concept_aws_polly_synthesizer_voice;
+<-concept_ru_synthesizer_voice;
+<-concept_male_synthesizer_voice;
+<-concept_standard_synthesizer_voice;
+=>nrel_main_idtf:
+	[голос "Максим"] 
+	(* <- lang_ru;; *);
+	[voice "Maxim"]
+	(* <- lang_en;; *);
+=>nrel_voice_id:[Maxim];;

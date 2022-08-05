@@ -1,0 +1,7 @@
+recognizer_vosk
+<-concept_recognizer;
+=>nrel_main_idtf:
+	[распознаватель "Vosk"]
+	(* <- lang_ru;; *);
+	[Vosk recognizer]
+	(* <- lang_en;; *);;

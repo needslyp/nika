@@ -1,0 +1,8 @@
+format_audio
+<-sc_node_not_relation;
+<-format;
+=>nrel_main_idtf:
+    [формат аудио]
+    (* <-lang_ru;; *);
+    [format audio]
+    (* <-lang_en;; *);;

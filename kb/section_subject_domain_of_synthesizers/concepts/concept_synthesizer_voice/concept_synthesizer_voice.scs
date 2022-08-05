@@ -1,0 +1,24 @@
+concept_synthesizer_voice
+<-sc_node_not_relation;
+=>nrel_main_idtf:
+	[голос синтезатора] 
+	(* <- lang_ru;; *);
+	[synthesizer voice]
+	(* <- lang_en;; *);
+<=nrel_subdividing:
+    {
+    concept_aws_polly_synthesizer_voice;
+    concept_azure_synthesizer_voice
+    };
+    {
+    concept_en_synthesizer_voice;
+    concept_ru_synthesizer_voice
+    };
+    {
+    concept_female_synthesizer_voice;
+    concept_male_synthesizer_voice
+    };
+    {
+    concept_neural_synthesizer_voice;
+    concept_standard_synthesizer_voice
+    };;

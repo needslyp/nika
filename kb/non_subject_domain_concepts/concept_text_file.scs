@@ -1,0 +1,7 @@
+concept_text_file
+<-sc_node_not_relation;
+=>nrel_main_idtf:
+    [текстовый файл]
+    (* <-lang_ru;; *);
+    [text file]
+    (* <-lang_en;; *);;

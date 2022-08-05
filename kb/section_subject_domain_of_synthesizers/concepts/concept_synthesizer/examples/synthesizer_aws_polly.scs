@@ -1,0 +1,14 @@
+synthesizer_aws_polly
+<-concept_synthesizer;
+=>nrel_main_idtf:
+	[синтезатор "Aws Polly"] 
+	(* <- lang_ru;; *);
+	[Aws Polly synthesizer]
+	(* <- lang_en;; *);
+=>nrel_supported_voices: concept_aws_polly_synthesizer_voice;
+=>nrel_current_voices:...
+    (*
+    ->voice_brian_aws_polly;;
+    ->voice_vicki_aws_polly;;
+    ->voice_maxim_aws_polly;;
+    *);;

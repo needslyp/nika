@@ -1,0 +1,53 @@
+nrel_recognizer
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-asymmetric_relation;
+<-antitransitive_relation;
+=>nrel_main_idtf:
+	[распознаватель*] 
+	(* <- lang_ru;; *);
+	[recognizer*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: Myself;
+=>nrel_second_domain: concept_recognizer;
+=>nrel_definitional_domain:
+	... 
+	(*
+	<= nrel_combination: 
+		{
+		Myself;
+		concept_recognizer
+		};;
+	*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (распознаватель*)]
+		(* <- lang_ru;; *);
+		[Def. (recognizer*)]
+		(* <- lang_en;; *);;
+	<-definition;;
+	<=nrel_sc_text_translation: 
+		...
+		(*
+		-> rrel_example: 
+			[Распознаватель* - бинарное ориентированное отношение, связывающее систему с распознавателем, установленным по умолчанию.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Recognizer* is a binary-oriented relationship that connects the system to the default recognizer.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		binary_relation;
+		oriented_relation;
+		concept_synthesizer
+		};;
+	*);;	

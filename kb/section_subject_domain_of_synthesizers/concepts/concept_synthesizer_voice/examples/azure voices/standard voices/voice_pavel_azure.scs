@@ -1,0 +1,12 @@
+voice_pavel_azure
+<-sc_node_not_relation;
+<-concept_azure_synthesizer_voice;
+<-concept_ru_synthesizer_voice;
+<-concept_male_synthesizer_voice;
+<-concept_standard_synthesizer_voice;
+=>nrel_main_idtf:
+	[голос "Павел"] 
+	(* <- lang_ru;; *);
+	[voice "Pavel"]
+	(* <- lang_en;; *);
+=>nrel_voice_id:[ru-RU-Pavel];;

@@ -1,0 +1,24 @@
+action_synthesize_speech
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	[действие. синтезировать речь](* <- lang_ru;; *);
+	[action. synthesize speech](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+	    ...
+    	(*
+    		-> rrel_example:
+    			[Action. synthesize speech is an action for synthesizing voicing a message.](* <- lang_en;;	*);;
+    	*);
+		...
+		(*
+			-> rrel_example:
+				[Действие. синтезировать речь - действие по синтезу озвучивания сообщения.](* <- lang_ru;;	*);;
+		*);;
+	*);;

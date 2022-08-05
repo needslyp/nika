@@ -1,0 +1,7 @@
+concept_male_synthesizer_voice
+<-sc_node_not_relation;
+=>nrel_main_idtf:
+	[мужской голос синтезатора] 
+	(* <- lang_ru;; *);
+	[male synthesizer voice]
+	(* <- lang_en;; *);;

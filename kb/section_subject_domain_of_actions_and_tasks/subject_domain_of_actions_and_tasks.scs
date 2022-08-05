@@ -1,0 +1,6 @@
+subject_domain_of_actions_and_tasks
+	-> rrel_not_maximum_studied_object_class:
+		action_recognize_text;
+		action_synthesize_speech;
+	-> rrel_explored_relation:
+		rrel_dynamic_argument;;

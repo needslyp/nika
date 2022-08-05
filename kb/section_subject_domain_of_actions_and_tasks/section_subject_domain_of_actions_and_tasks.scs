@@ -1,0 +1,6 @@
+rrel_key_sc_element -> (section_subject_domain_actions_and_tasks -> action_recognize_text)
+(*
+	=> nrel_key_sc_element_order: (section_subject_domain_actions_and_tasks -> action_synthesize_speech)
+	(* <- rrel_key_sc_element;; *);;
+
+*);;
