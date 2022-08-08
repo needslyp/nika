@@ -6,13 +6,7 @@ class TipsImpl extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            tips: [
-                { text: 'Что такое Простоквашино?' },
-                { text: 'Кто такой Иванов Иван Иванович?' },
-                { text: 'Под чьей ответственностью находится цех №7?' },
-                { text: 'Сколько сотрудников болеет в производственном отделе?' },
-                { text: 'Какое состояние цеха №7?' },
-            ],
+            tips: [{ text: 'Привет!' }],
         };
     }
 
