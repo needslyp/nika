@@ -16,10 +16,10 @@ module.exports = {
     entry: resolveAppPath('src/index.tsx'),
 
     output: {
-        filename: 'aide-web.js',
+        filename: 'idesa-web.js',
         path: outputPath,
         libraryTarget: 'umd',
-        library: 'AIdeWeb',
+        library: 'IDESAWeb',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.css'],
