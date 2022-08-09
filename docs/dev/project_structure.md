@@ -13,22 +13,22 @@ Some tips:
 
 - After update c++ code you need to rebuild problem-solver. Just run:
 ```
-cd aide/scripts
+cd idesa/scripts
 ./build_problem_solver.sh
 ```
 For a full rebuild with the deleting of the *bin* and *build* folders run:
 ```
-cd aide/scripts
+cd idesa/scripts
 ./build_problem_solver.sh -f
 ```
 For build tests run:
 ```
-cd aide/scripts
+cd idesa/scripts
 ./build_problem_solver.sh -t
 ```
 For a full rebuild with build tests and the deleting of the *bin* and *build* folders run:
 ```
-cd aide/scripts
+cd idesa/scripts
 ./build_problem_solver.sh -f -t
 ```
 
@@ -54,7 +54,7 @@ sc_result MyModule::InitializeImpl()
 - For enable debug:
 
     * add *SET(CMAKE_BUILD_TYPE Debug)* line 
-    to *aide/CMakeLists.txt* file;
+    to *idesa/CMakeLists.txt* file;
     * rebuild problem-solver.
 
 ### Agents on Python
