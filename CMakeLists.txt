@@ -1,5 +1,5 @@
-project (ostis-example-app)
-cmake_minimum_required (VERSION 2.8)
+project(idesa)
+cmake_minimum_required(VERSION 2.8)
 
 set(SC_MACHINE_PATH "${CMAKE_CURRENT_LIST_DIR}/ostis-web-platform/sc-machine")
 include("${SC_MACHINE_PATH}/CMakeLists.txt")
@@ -32,10 +32,4 @@ foreach(SUBDIR ${SUBDIRS})
     add_subdirectory(${SUBSYSTEMS_PATH}/${SUBDIR}/problem-solver)
 endforeach()
 
-
-set(CONNECTED_TOOLS_BUILD OFF)
-set(CONNECTED_TOOLS_BUILD_TEST OFF)
-
-
 add_subdirectory(problem-solver)
-

@@ -7,7 +7,7 @@
 
 using namespace commonModule;
 
-SC_IMPLEMENT_MODULE(CommonModule)
+SC_IMPLEMENT_MODULE(CommonModule);
 
 sc_result CommonModule::InitializeImpl()
 {
@@ -19,11 +19,11 @@ sc_result CommonModule::InitializeImpl()
   ScMemoryContext ctx(sc_access_lvl_make_min, "CommonModule");
   if (ActionUtils::isActionDeactivated(&ctx, Keynodes::action_interpret_non_atomic_action))
   {
-    SC_LOG_ERROR("action_interpret_non_atomic_action is deactivated")
+    SC_LOG_ERROR("action_interpret_non_atomic_action is deactivated");
   }
   else 
   {
-    SC_AGENT_REGISTER(NonAtomicActionInterpreterAgent)
+    SC_AGENT_REGISTER(NonAtomicActionInterpreterAgent);
   }
 
   return SC_RESULT_OK;
@@ -31,7 +31,7 @@ sc_result CommonModule::InitializeImpl()
 
 sc_result CommonModule::ShutdownImpl()
 {
-  SC_AGENT_UNREGISTER(NonAtomicActionInterpreterAgent)
+  SC_AGENT_UNREGISTER(NonAtomicActionInterpreterAgent);
 
   return SC_RESULT_OK;
 }

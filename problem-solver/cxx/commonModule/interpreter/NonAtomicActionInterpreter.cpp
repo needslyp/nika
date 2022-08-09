@@ -49,13 +49,13 @@ ScAddr NonAtomicActionInterpreter::getFirstSubAction(ScAddr const & decompositio
 
 void NonAtomicActionInterpreter::applyAction(ScAddr const & actionAddr)
 {
-  SC_LOG_DEBUG("NonAtomicActionInterpreter: waiting for atomic action finish.")
+  SC_LOG_DEBUG("NonAtomicActionInterpreter: waiting for atomic action finish.");
   context->CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, actionAddr);
   if (!ActionUtils::waitAction(context, actionAddr, WAIT_TIME))
   {
     throw std::runtime_error("NonAtomicActionInterpreter: action wait time expired.");
   }
-  SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished.")
+  SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished.");
 }
 
 ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
@@ -66,7 +66,7 @@ ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
         actionAddr,
         ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished successfully.")
+    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished successfully.");
     nextAction = getThenAction(actionAddr);
   }
   else if (context->HelperCheckEdge(
@@ -74,12 +74,12 @@ ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
         actionAddr,
         ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished unsuccessfully.")
+    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished unsuccessfully.");
     nextAction = getElseAction(actionAddr);
   }
   else
   {
-    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished with unknown result.")
+    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished with unknown result.");
     nextAction = getGoToAction(actionAddr);
   }
 
@@ -91,7 +91,7 @@ ScAddr NonAtomicActionInterpreter::getThenAction(ScAddr const & actionAddr)
   ScAddr nextAction = utils::IteratorUtils::getFirstByOutRelation(context, actionAddr, Keynodes::nrel_then);
   if (!nextAction.IsValid())
   {
-    SC_LOG_DEBUG("Action with nrel_then relation not found, searching for nrel_goto instead")
+    SC_LOG_DEBUG("Action with nrel_then relation not found, searching for nrel_goto instead");
     nextAction = getGoToAction(actionAddr);
   }
   return nextAction;
@@ -102,7 +102,7 @@ ScAddr NonAtomicActionInterpreter::getElseAction(ScAddr const & actionAddr)
   ScAddr nextAction = utils::IteratorUtils::getFirstByOutRelation(context, actionAddr, Keynodes::nrel_else);
   if (!nextAction.IsValid())
   {
-    SC_LOG_DEBUG("Action with nrel_else relation not found, searching for nrel_goto instead")
+    SC_LOG_DEBUG("Action with nrel_else relation not found, searching for nrel_goto instead");
     nextAction = getGoToAction(actionAddr);
   }
   return nextAction;

@@ -30,7 +30,7 @@ ScAddr LanguageSearcher::getMessageLanguage(const ScAddr & messageNode)
       langNode = getLanguage(link);
   } catch (runtime_error & ex)
   {
-    SC_LOG_ERROR(ex.what())
+    SC_LOG_ERROR(ex.what());
   }
 
   return langNode;

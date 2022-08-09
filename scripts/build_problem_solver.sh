@@ -3,18 +3,19 @@ echo -en '\E[47;31m'"\033[1mBuild sc-machine\033[0m\n"
 tput sgr0
 
 if [ "$1" != "-ci" ];
-    then
-        source set_vars.sh
-    fi
+  then
+    source set_vars.sh
+fi
 
 set -eo pipefail
 
 
-cd "${PLATFORM_PATH}"/sc-machine
+cd "${SC_MACHINE_PATH}"
 if [ "$1" == "--full" ] || [ "$1" == "-f" ];
 	then
 		rm -rf build
 		rm -rf bin
+		find "${APP_ROOT_PATH}"/problem-solver/cxx/ -type d -name generated -exec rm -rf {} +
 fi
 
 if [ ! -d "./build" ];
@@ -25,11 +26,11 @@ cd build
 # check last argument
 if [ "${!#}" == "--tests" ] || [ "${!#}" == "-t" ];
 	then
-		cmake "${APP_ROOT_PATH}" -DSC_AUTO_TEST=ON -DSC_BUILD_TESTS=ON
-	else
-		cmake "${APP_ROOT_PATH}"
+  	cmake -B "${SC_MACHINE_PATH}"/build "${APP_ROOT_PATH}" -DSC_AUTO_TEST=ON -DSC_BUILD_TESTS=ON
+  else
+  	cmake -B "${SC_MACHINE_PATH}"/build "${APP_ROOT_PATH}"
 fi
-make
+cmake --build "${SC_MACHINE_PATH}"/build -j$(nproc)
 
 cd "${WORKING_PATH}"
 echo "${PLATFORM_PATH}"

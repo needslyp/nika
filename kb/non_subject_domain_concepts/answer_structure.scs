@@ -1,5 +1,6 @@
 answer_structure = [*
 	IDESA <- concept_study_system;;
+	IDESA => nrel_knowledge_base: ui_start_sc_element;;
 *];;
 
 concept_study_system

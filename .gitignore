@@ -2,6 +2,7 @@
 .vscode
 cmake-build-debug
 cmake-build-release
+build
 
 .venv
 *.pyc
@@ -12,7 +13,7 @@ cmake-build-release
 *.scs~
 ostis
 ostis-web-platform
-prepared_kb
+kb.bin
 
 client/node_modules
 client/assets/aide-web.js

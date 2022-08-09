@@ -3,8 +3,6 @@
 * Author Ruslan Korshunov
 */
 
-#pragma once
-
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 
@@ -44,11 +42,11 @@ ScAddr MessageSearcher::getFirstMessage(const ScAddr & nonAtomicMessageNode)
   if (result.Size() == 1)
   {
     resultMessageNode = result[0][VAR_MESSAGE];
-    SC_LOG_DEBUG("MessageSearcher: the first message node found")
+    SC_LOG_DEBUG("MessageSearcher: the first message node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: the first message node not found")
+    SC_LOG_DEBUG("MessageSearcher: the first message node not found");
   }
 
   return resultMessageNode;
@@ -84,11 +82,11 @@ ScAddr MessageSearcher::getNextMessage(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultMessageNode = result[0][VAR_MESSAGE];
-    SC_LOG_DEBUG("MessageSearcher: next message node found")
+    SC_LOG_DEBUG("MessageSearcher: next message node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: next message node not found")
+    SC_LOG_DEBUG("MessageSearcher: next message node not found");
   }
 
   return resultMessageNode;
@@ -112,11 +110,11 @@ ScAddr MessageSearcher::getMessageAuthor(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultAuthorNode = result[0][VAR_AUTHOR];
-    SC_LOG_DEBUG("MessageSearcher: author set node found")
+    SC_LOG_DEBUG("MessageSearcher: author set node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: author set node not found")
+    SC_LOG_DEBUG("MessageSearcher: author set node not found");
   }
 
   return resultAuthorNode;
@@ -140,11 +138,11 @@ ScAddr MessageSearcher::getMessageTheme(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultThemeNode = result[0][VAR_THEME];
-    SC_LOG_DEBUG("MessageSearcher: message theme node found")
+    SC_LOG_DEBUG("MessageSearcher: message theme node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: message theme node not found")
+    SC_LOG_DEBUG("MessageSearcher: message theme node not found");
   }
 
   return resultThemeNode;

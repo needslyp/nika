@@ -7,25 +7,22 @@ prepare_platform()
 	./prepare.sh no_build_kb
 }
 
-
 prepare_platform_without_build()
 {
 	./scripts/prepare_platform.sh
 }
 
-
 build_kb()
 {
 	cd "${APP_ROOT_PATH}"/scripts
+	echo "${APP_ROOT_PATH}"/scripts
 	./build_kb.sh
 }
-
 
 build_problem_solver()
 {
 	cd "${APP_ROOT_PATH}"/scripts
 	./build_problem_solver.sh
-	cat "${PLATFORM_PATH}"/sc-machine/bin/config.ini >> "${PLATFORM_PATH}"/config/sc-web.ini
 }
 
 build_interface()
@@ -38,7 +35,7 @@ set -eo pipefail
 
 cd "${APP_ROOT_PATH}"
 if [ -d "${PLATFORM_PATH}" ];
-	then
+  then
 		echo -en "Update OSTIS platform\n"
 		cd "${PLATFORM_PATH}"
 		git pull
@@ -47,7 +44,7 @@ if [ -d "${PLATFORM_PATH}" ];
 		prepare_platform
 		build_kb
 		build_interface
-	else
+  else
 		prepare_platform_without_build
 		build_problem_solver
 		build_kb
@@ -55,4 +52,3 @@ if [ -d "${PLATFORM_PATH}" ];
 fi
 
 cd "${WORKING_PATH}"
-

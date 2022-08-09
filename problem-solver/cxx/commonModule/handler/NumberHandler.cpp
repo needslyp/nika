@@ -29,7 +29,7 @@ ScAddr commonModule::NumberHandler::findNumberNode(const double & number)
   std::string numberAsString = this->numberToLikView(number);
   ScStreamPtr numberAsStream = ScStreamConverter::StreamFromString(numberAsString);
   ScAddrVector candidateList = this->context->FindLinksByContent(numberAsStream);
-  SC_LOG_DEBUG("NumberHandler found " + std::to_string(candidateList.size()) + " sc-link with content " + numberAsString)
+  SC_LOG_DEBUG("NumberHandler found " + std::to_string(candidateList.size()) + " sc-link with content " + numberAsString);
 
   for (ScAddr candidateLink : candidateList)
   {

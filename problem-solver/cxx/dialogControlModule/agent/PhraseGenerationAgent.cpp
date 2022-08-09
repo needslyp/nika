@@ -34,7 +34,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   {
     return SC_RESULT_OK;
   }
-  SC_LOG_DEBUG("PhraseGenerationAgent started")
+  SC_LOG_DEBUG("PhraseGenerationAgent started");
 
   ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(
           &m_memoryCtx,
@@ -42,7 +42,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
           scAgentsCommon::CoreKeynodes::rrel_1);
   if (!replyMessageNode.IsValid())
   {
-    SC_LOG_ERROR("Action doesn't have a reply message node.")
+    SC_LOG_ERROR("Action doesn't have a reply message node.");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
@@ -52,7 +52,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
         scAgentsCommon::CoreKeynodes::rrel_2);
   if (!phraseLink.IsValid())
   {
-    SC_LOG_ERROR("Action doesn't have a link with a text template.")
+    SC_LOG_ERROR("Action doesn't have a link with a text template.");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
@@ -69,7 +69,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   ScAddr linkResult = generateLinkByTemplate(templateNode, parametersNode, phraseLink);
   if (!linkResult.IsValid())
   {
-    SC_LOG_ERROR("Answer isn't found.")
+    SC_LOG_ERROR("Answer isn't found.");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR;
   }
@@ -81,12 +81,12 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   }
   else
   {
-    SC_LOG_DEBUG("Language link isn't found.")
+    SC_LOG_DEBUG("Language link isn't found.");
   }
   generateSemanticEquivalent(replyMessageNode, templateNode);
 
   AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, linkResult, true);
-  SC_LOG_DEBUG("PhraseGenerationAgent finished")
+  SC_LOG_DEBUG("PhraseGenerationAgent finished");
   return SC_RESULT_OK;
 }
 
@@ -115,13 +115,13 @@ ScAddr PhraseGenerationAgent::generateLinkByTemplate(
   }
   else
   {
-    SC_LOG_DEBUG("Text template doesn't have variables.")
+    SC_LOG_DEBUG("Text template doesn't have variables.");
     textResult = text;
   }
   if (!textResult.empty())
   {
     linkResult = handler.createLink(textResult);
-    SC_LOG_DEBUG("Generated text: \"" + utils::CommonUtils::getLinkContent(&m_memoryCtx, linkResult) + "\"")
+    SC_LOG_DEBUG("Generated text: \"" + utils::CommonUtils::getLinkContent(&m_memoryCtx, linkResult) + "\"");
   }
 
   return linkResult;
@@ -148,7 +148,7 @@ string PhraseGenerationAgent::findResultText(
   }
   else
   {
-    SC_LOG_DEBUG("Phrase template isn't found.")
+    SC_LOG_DEBUG("Phrase template isn't found.");
   }
   return textResult;
 }

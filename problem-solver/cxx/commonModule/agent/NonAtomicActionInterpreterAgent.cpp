@@ -22,7 +22,7 @@ SC_AGENT_IMPLEMENTATION(NonAtomicActionInterpreterAgent)
   {
     return SC_RESULT_OK;
   }
-  SC_LOG_DEBUG("NonAtomicActionInterpreterAgent started")
+  SC_LOG_DEBUG("NonAtomicActionInterpreterAgent started");
 
   ScAddr nonAtomicActionAddr;
   try
@@ -46,7 +46,7 @@ SC_AGENT_IMPLEMENTATION(NonAtomicActionInterpreterAgent)
   }
   catch (std::exception & ex)
   {
-    SC_LOG_ERROR(ex.what())
+    SC_LOG_ERROR(ex.what());
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
@@ -59,12 +59,12 @@ SC_AGENT_IMPLEMENTATION(NonAtomicActionInterpreterAgent)
   catch (std::runtime_error & ex)
   {
     deleteFields();
-    SC_LOG_ERROR(ex.what())
+    SC_LOG_ERROR(ex.what());
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
   deleteFields();
-  SC_LOG_DEBUG("NonAtomicActionInterpreterAgent finished")
+  SC_LOG_DEBUG("NonAtomicActionInterpreterAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, true);
   return SC_RESULT_OK;
 }

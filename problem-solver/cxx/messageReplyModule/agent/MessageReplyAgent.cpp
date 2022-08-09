@@ -26,26 +26,26 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
     return SC_RESULT_OK;
   }
 
-  SC_LOG_DEBUG("MessageReplyAgent started")
+  SC_LOG_DEBUG("MessageReplyAgent started");
 
   ScAddr linkAddr = utils::IteratorUtils::getFirstByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_1);
   ScAddr processingProgramAddr = getMessageProcessingProgram();
   ScAddr authorAddr = utils::IteratorUtils::getFirstByOutRelation(&m_memoryCtx, actionAddr, MessageReplyKeynodes::nrel_authors);
   if (!processingProgramAddr.IsValid())
   {
-    SC_LOG_ERROR("Message processing program not found.")
+    SC_LOG_ERROR("Message processing program not found.");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
   if (!linkIsValid(linkAddr))
   {
-    SC_LOG_ERROR("Message link not found.")
+    SC_LOG_ERROR("Message link not found.");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
   if (!authorAddr.IsValid())
   {
-    SC_LOG_ERROR("Message author not found.")
+    SC_LOG_ERROR("Message author not found.");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
@@ -56,7 +56,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
   }
   catch (std::runtime_error & exception)
   {
-    SC_LOG_ERROR(exception.what())
+    SC_LOG_ERROR(exception.what());
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
@@ -68,7 +68,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
   ScAddr answerAddr;
   if (!waitForActionSuccessfulFinish(actionToInterpret))
   {
-    SC_LOG_ERROR("Action wait time expired or action not finished successfully")
+    SC_LOG_ERROR("Action wait time expired or action not finished successfully");
 
     try
     {
@@ -76,7 +76,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
     }
     catch (std::runtime_error & exception)
     {
-      SC_LOG_ERROR(exception.what())
+      SC_LOG_ERROR(exception.what());
       utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
       return SC_RESULT_ERROR;
     }
@@ -89,7 +89,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
     }
     catch (std::runtime_error & exception)
     {
-      SC_LOG_ERROR(exception.what())
+      SC_LOG_ERROR(exception.what());
 
       try
       {
@@ -97,14 +97,14 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
       }
       catch (std::runtime_error & exception)
       {
-        SC_LOG_ERROR(exception.what())
+        SC_LOG_ERROR(exception.what());
         utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
         return SC_RESULT_ERROR;
       }
     }
   }
 
-  SC_LOG_DEBUG("MessageReplyAgent finished")
+  SC_LOG_DEBUG("MessageReplyAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerAddr, true);
   return SC_RESULT_OK;
 }
@@ -326,12 +326,12 @@ bool MessageReplyAgent::linkIsValid(ScAddr const & linkAddr)
     bool isTextValid = textLinkIsValid(linkAddr);
     if (isSoundValid)
     {
-      SC_LOG_DEBUG("Sound link is found")
+      SC_LOG_DEBUG("Sound link is found");
       return true;
     }
     if (isTextValid)
     {
-      SC_LOG_DEBUG("Text link is found")
+      SC_LOG_DEBUG("Text link is found");
       return true;
     }
   }

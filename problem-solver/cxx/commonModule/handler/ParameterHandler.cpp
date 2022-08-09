@@ -71,13 +71,13 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
   {
     SC_LOG_DEBUG("ParameterHandler More then 1 parameter node of "
                  + this->context->HelperGetSystemIdtf(parameterClass)
-                 + " by number " + this->context->HelperGetSystemIdtf(numberNode))
+                 + " by number " + this->context->HelperGetSystemIdtf(numberNode));
   }
   else
   {
     SC_LOG_DEBUG("ParameterHandler found no parameter node of "
                  + this->context->HelperGetSystemIdtf(parameterClass)
-                 + " by number " + this->context->HelperGetSystemIdtf(numberNode))
+                 + " by number " + this->context->HelperGetSystemIdtf(numberNode));
   }
 
   return parameterNode;
@@ -104,13 +104,13 @@ ScAddr ParameterHandler::findParameterNodeByEntity(
   {
     SC_LOG_DEBUG("ParameterHandler More then 1 parameter node of "
                         + this->context->HelperGetSystemIdtf(parameterClass)
-                        + " for entity " + this->context->HelperGetSystemIdtf(entity))
+                        + " for entity " + this->context->HelperGetSystemIdtf(entity));
   }
   else
   {
     SC_LOG_DEBUG("ParameterHandler found no parameter node of "
                         + this->context->HelperGetSystemIdtf(parameterClass)
-                        + " for entity " + this->context->HelperGetSystemIdtf(entity))
+                        + " for entity " + this->context->HelperGetSystemIdtf(entity));
   }
 
   return parameterNode;

@@ -22,7 +22,7 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
   {
     return SC_RESULT_OK;
   }
-  SC_LOG_DEBUG("StandardMessageReplyAgent started")
+  SC_LOG_DEBUG("StandardMessageReplyAgent started");
 
   ScAddr messageNode = IteratorUtils::getAnyByOutRelation(
         &m_memoryCtx,
@@ -31,8 +31,8 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
 
   if (!messageNode.IsValid())
   {
-    SC_LOG_DEBUG("StandardMessageReplyAgent: the action doesn't have a message node")
-    SC_LOG_DEBUG("StandardMessageReplyAgent finished")
+    SC_LOG_DEBUG("StandardMessageReplyAgent: the action doesn't have a message node");
+    SC_LOG_DEBUG("StandardMessageReplyAgent finished");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
@@ -40,12 +40,12 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
   ScAddr replyMessageNode = generateReplyMessage(messageNode);
   if (!replyMessageNode.IsValid())
   {
-    SC_LOG_ERROR("StandardMessageReplyAgent: the reply message isn't generated")
-    SC_LOG_DEBUG("StandardMessageReplyAgent finished")
+    SC_LOG_ERROR("StandardMessageReplyAgent: the reply message isn't generated");
+    SC_LOG_DEBUG("StandardMessageReplyAgent finished");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR;
   }
-  SC_LOG_DEBUG("StandardMessageReplyAgent: the reply message is generated")
+  SC_LOG_DEBUG("StandardMessageReplyAgent: the reply message is generated");
 
   ScAddr logicRuleNode = getLogicRule(messageNode);
 
@@ -58,7 +58,7 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
   auto * messageHandler = new MessageHandler(&m_memoryCtx);
   if (!messageHandler->processReplyMessage(replyMessageNode, logicRuleNode, langNode, parametersNode))
   {
-    SC_LOG_ERROR("StandardMessageReplyAgent: the reply message is formed incorrectly")
+    SC_LOG_ERROR("StandardMessageReplyAgent: the reply message is formed incorrectly");
     delete messageHandler;
     ScIterator5Ptr it5 = IteratorUtils::getIterator5(
           &m_memoryCtx,
@@ -70,7 +70,7 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
         m_memoryCtx.EraseElement(it5->Get(1));
     }
 
-    SC_LOG_DEBUG("StandardMessageReplyAgent finished")
+    SC_LOG_DEBUG("StandardMessageReplyAgent finished");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR;
   }
@@ -82,7 +82,7 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
   m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
   delete messageHandler;
 
-  SC_LOG_DEBUG("StandardMessageReplyAgent finished")
+  SC_LOG_DEBUG("StandardMessageReplyAgent finished");
   AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, replyMessageNode, true);
   return SC_RESULT_OK;
 }
@@ -166,11 +166,11 @@ ScAddr StandardMessageReplyAgent::getLogicRule(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultRuleNode = result[0][VAR_LR];
-    SC_LOG_DEBUG("StandardMessageReplyAgent: logic rule found")
+    SC_LOG_DEBUG("StandardMessageReplyAgent: logic rule found");
   }
   else
   {
-    SC_LOG_DEBUG("StandardMessageReplyAgent: logic rule not found")
+    SC_LOG_DEBUG("StandardMessageReplyAgent: logic rule not found");
   }
 
   return resultRuleNode;

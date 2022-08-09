@@ -24,20 +24,20 @@ SC_AGENT_IMPLEMENTATION(ErrorMessageReplyAgent)
     return SC_RESULT_OK;
   }
 
-  SC_LOG_DEBUG("ErrorMessageReplyAgent started")
+  SC_LOG_DEBUG("ErrorMessageReplyAgent started");
 
   ScAddr errorMessage = utils::IteratorUtils::getFirstByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_1);
   ScAddr processingProgramAddr = getMessageProcessingProgram();
 
   if (!errorMessage.IsValid())
   {
-    SC_LOG_ERROR("Message processing program not found.")
+    SC_LOG_ERROR("Message processing program not found.");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
   if (!processingProgramAddr.IsValid())
   {
-    SC_LOG_ERROR("Message processing program not found.")
+    SC_LOG_ERROR("Message processing program not found.");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
@@ -49,7 +49,7 @@ SC_AGENT_IMPLEMENTATION(ErrorMessageReplyAgent)
       argsVector);
   if (!waitForActionSuccessfulFinish(actionToInterpret))
   {
-    SC_LOG_ERROR("Error action wait time expired or action not finished successfully")
+    SC_LOG_ERROR("Error action wait time expired or action not finished successfully");
     if (!waitForActionSuccessfulFinish(actionToInterpret))
     {
       throw std::runtime_error("ErrorMessageReplyAgent: Error reply message not generated");
@@ -62,12 +62,12 @@ SC_AGENT_IMPLEMENTATION(ErrorMessageReplyAgent)
   }
   catch (std::runtime_error & exception)
   {
-    SC_LOG_ERROR(exception.what())
+    SC_LOG_ERROR(exception.what());
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
 
-  SC_LOG_DEBUG("ErrorMessageReplyAgent finished")
+  SC_LOG_DEBUG("ErrorMessageReplyAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerAddr, true);
   return SC_RESULT_OK;
 }
