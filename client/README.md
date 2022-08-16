@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-## Run 
-Run on Linux for development:
-```sh
-#Terminal
-yarn && yarn start-dev
-```
-Run on Linux for production:
-```sh
-#Terminal
-yarn && yarn start-prod
-```
-=======
 # idesa-ui
 IDESA User Interface
 
@@ -59,4 +46,3 @@ Example for production
 yarn build --env envFilePath='./your-path'
 yarn serve
 ```
->>>>>>> 437880a0f... docs(interface): update readme
