@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { net, serv, ui } from './interfaces';
 
 export interface Store {
@@ -11,3 +12,15 @@ export const storeInitialState: Store = {
     services: serv._initServices,
     ui: ui._initState,
 };
+=======
+import { configureStore } from '@reduxjs/toolkit';
+import { profileSlice } from './profileSlice';
+import { commonSlice } from './commonSlice';
+
+export const store = configureStore({
+    reducer: {
+        [profileSlice.name]: profileSlice.reducer,
+        [commonSlice.name]: commonSlice.reducer,
+    },
+});
+>>>>>>> 92191d324... feat(interface): remake static
