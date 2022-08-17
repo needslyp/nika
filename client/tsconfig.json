@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-  "compilerOptions": {
-    "outDir": "./assets/",
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "module": "commonjs",
-    "target": "es6",
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-  }
-=======
     "compilerOptions": {
         "sourceMap": true,
         "noImplicitAny": false,
@@ -36,5 +25,4 @@
         },
         "allowSyntheticDefaultImports": true
     }
->>>>>>> 7bd3b8924... feat(interface): add build from node
 }

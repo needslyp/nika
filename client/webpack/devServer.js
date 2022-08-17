@@ -15,6 +15,6 @@ module.exports = {
     open: true,
     https: true,
     historyApiFallback: true,
-    port: 3080,
+    port: 3030,
     proxy,
 };
