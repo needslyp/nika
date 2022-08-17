@@ -68,7 +68,7 @@ export const FetchingSpinnerText = styled.div`
 
 export const AnswerSpinnerText = styled.div`
     margin-left: 8px;
-    font-family: 'Miriam Libre';
+    font-family: 'Robot';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

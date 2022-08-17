@@ -52,7 +52,7 @@ export const Button = styled.button`
     border-radius: 5px;
     border: 0;
     outline: none;
-    font-family: 'Poppins';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
@@ -73,7 +73,7 @@ export const Button = styled.button`
 export const ButtonMoreInformation = styled.div`
     display: inline-flex;
     height: 15px;
-    font-family: 'Poppins';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -121,7 +121,7 @@ export const ButtonMoreInformationText = styled.div`
     }
 `;
 export const MoreInformationText = styled.div`
-    font-family: 'Poppins';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -180,7 +180,7 @@ export const Info = styled.div`
     }
 `;
 export const Title = styled.div`
-    font-family: 'Poppins';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -193,7 +193,7 @@ export const Title = styled.div`
 `;
 export const Text = styled.div`
     margin-top: 8px;
-    font-family: 'Poppins';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

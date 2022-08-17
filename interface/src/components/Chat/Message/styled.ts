@@ -19,7 +19,7 @@ export const TextWrapper = styled.div`
     display: flex;
 `;
 export const Text = styled.div`
-    font-family: 'Miriam Libre';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -74,7 +74,7 @@ export const WrapperRebootError = styled.div`
 export const TextReboot = styled.div`
     margin-left: 4px;
     padding-top: 2px;
-    font-family: 'Macondo';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
