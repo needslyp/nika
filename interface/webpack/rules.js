@@ -37,7 +37,6 @@ const svgRule = {
     use: ['@svgr/webpack', 'file-loader'],
 };
 
-// TODO: Убрать это правило
 const cssRule = {
     test: /\.css$/i,
     use: ['style-loader', 'css-loader'],
