@@ -3,5 +3,5 @@ then
   source set_vars.sh
 fi
 
-cd ${APP_ROOT_PATH}/client
-yarn && yarn webpack-dev
+cd ${APP_ROOT_PATH}/interface
+yarn && yarn start
