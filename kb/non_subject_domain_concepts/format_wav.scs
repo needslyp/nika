@@ -1,8 +1,0 @@
-format_wav
-<-sc_node_not_relation;
-<-format_audio;
-=>nrel_main_idtf:
-    [формат wav]
-    (* <-lang_ru;; *);
-    [format wav]
-    (* <-lang_en;; *);;
