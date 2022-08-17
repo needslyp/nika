@@ -10,17 +10,7 @@ cd idesa
 git submodule update --init --recursive
 cd scripts/
 ./install_deps_ubuntu.sh
-pip3 install -r ../requirements/dev.txt
 ./install_project.sh
-```
-
-To install only production dependencies use 
-```sh
-pip3 install -r ../requirements/prod.txt
-```
-instead of
-```sh
-pip3 install -r ../requirements/dev.txt
 ```
 
 Install Ubuntu dependencies:
