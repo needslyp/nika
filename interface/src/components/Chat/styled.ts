@@ -12,23 +12,16 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgba(151, 206, 157, 0.2);
+    background: white;
     box-sizing: border-box;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
-    @media (max-width: 768px) {
-        background: none;
-        backdrop-filter: none;
-    }
+    border-radius: 15px;
 `;
 export const SearchBar = styled.div`
     display: flex;
     justify-content: flex-end;
     background: rgba(99, 132, 102, 0.43);
-`;
-export const SearchIcon = styled.div`
-    padding: 13px 19px 13px 0;
-    cursor: pointer;
 `;
 export const Main = styled.div`
     height: 100%;
@@ -139,37 +132,25 @@ export const Footer = styled.div`
     margin-left: 9px;
     margin-right: 12px;
     padding-bottom: 9px;
-    @media (max-width: 768px) {
-        margin-left: 16px;
-        margin-right: 16px;
-        padding-bottom: 12px;
-    } ;
 `;
 export const FooterInput = styled.input`
     width: 100%;
     padding: 15px 0px 15px 18px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
     border: 0;
     border-radius: 60px;
     outline: 0;
-    font-family: 'Miriam Libre';
+    font-family: 'Times New Roman';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 21px;
+    line-height: 10px;
     color: #000000;
-    @media (max-width: 768px) {
-        font-size: 14px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 13px;
-    } ;
 `;
 export const FooterSend = styled.button`
     padding: 13px 12px 13px 6px;
     margin-left: 12px;
     border-radius: 50%;
-    background: #d5e8f3;
     box-shadow: 1.44px 1.44px 1.44px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     border: 0;
@@ -182,42 +163,8 @@ export const FooterSend = styled.button`
     &:active {
         box-shadow: 0px 0px 10px #627599;
     }
-    @media (max-width: 768px) {
-        margin-left: 8px;
-        padding: 10px 10px 10px 5px;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        &:hover {
-            background: #d5e8f3;
-        }
-        &:hover path {
-            stroke: #627599;
-        }
-        &:active {
-            background: #849299;
-        }
-        &:active path {
-            stroke: white;
-        }
-    } ;
 `;
 export const WrapperSendIcon = styled.div`
     width: 33px;
     height: 27px;
-    @media (max-width: 768px) {
-        width: 25px;
-        height: 20px;
-    } ;
-`;
-export const FooterVoice = styled.div`
-    padding: 8px 13px;
-    border-radius: 50%;
-    background: rgba(213, 232, 243, 0.5);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    &:hover {
-        background: #519bbb;
-    }
-    &:active {
-        box-shadow: 0px 0px 10px #627599;
-    }
 `;

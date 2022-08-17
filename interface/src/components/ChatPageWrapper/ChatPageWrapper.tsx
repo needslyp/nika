@@ -7,8 +7,4 @@ export const ChatPageWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     flex-grow: 1;
-    @media (max-width: 768px) {
-        padding: 0;
-        grid-template-rows: auto 1fr;
-    }
 `;
