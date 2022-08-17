@@ -19,7 +19,4 @@ ScAddr MessageReplyKeynodes::format_wav;
 ScAddr MessageReplyKeynodes::languages;
 ScAddr MessageReplyKeynodes::concept_sound_file;
 ScAddr MessageReplyKeynodes::concept_text_file;
-ScAddr MessageReplyKeynodes::concept_error_message;
-ScAddr MessageReplyKeynodes::action_reply_to_error_message;
-ScAddr MessageReplyKeynodes::error_message_processing_program;
 }

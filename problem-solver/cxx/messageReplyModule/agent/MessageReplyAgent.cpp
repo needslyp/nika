@@ -69,39 +69,19 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
   if (!waitForActionSuccessfulFinish(actionToInterpret))
   {
     SC_LOG_ERROR("Action wait time expired or action not finished successfully");
-
-    try
-    {
-      answerAddr = callErrorMessageReplyAgent(authorAddr);
-    }
-    catch (std::runtime_error & exception)
-    {
-      SC_LOG_ERROR(exception.what());
-      utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
-      return SC_RESULT_ERROR;
-    }
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
+    return SC_RESULT_ERROR;
   }
-  else
-  {
-    try
-    {
-      answerAddr = generateAnswer(messageAddr);
-    }
-    catch (std::runtime_error & exception)
-    {
-      SC_LOG_ERROR(exception.what());
 
-      try
-      {
-        answerAddr = callErrorMessageReplyAgent(authorAddr);
-      }
-      catch (std::runtime_error & exception)
-      {
-        SC_LOG_ERROR(exception.what());
-        utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
-        return SC_RESULT_ERROR;
-      }
-    }
+  try
+  {
+    answerAddr = generateAnswer(messageAddr);
+  }
+  catch (std::runtime_error & exception)
+  {
+    SC_LOG_ERROR(exception.what());
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
+    return SC_RESULT_ERROR;
   }
 
   SC_LOG_DEBUG("MessageReplyAgent finished");
@@ -151,70 +131,6 @@ ScAddr MessageReplyAgent::generateMessage(ScAddr const & authorAddr, ScAddr cons
     throw std::runtime_error("Unable to generate message");
   }
   return templateGenResult[USER_MESSAGE_ALIAS];
-}
-
-ScAddr MessageReplyAgent::generateErrorMessage(ScAddr const & authorAddr)
-{
-  std::string const USER_MESSAGE_ALIAS = "_user_message";
-  std::string const TRANSLATION_NODE_ALIAS = "_translation_node";
-  std::string const ERROR = "Ошибка";
-
-  ScAddr linkAddr = ms_context->CreateLink();
-  ScLink link = ScLink(*ms_context, linkAddr);
-  link.Set(ERROR);
-
-  ScTemplate errorMessageTemplate;
-  errorMessageTemplate.Triple(
-          MessageReplyKeynodes::concept_message,
-          ScType::EdgeAccessVarPosPerm,
-          ScType::NodeVar >> USER_MESSAGE_ALIAS);
-  errorMessageTemplate.Triple(
-          MessageReplyKeynodes::concept_error_message,
-          ScType::EdgeAccessVarPosPerm,
-          USER_MESSAGE_ALIAS);
-  errorMessageTemplate.TripleWithRelation(
-          USER_MESSAGE_ALIAS,
-          ScType::EdgeDCommonVar,
-          authorAddr,
-          ScType::EdgeAccessVarPosPerm,
-          MessageReplyKeynodes::nrel_authors);
-  errorMessageTemplate.TripleWithRelation(
-          ScType::NodeVar >> TRANSLATION_NODE_ALIAS,
-          ScType::EdgeDCommonVar,
-          USER_MESSAGE_ALIAS,
-          ScType::EdgeAccessVarPosPerm,
-          CoreKeynodes::nrel_sc_text_translation);
-  errorMessageTemplate.Triple(
-          TRANSLATION_NODE_ALIAS,
-          ScType::EdgeAccessVarPosPerm,
-          linkAddr);
-  errorMessageTemplate.Triple(
-          CoreKeynodes::lang_ru,
-          ScType::EdgeAccessVarPosPerm,
-          linkAddr);
-
-  ScTemplateGenResult templateGenResult;
-  if (!m_memoryCtx.HelperGenTemplate(errorMessageTemplate, templateGenResult))
-  {
-    throw std::runtime_error("Unable to generate message");
-  }
-  return templateGenResult[USER_MESSAGE_ALIAS];
-}
-
-ScAddr MessageReplyAgent::callErrorMessageReplyAgent(ScAddr const & authorAddr)
-{
-  ScAddr errorMessage = generateErrorMessage(authorAddr);
-  ScAddrVector errorArgsVector = {errorMessage};
-  ScAddr errorAction = utils::AgentUtils::initAgent(
-          &m_memoryCtx,
-          MessageReplyKeynodes::action_reply_to_error_message,
-          errorArgsVector);
-  if (!waitForActionSuccessfulFinish(errorAction))
-  {
-    throw std::runtime_error("MessageReplyAgent: Error reply message not generated");
-  }
-
-  return utils::IteratorUtils::getFirstByOutRelation(&m_memoryCtx, errorAction, CoreKeynodes::nrel_answer);
 }
 
 ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageAddr)
