@@ -1,4 +1,4 @@
-const target = process.env.ML_URL ?? 'https://localhost:3003';
+const target = process.env.ML_URL ?? 'http://localhost:3003';
 
 const proxy = {
     '/api': {
@@ -13,7 +13,7 @@ module.exports = {
     compress: true,
     hot: true,
     open: true,
-    https: true,
+    https: false,
     historyApiFallback: true,
     port: 3033,
     proxy,
