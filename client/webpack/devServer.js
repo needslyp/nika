@@ -1,4 +1,4 @@
-const target = process.env.ML_URL ?? 'https://pcare.dev-ml-service.ostis.ai/';
+const target = process.env.ML_URL ?? 'https://localhost:3003';
 
 const proxy = {
     '/api': {

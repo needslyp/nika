@@ -31,7 +31,7 @@ const defaultIcons = {
 
 const textMoreInfo = {
     en: 'more information',
-    de: 'mehr Informationen',
+    ru: 'Больше информации',
 };
 
 export interface IProps {

@@ -91,16 +91,16 @@ const WrapperArrowUp = styled.div<{ isRotate: boolean }>`
 
 const languageMap = {
     en: 'English',
-    de: 'Deutsch',
+    ru: 'Русский',
 };
 const languageMapMobile = {
     en: 'En',
-    de: 'De',
+    ru: 'Ru',
 };
-const languages = ['en', 'de'];
+const languages = ['en', 'ru'];
 
 export const Language = () => {
-    const [opened, , close, togle] = useBooleanState(false);
+    const [opened, close, toggle] = useBooleanState(false);
 
     const dispatch = useDispatch();
     const hookLanguage = useLanguage();
@@ -118,7 +118,7 @@ export const Language = () => {
     const width = useWindowSize() > 768;
     return (
         <Wrapper isRotate={true}>
-            <Header onClick={togle} ref={headerRef}>
+            <Header onClick={toggle} ref={headerRef}>
                 <WrapperArrowUp isRotate={opened}>
                     <ArrowUp />
                 </WrapperArrowUp>
