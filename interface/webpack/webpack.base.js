@@ -10,7 +10,6 @@ module.exports = (env) => ({
     mode: NODE_ENV,
     resolve: {
         alias,
-        // TODO: Убрать css
         extensions: ['.js', '.ts', '.tsx', '.css'],
     },
     entry: relativeRoot('src/index.tsx'),
