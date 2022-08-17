@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "compilerOptions": {
     "outDir": "./assets/",
     "sourceMap": true,
@@ -8,4 +9,32 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
   }
+=======
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "target": "es6",
+        "strict": true,
+        "jsx": "react-jsx",
+        "baseUrl": "./src",
+        "paths": {
+            "@model/*": ["model/*"],
+            "@model": ["model/index"],
+            "@constants": ["constants/index"],
+            "@pages/*": ["pages/*"],
+            "@hooks/*": ["hooks/*"],
+            "@hooks": ["hooks/index"],
+            "@store/*": ["store/*"],
+            "@store": ["store/index"],
+            "@api/*": ["api/*"],
+            "@api": ["api/index"],
+            "@utils": ["utils/index"],
+            "@components/*": ["components/*"],
+            "@assets/*": ["assets/*"],
+            "@agents/*": ["api/sc/agents/*"]
+        },
+        "allowSyntheticDefaultImports": true
+    }
+>>>>>>> 7bd3b8924... feat(interface): add build from node
 }
