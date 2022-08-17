@@ -1,11 +1,9 @@
-import { lazy, useEffect } from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { routes } from '@constants';
+import { lazy, useEffect } from "react";
+import { Route, Redirect } from "react-router-dom";
 import { loadingComponent } from '@components/LoadingComponent';
+import { routes } from '@constants';
 import { useToast } from '@components/Toast';
 import { client } from '@api';
-import { Notification } from '@components/Notification';
-import { HeaderPanel } from "@components/Header";
 
 import 'antd/dist/antd.css';
 import './assets/main.css';
@@ -13,12 +11,16 @@ import './assets/main.css';
 import { Layout } from 'antd';
 const { Header, Content, Footer } = Layout;
 
+import { Notification } from '@components/Notification';
+import { HeaderPanel } from "@components/Header";
+import { FooterPanel } from "@components/Footer";
+
 const Demo = loadingComponent(lazy(() => import('@pages/Demo')));
 const About = loadingComponent(lazy(() => import('@pages/About')));
 
 const DemoRoutes = () => (
     <>
-        <Route path={routes.MAIN}>
+        <Route exact path={routes.MAIN}>
             <Demo />
         </Route>
         <Redirect to={routes.MAIN} />
@@ -58,20 +60,18 @@ const ClientNotifications = () => {
 
 export const App = () => {
     return (
-      <Layout>
-        <Header>
-          <HeaderPanel />
-        </Header>
-        <Content>
-          <ClientNotifications />
-          <DemoRoutes />
-          <AboutRoutes />
-        </Content>
-        <Footer>
-          <span className="copyright">
-            Авторское право © Intelligent Semantic Systems LLC, Все права защищены
-          </span>
-        </Footer>
-      </Layout>
+        <Layout>
+            <Header>
+                <HeaderPanel />
+            </Header>
+            <Content>
+                <ClientNotifications />
+                <DemoRoutes />
+                <AboutRoutes />
+            </Content>
+            <Footer>
+                <FooterPanel />
+            </Footer>
+        </Layout>
     );
 };
