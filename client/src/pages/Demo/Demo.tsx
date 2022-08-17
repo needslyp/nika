@@ -6,7 +6,7 @@ import { Date } from '@components/Chat/Date';
 import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
 import { useChat } from '@hooks/useChat';
-import {ScgViewer} from "@components/SCgViewer/SCgViewer";
+import { ScgViewer } from "@components/SCgViewer/SCgViewer";
 
 export const Demo = () => {
     const [patient, setPatient] = useState<ScAddr | null>(null);
