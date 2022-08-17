@@ -116,7 +116,7 @@ export const FooterInput = styled.input`
     width: 100%;
     padding: 15px 15px 15px 18px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(150, 150, 150, 0.2);
+    border: 2px solid rgba(100, 150, 150, 0.2);
     border-radius: 60px;
     outline: 0;
     font-family: 'Roboto';
