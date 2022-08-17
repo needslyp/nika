@@ -74,9 +74,6 @@ export const AnswerSpinnerText = styled.div`
     font-size: 14px;
     line-height: 18px;
     color: #949494;
-    @media (max-width: 768px) {
-        font-size: 12px;
-    }
 `;
 export const ArrowWrapper = styled.div`
     position: absolute;
@@ -94,28 +91,10 @@ export const ArrowWrapper = styled.div`
     &:hover {
         background: #e4e0dd;
     }
-    @media (max-width: 768px) {
-        width: 41px;
-        height: 41px;
-        right: 15px;
-        bottom: 90px;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-        &:hover {
-            background: #f9f3f0;
-        }
-        &:active {
-            background: #e4e0dd;
-        }
-    }
 `;
 export const WrapperIcon = styled.div`
     width: 22px;
     height: 25px;
-    @media (max-width: 768px) {
-        width: 16px;
-        height: 19px;
-    }
 `;
 export const WrapperAgentAnswer = styled.div`
     height: 25px;

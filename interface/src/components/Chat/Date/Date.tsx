@@ -15,12 +15,6 @@ const Wrapper = styled.div`
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    @media (max-width: 768px) {
-        width: 91px;
-        padding: 2px 9px;
-        font-size: 12px;
-        line-height: 14px;
-    }
 `;
 const DateInfo = styled.div`
     align-items: center;

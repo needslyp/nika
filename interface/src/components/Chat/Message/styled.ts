@@ -25,18 +25,12 @@ export const Text = styled.div`
     font-size: 16px;
     line-height: 21px;
     color: #000000;
-    @media (max-width: 768px) {
-        font-size: 14px;
-    }
 `;
 export const Info = styled.div`
     margin-top: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 768px) {
-        margin-top: 2px;
-    }
 `;
 export const Time = styled.div`
     display: flex;
@@ -47,9 +41,6 @@ export const Time = styled.div`
     font-size: 12px;
     line-height: 14px;
     color: #797979;
-    @media (max-width: 768px) {
-        font-size: 10px;
-    }
 `;
 export const WrapperLoadingIcon = styled.div`
     position: absolute;
