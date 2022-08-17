@@ -43,15 +43,15 @@ interface IProps {
 }
 const textPlaceholder = {
     en: 'Enter your message here...',
-    de: 'Geben Sie hier Ihre Nachricht ein...',
+    ru: 'Введите сообщение...',
 };
 const textLoad = {
     en: 'Load messages',
-    de: 'Nachrichten laden',
+    ru: 'Загрузка сообщений',
 };
 const textAgentAnswer = {
     en: 'message is being typed',
-    de: 'Nachricht wird eingegeben',
+    ru: 'Сообщение печатается',
 };
 
 export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(

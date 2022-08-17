@@ -26,7 +26,7 @@ interface IProps {
 
 const textSend = {
     en: 'Send again',
-    de: 'Nochmals senden',
+    ru: 'Повторить отправку',
 };
 
 export const Message = ({
