@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
@@ -85,3 +86,12 @@ module.exports = {
         ],
     },
 };
+=======
+require('dotenv').config();
+
+const { merge } = require('webpack-merge');
+const baseConfig = require('./webpack/webpack.base');
+const initPresets = require('./webpack/presets');
+
+module.exports = (env) => merge(baseConfig(env), initPresets(env));
+>>>>>>> 7bd3b8924... feat(interface): add build from node
