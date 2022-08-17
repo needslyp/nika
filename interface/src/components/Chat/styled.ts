@@ -135,12 +135,12 @@ export const Footer = styled.div`
 `;
 export const FooterInput = styled.input`
     width: 100%;
-    padding: 15px 0px 15px 18px;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-    border: 0;
+    padding: 15px 15px 15px 18px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(150, 150, 150, 0.2);
     border-radius: 60px;
     outline: 0;
-    font-family: 'Times New Roman';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IRootState } from '@store';
 
 const initialState = {
-    language: localStorage.getItem('language') === null ? 'en' : `${localStorage.getItem('language')}`,
+    language: localStorage.getItem('language') === null ? 'ru' : `${localStorage.getItem('language')}`,
 };
 
 export const commonSlice = createSlice({
