@@ -1,3 +1,4 @@
+import { routes } from '@constants';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -8,10 +9,10 @@ export const HeaderPanel = () => {
       <div className="nav-container">
         <ul className="nav">
           <li>
-            <NavLink to="/demo">Главная</NavLink>
+            <NavLink to={routes.MAIN}>Главная</NavLink>
           </li>
           <li>
-            <NavLink to="/about">О нас</NavLink>
+            <NavLink to={routes.ABOUT}>О нас</NavLink>
           </li>
         </ul>
       </div>

@@ -1,1 +1,2 @@
-export const DEMO = '/demo' as const;
+export const MAIN = '/' as const;
+export const ABOUT = '/about' as const;

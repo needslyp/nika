@@ -18,16 +18,16 @@ const About = loadingComponent(lazy(() => import('@pages/About')));
 
 const DemoRoutes = () => (
     <>
-        <Route path={routes.DEMO}>
+        <Route path={routes.MAIN}>
             <Demo />
         </Route>
-        <Redirect to={routes.DEMO} />
+        <Redirect to={routes.MAIN} />
     </>
 );
 
 const AboutRoutes = () => (
     <>
-        <Route path="/about">
+        <Route path={routes.ABOUT}>
             <About />
         </Route>
     </>
