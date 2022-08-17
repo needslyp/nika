@@ -1,5 +1,5 @@
-# idesa-ui
-IDESA User Interface
+# nika-ui
+NIKA User Interface
 
 ## Run 
 
