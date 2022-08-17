@@ -46,14 +46,6 @@ public:
   SC_PROPERTY(Keynode("concept_text_file"), ForceCreate)
   static ScAddr concept_text_file;
 
-  SC_PROPERTY(Keynode("concept_error_message"), ForceCreate)
-  static ScAddr concept_error_message;
-
-  SC_PROPERTY(Keynode("action_reply_to_error_message"), ForceCreate)
-  static ScAddr action_reply_to_error_message;
-
-  SC_PROPERTY(Keynode("error_message_processing_program"), ForceCreate)
-  static ScAddr error_message_processing_program;
 };
 
 } // namespace messageReplyModule

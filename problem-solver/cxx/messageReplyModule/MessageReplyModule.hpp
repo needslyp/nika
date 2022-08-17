@@ -10,7 +10,6 @@
 
 #include "keynodes/MessageReplyKeynodes.hpp"
 #include "agent/MessageReplyAgent.hpp"
-#include "agent/ErrorMessageReplyAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 #include "MessageReplyModule.generated.hpp"

@@ -27,10 +27,6 @@ private:
 
   ScAddr generateMessage(ScAddr const & authorAddr, ScAddr const & linkAddr);
 
-  ScAddr generateErrorMessage(ScAddr const & authorAddr);
-
-  ScAddr callErrorMessageReplyAgent(ScAddr const & authorAddr);
-
   ScAddr generateNonAtomicActionArgsSet(ScAddr const & messageAddr);
 
   ScAddr generateAnswer(ScAddr const & messageAddr);
