@@ -6,10 +6,10 @@ const FullPageSpinner = styled(Spinner)`
     margin: auto;
 `;
 
-// eslint-disable-next-line react/display-name
-export const loadingComponent = (C: React.ComponentType<any>) => () =>
+// eslint-disable-next-line react/display-name,@typescript-eslint/explicit-module-boundary-types
+export const loadingComponent = (C) => () =>
     (
         <Suspense fallback={<FullPageSpinner size={64} />}>
-           <C />
+            <C />
         </Suspense>
     );

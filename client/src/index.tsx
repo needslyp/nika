@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as redux from 'redux';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-
-import { configureStore, Store } from './store';
-import { AppContainer } from './App';
-
-import { ServerRoot } from './utils/server';
-
-const store: redux.Store<Store> = configureStore();
-const server: ServerRoot = new ServerRoot(process.env.SERVER_API_PATH, store);
-server.Start();
-=======
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -39,17 +23,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 `;
->>>>>>> 92191d324... feat(interface): remake static
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-<<<<<<< HEAD
-            <AppContainer />
-=======
             <GlobalStyle />
             <App />
->>>>>>> 92191d324... feat(interface): remake static
         </BrowserRouter>
     </Provider>,
     document.getElementById('content'),
