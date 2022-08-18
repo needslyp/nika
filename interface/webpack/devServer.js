@@ -4,5 +4,5 @@ module.exports = {
     open: true,
     https: false,
     historyApiFallback: true,
-    port: 3035,
+    port: 3033,
 };
