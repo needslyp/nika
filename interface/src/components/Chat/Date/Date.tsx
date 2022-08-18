@@ -4,20 +4,21 @@ interface IProps {
     date: string;
 }
 const Wrapper = styled.div`
-    width: 105px;
+    width: 140px;
     margin: auto;
     margin-top: 8px;
     margin-bottom: 16px;
-    padding: 2px 10px;
-    background: #daeddc;
-    border-radius: 3px;
-    color: #707070;
+    padding: 6px 10px;
+    background: #8fc1cf;
+    border-radius: 10px;
+    color: black;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
 `;
 const DateInfo = styled.div`
     align-items: center;
+    text-align: center;
 `;
 
 const months = {

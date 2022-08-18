@@ -25,6 +25,7 @@ export const Text = styled.div`
     font-size: 16px;
     line-height: 21px;
     color: #000000;
+    text-align: justify;
 `;
 export const Info = styled.div`
     margin-top: 4px;
@@ -40,7 +41,7 @@ export const Time = styled.div`
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #797979;
+    color: #696969;
 `;
 export const WrapperLoadingIcon = styled.div`
     position: absolute;
