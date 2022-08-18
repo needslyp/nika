@@ -131,8 +131,8 @@ export const FooterSend = styled.button`
     margin-left: 12px;
     border-radius: 50%;
     box-shadow: 1.44px 1.44px 1.44px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(100, 150, 150, 0.2);
     cursor: pointer;
-    border: 0;
     &:hover {
         background: #849299;
     }
