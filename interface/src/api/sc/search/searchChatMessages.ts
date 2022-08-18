@@ -4,7 +4,7 @@ import { client } from '../client';
 const rrel1 = 'rrel_1';
 const nrelAuth = 'nrel_authors';
 const nrelScTextTranslation = 'nrel_sc_text_translation';
-const conceptPatient = 'concept_patient';
+const conceptUser = 'concept_user';
 const conceptAssistant = 'concept_assistant';
 const nrelMessageSequence = 'nrel_message_sequence';
 const rrelLast = 'rrel_last';
@@ -17,7 +17,7 @@ const baseKeynodes = [
     { id: rrel1, type: ScType.NodeConstRole },
     { id: nrelAuth, type: ScType.NodeConstNoRole },
     { id: nrelScTextTranslation, type: ScType.NodeConstNoRole },
-    { id: conceptPatient, type: ScType.NodeConstClass },
+    { id: conceptUser, type: ScType.NodeConstClass },
     { id: conceptAssistant, type: ScType.NodeConstClass },
     { id: nrelMessageSequence, type: ScType.NodeConstNoRole },
     { id: rrelLast, type: ScType.NodeConstRole },

@@ -10,26 +10,26 @@ import * as React from "react";
 import { SC_WEB_URL } from "@constants";
 
 export const Demo = () => {
-    const [patient, setPatient] = useState<ScAddr | null>(null);
+    const [user, setUser] = useState<ScAddr | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(patient);
+    const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
     const onSend = useCallback(
         async (text: string) => {
-            if (!patient) return;
-            await sendMessage(patient, text);
+            if (!user) return;
+            await sendMessage(user, text);
         },
-        [patient, sendMessage],
+        [user, sendMessage],
     );
 
     const url = SC_WEB_URL + '/?sys_id=answer_structure&scg_structure_view_only=true';
 
     useEffect(() => {
         (async () => {
-            const patient = await resolveUserAgent();
-            if (!patient) return;
-            setPatient(patient);
-            await initChat([patient]);
+            const user = await resolveUserAgent();
+            if (!user) return;
+            setUser(user);
+            await initChat([user]);
             setIsLoading(false);
         })();
     }, [initChat]);
@@ -51,7 +51,7 @@ export const Demo = () => {
                             <Fragment key={item.id}>
                                 {showDate && <Date date={item.date} />}
                                 <Message
-                                    isLeft={!!patient && !item.author.equal(patient)}
+                                    isLeft={!!user && !item.author.equal(user)}
                                     time={item.time}
                                     attachment={item.attachment}
                                     isLoading={item.isLoading}
