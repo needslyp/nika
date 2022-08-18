@@ -56,9 +56,9 @@ const createUser = async () => {
 }
 
 export const resolveUserAgent = async () => {
-    const user = getUser();
+    const user = await getUser();
     if (user !== null)
         return user;
 
-    return createUser();
+    return await createUser();
 };
