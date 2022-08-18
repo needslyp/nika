@@ -23,32 +23,32 @@ const DateInfo = styled.div`
 
 const months = {
     en: {
-        1: 'January',
-        2: 'February',
-        3: 'March',
-        4: 'April',
-        5: 'Mai',
-        6: 'June',
-        7: 'July',
-        8: 'August',
-        9: 'September',
-        10: 'October',
-        11: 'November',
-        12: 'December',
+        1: 'january',
+        2: 'february',
+        3: 'march',
+        4: 'april',
+        5: 'mai',
+        6: 'june',
+        7: 'july',
+        8: 'august',
+        9: 'september',
+        10: 'october',
+        11: 'november',
+        12: 'december',
     },
     ru: {
-        1: 'Январь',
-        2: 'Февраль',
-        3: 'Март',
-        4: 'Апрель',
-        5: 'Май',
-        6: 'Июнь',
-        7: 'Июль',
-        8: 'Август',
-        9: 'Сентябрь',
-        10: 'Октябрь',
-        11: 'Ноябрь',
-        12: 'Декабрь',
+        1: 'января',
+        2: 'февраля',
+        3: 'марта',
+        4: 'апреля',
+        5: 'мая',
+        6: 'июня',
+        7: 'июля',
+        8: 'августа',
+        9: 'сентября',
+        10: 'октября',
+        11: 'ноября',
+        12: 'декабря',
     },
 };
 
@@ -60,7 +60,7 @@ export const Date = ({ date }: IProps) => {
     return (
         <>
             <Wrapper>
-                <DateInfo>{`${currentMonth[Number(month)]} ${day} ${year}`}</DateInfo>
+                <DateInfo>{`${day} ${currentMonth[Number(month)]} ${year}`}</DateInfo>
             </Wrapper>
         </>
     );
