@@ -99,14 +99,14 @@ export const useChat = (user: ScAddr | null) => {
     }, [chatNode, shouldEnd, messages]);
 
     const sendMessage = useCallback(
-        async (patient: ScAddr, text: string) => {
+        async (user: ScAddr, text: string) => {
             const linkAddr = await createLinkText(text);
             if (!linkAddr || !chatNode) return;
             const date = new Date();
             const message = {
                 id: linkAddr.value,
                 text,
-                author: patient,
+                author: user,
                 time: `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`,
                 date: `${date.getFullYear()}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date
                     .getDate()
@@ -116,7 +116,7 @@ export const useChat = (user: ScAddr | null) => {
                 isLoading: true,
             };
             setMessages((prev) => [...prev, message]);
-            await newMessageAgent(chatNode, patient, linkAddr);
+            await newMessageAgent(chatNode, user, linkAddr);
 
             setIsAgentAnswer(false);
         },

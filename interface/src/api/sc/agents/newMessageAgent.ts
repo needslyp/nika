@@ -92,9 +92,9 @@ const findNewMesssageNode = async (circuitAddr: ScAddr) => {
 export const newMessageAgent = async (chatNode: ScAddr, author: ScAddr | string, linkAddr: ScAddr) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-    const [template, patientActionNodeAlias] = await describeAgent(chatNode, author, keynodes, linkAddr);
+    const [template, userActionNodeAlias] = await describeAgent(chatNode, author, keynodes, linkAddr);
 
-    const circuitAddr = await makeAgent(template, patientActionNodeAlias);
+    const circuitAddr = await makeAgent(template, userActionNodeAlias);
 
     if (!circuitAddr) return null;
 

@@ -28,9 +28,9 @@ const findDialogNode = async (user: ScAddr) => {
     );
     const resultDialogNode = await client.templateSearch(template);
 
-    if (resultDialogNode.length) {
+    if (resultDialogNode.length)
         return resultDialogNode[0].get(dialog);
-    }
+
     return null;
 };
 
