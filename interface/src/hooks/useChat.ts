@@ -11,7 +11,6 @@ interface IMessage {
     id: number;
     time: string | number;
     date: string;
-    attachment?: string;
     addr: ScAddr;
     isLoading?: boolean;
 }
@@ -32,7 +31,6 @@ export const useChat = (user: ScAddr | null) => {
         const exactValue = 'exact_value';
         const begin = 'begin';
         const nrelTimestampMeasurement = 'nrel_timestamp_measurement';
-        const attachment = 'nrel_attachments';
 
         const baseKeynodes = [
             { id: nrelAuthors, type: ScType.NodeConstNoRole },
@@ -40,7 +38,6 @@ export const useChat = (user: ScAddr | null) => {
             { id: exactValue, type: ScType.NodeConstClass },
             { id: begin, type: ScType.NodeConstClass },
             { id: nrelTimestampMeasurement, type: ScType.NodeConstNoRole },
-            { id: attachment, type: ScType.NodeConstNoRole },
         ];
 
         const keynodes = await client.resolveKeynodes(baseKeynodes);
