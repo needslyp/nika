@@ -5,7 +5,7 @@ export const WrapperMessage = styled.div<{ isLeft: boolean }>`
     width: fit-content;
     max-width: 65%;
     margin: 0px 18px 8px 16px;
-    padding: 8px 8px 4px 8px;
+    padding: 8px 8px 8px 8px;
     align-self: ${(props) => (props.isLeft ? 'start' : 'end')};
     background: ${(props) => (props.isLeft ? '#FFFFFF' : '#cbd4e3')};
     border-radius: 10px;
