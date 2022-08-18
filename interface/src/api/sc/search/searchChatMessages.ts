@@ -1,30 +1,26 @@
 import { ScAddr, ScTemplate, ScType } from 'ts-sc-client';
-import { client } from '../client';
+import { client } from "@api";
 
 const rrel1 = 'rrel_1';
 const nrelAuth = 'nrel_authors';
 const nrelScTextTranslation = 'nrel_sc_text_translation';
 const conceptUser = 'concept_user';
-const conceptAssistant = 'concept_assistant';
 const nrelMessageSequence = 'nrel_message_sequence';
 const rrelLast = 'rrel_last';
 const exactValue = 'exact_value';
 const begin = 'begin';
 const nrelTimestampMeasurement = 'nrel_timestamp_measurement';
-const attachment = 'nrel_attachments';
 
 const baseKeynodes = [
     { id: rrel1, type: ScType.NodeConstRole },
     { id: nrelAuth, type: ScType.NodeConstNoRole },
     { id: nrelScTextTranslation, type: ScType.NodeConstNoRole },
     { id: conceptUser, type: ScType.NodeConstClass },
-    { id: conceptAssistant, type: ScType.NodeConstClass },
     { id: nrelMessageSequence, type: ScType.NodeConstNoRole },
     { id: rrelLast, type: ScType.NodeConstRole },
     { id: exactValue, type: ScType.NodeConstClass },
     { id: begin, type: ScType.NodeConstClass },
     { id: nrelTimestampMeasurement, type: ScType.NodeConstNoRole },
-    { id: attachment, type: ScType.NodeConstNoRole },
 ];
 
 interface IMessage {
@@ -60,7 +56,6 @@ const findCurrentEdge = async (chatNode: ScAddr, messageNode: ScAddr) => {
     const template = new ScTemplate();
     template.triple(chatNode, [ScType.EdgeAccessVarPosPerm, currentEdgeAlias], messageNode);
     const resultLastMessageEdge = await client.templateSearch(template);
-    console.log({ resultLastMessageEdge });
 
     if (resultLastMessageEdge.length) {
         return resultLastMessageEdge[0].get(currentEdgeAlias);
@@ -103,7 +98,7 @@ const findPreviousEdge = async (chatNode: ScAddr, keynodes: Record<string, ScAdd
     return null;
 };
 
-export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<string, ScAddr>, attachment?: string) => {
+export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<string, ScAddr>) => {
     const messageNodeAlias = '_message_node';
     const authorNodeAlias = '_author_node';
     const textNodeAlias = '_text_node';
@@ -161,32 +156,7 @@ export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<stri
 
     const [date] = infoTime[0].data.toString().split(' ');
 
-    return { id: linkNode.value, text, author, time, date, attachment, addr: messagesNode };
-};
-
-export const getImage = async (messageNode: ScAddr, keynodes: Record<string, ScAddr>) => {
-    const attachmentAlias = '_attachment';
-    const attachmentLinkAlias = '_attachment_link';
-    const template = new ScTemplate();
-    template.tripleWithRelation(
-        messageNode,
-        ScType.EdgeDCommonVar,
-        [ScType.NodeVar, attachmentAlias],
-        ScType.EdgeAccessVarPosPerm,
-        keynodes[attachment],
-    );
-    template.triple(attachmentAlias, ScType.EdgeAccessVarPosPerm, [ScType.LinkVar, attachmentLinkAlias]);
-
-    const result = await client.templateSearch(template);
-
-    if (result.length) {
-        const attachmentLink = result[0].get(attachmentLinkAlias);
-        const attachmentImg = await client.getLinkContents([attachmentLink]);
-        const resultAttach = attachmentImg[0].data;
-
-        return resultAttach ? String(resultAttach) : undefined;
-    }
-    return undefined;
+    return { id: linkNode.value, text, author, time, date, addr: messagesNode };
 };
 
 const checkRrel1 = async (keynodes: Record<string, ScAddr>, chatNode: ScAddr, messageNode: ScAddr) => {
@@ -220,8 +190,7 @@ const getFirstMessages = async (
 
     if (!currentEdge) return defaultReturn;
 
-    const lastAttachment = await getImage(currentMessagesNode, keynodes);
-    const lastMessage = await getInfoMessage(currentMessagesNode, keynodes, lastAttachment);
+    const lastMessage = await getInfoMessage(currentMessagesNode, keynodes);
     if (!lastMessage) return defaultReturn;
     if (!lastMessageScAddr) messages.push(lastMessage);
 
@@ -236,8 +205,7 @@ const getFirstMessages = async (
 
         if (!currentMessagesNode) break;
 
-        const attachment = await getImage(currentMessagesNode, keynodes);
-        const message = await getInfoMessage(currentMessagesNode, keynodes, attachment);
+        const message = await getInfoMessage(currentMessagesNode, keynodes);
         if (!message) break;
         messages.unshift(message);
     }
@@ -246,7 +214,7 @@ const getFirstMessages = async (
     return { messages, shouldEnd };
 };
 
-export const searchChatMessages = async (chatNode: ScAddr, ammount: number, lastMessageScAddr?: ScAddr) => {
+export const searchChatMessages = async (chatNode: ScAddr, amount: number, lastMessageScAddr?: ScAddr) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
-    return await getFirstMessages(chatNode, keynodes, ammount, lastMessageScAddr);
+    return await getFirstMessages(chatNode, keynodes, amount, lastMessageScAddr);
 };

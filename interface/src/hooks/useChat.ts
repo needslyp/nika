@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { ScAddr, ScEventParams, ScEventType, ScType } from 'ts-sc-client';
 import { client } from '@api';
 import { dialogAgent } from '@api/sc/agents/dialogAgent';
-import { getImage, getInfoMessage, searchChatMessages } from '@api/sc/search/searchChatMessages';
+import { getInfoMessage, searchChatMessages } from '@api/sc/search/searchChatMessages';
 import { newMessageAgent, createLinkText } from '@api/sc/agents/newMessageAgent';
 
 interface IMessage {
@@ -47,8 +47,7 @@ export const useChat = (user: ScAddr | null) => {
 
         const onActionFinished = async (_subscribedAddr: ScAddr, _arc: ScAddr, messageNode: ScAddr) => {
             if (!messageNode.isValid()) return;
-            const attachment = await getImage(messageNode, keynodes);
-            const newMessage = await getInfoMessage(messageNode, keynodes, attachment);
+            const newMessage = await getInfoMessage(messageNode, keynodes);
 
             if (!newMessage || !user) return;
 

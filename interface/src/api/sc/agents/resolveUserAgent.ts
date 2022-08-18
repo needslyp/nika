@@ -2,7 +2,7 @@ import {ScTemplate, ScType} from 'ts-sc-client';
 import { client } from '@api/sc';
 
 const conceptUser = 'concept_user';
-const conceptDialog = 'concept_dialog';
+const conceptDialog = 'concept_dialogue';
 const rrelDialogParticipant = 'rrel_dialog_participant';
 
 const baseKeynodes = [
@@ -22,9 +22,9 @@ const getUser = async () => {
         [ScType.NodeVar, user],
     );
     const result = await client.templateSearch(template);
-    if (result.length === 1)
+    if (result.length === 1) {
         return result[0].get(user);
-
+    }
     return null;
 }
 
@@ -57,8 +57,8 @@ const createUser = async () => {
 
 export const resolveUserAgent = async () => {
     const user = await getUser();
-    if (user !== null)
+    if (user !== null) {
         return user;
-
+    }
     return await createUser();
 };

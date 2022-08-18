@@ -34,7 +34,6 @@ export const Message = ({
     isError = false,
     isLoading = false,
     time = '',
-    attachment = '',
     children,
     onClick,
 }: PropsWithChildren<IProps>) => {
@@ -46,11 +45,6 @@ export const Message = ({
                 <WrapperMessage isLeft={isLeft}>
                     <Text>
                         <TextWrapper> {children}</TextWrapper>
-                        {attachment && (
-                            <ImgWrapper>
-                                <Img src={`data:image/jpeg;base64,${attachment}`}></Img>
-                            </ImgWrapper>
-                        )}
                     </Text>
                     <Info>
                         <Time>{time}</Time>

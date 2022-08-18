@@ -76,7 +76,7 @@ const describeAgent = async (
     return [template, actionNodeAlias] as const;
 };
 
-const findNewMesssageNode = async (circuitAddr: ScAddr) => {
+const findNewMessageNode = async (circuitAddr: ScAddr) => {
     const message = '_message';
     const template = new ScTemplate();
 
@@ -98,5 +98,5 @@ export const newMessageAgent = async (chatNode: ScAddr, author: ScAddr | string,
 
     if (!circuitAddr) return null;
 
-    return await findNewMesssageNode(circuitAddr);
+    return await findNewMessageNode(circuitAddr);
 };

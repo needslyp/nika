@@ -26,6 +26,7 @@ export const Demo = () => {
 
     useEffect(() => {
         (async () => {
+            setIsLoading(true);
             const user = await resolveUserAgent();
             if (!user) return;
             setUser(user);
@@ -53,7 +54,6 @@ export const Demo = () => {
                                 <Message
                                     isLeft={!!user && !item.author.equal(user)}
                                     time={item.time}
-                                    attachment={item.attachment}
                                     isLoading={item.isLoading}
                                 >
                                     {item.text}

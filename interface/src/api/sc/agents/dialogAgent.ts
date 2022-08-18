@@ -1,7 +1,7 @@
 import { ScAddr, ScTemplate, ScType } from 'ts-sc-client';
 import { client } from '@api/sc/client';
 
-const conceptDialog = 'concept_dialog';
+const conceptDialog = 'concept_dialogue';
 const rrelDialogParticipant = 'rrel_dialog_participant';
 
 const baseKeynodes = [
@@ -28,8 +28,9 @@ const findDialogNode = async (user: ScAddr) => {
     );
     const resultDialogNode = await client.templateSearch(template);
 
-    if (resultDialogNode.length)
+    if (resultDialogNode.length) {
         return resultDialogNode[0].get(dialog);
+    }
 
     return null;
 };
