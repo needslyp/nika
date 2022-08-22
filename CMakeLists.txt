@@ -27,6 +27,8 @@ macro(subdir_list result current_dir)
     set(${result} ${dirlist})
 endmacro()
 
+include(dependencies.cmake)
+
 set(SUBSYSTEMS_PATH "${CMAKE_CURRENT_LIST_DIR}/subsystems")
 subdir_list(SUBDIRS ${SUBSYSTEMS_PATH})
 
