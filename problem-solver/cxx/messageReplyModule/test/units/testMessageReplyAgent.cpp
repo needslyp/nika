@@ -4,16 +4,14 @@
 */
 
 #include "sc_test.hpp"
-#include "builder/src/scs_loader.hpp"
+#include "sc-builder/src/scs_loader.hpp"
 #include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-memory/sc_wait.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "agent/MessageReplyAgent.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageReplyKeynodes.hpp"
 #include "test/agent/GenerateReplyMessageAgent.hpp"
-#include "test/agent/NotGenerateReplyMessageAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 namespace messageReplyModuleTest

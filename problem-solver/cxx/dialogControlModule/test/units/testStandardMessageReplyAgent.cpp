@@ -6,7 +6,7 @@
 #include "agent/DirectInferenceAgent.hpp"
 #include "agent/StandardMessageReplyAgent.hpp"
 #include "agent/PhraseGenerationAgent.hpp"
-#include "builder/src/scs_loader.hpp"
+#include "sc-builder/src/scs_loader.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"

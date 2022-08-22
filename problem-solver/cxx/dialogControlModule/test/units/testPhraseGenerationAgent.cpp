@@ -4,7 +4,7 @@
 */
 
 #include "agent/PhraseGenerationAgent.hpp"
-#include "builder/src/scs_loader.hpp"
+#include "sc-builder/src/scs_loader.hpp"
 #include "handler/LinkHandler.cpp"
 #include "keynodes/CoreKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"

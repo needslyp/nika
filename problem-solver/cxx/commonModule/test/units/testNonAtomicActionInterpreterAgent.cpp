@@ -4,9 +4,8 @@
 */
 
 #include "sc_test.hpp"
-#include "builder/src/scs_loader.hpp"
+#include "sc-builder/src/scs_loader.hpp"
 #include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-memory/sc_wait.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "agent/NonAtomicActionInterpreterAgent.hpp"
 #include "keynodes/Keynodes.hpp"

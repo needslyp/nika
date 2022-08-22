@@ -37,7 +37,7 @@ include_directories(
         ${SC_COMMON_MODULE_SRC})
 
 add_library(dialogControlModule SHARED ${SOURCES} ${HEADERS})
-target_link_libraries(dialogControlModule sc-memory sc-agents-common common inferenceModule)
+target_link_libraries(dialogControlModule sc-memory sc-agents-common common sc-builder-lib inferenceModule)
 
 sc_codegen_ex(dialogControlModule ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
