@@ -1,18 +1,20 @@
-project(idesa)
+project(nika)
 cmake_minimum_required(VERSION 2.8)
 
-set(SC_MACHINE_PATH "${CMAKE_CURRENT_LIST_DIR}/ostis-web-platform/sc-machine")
+set(PLATFORM_PATH "${CMAKE_CURRENT_LIST_DIR}/ostis-web-platform")
+set(SC_MACHINE_PATH "${PLATFORM_PATH}/sc-machine")
 include("${SC_MACHINE_PATH}/CMakeLists.txt")
+project_version(NIKA_PROJECT "0.1.0")
 
 # platform doesn't support multi-extensions. Have to put project binaries to sc-machine extensions
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSION_DIRECTORY})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS_DIRECTORY})
 
 # for multi-config builds (e.g. msvc)
-foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
-    string(TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${SC_EXTENSION_DIRECTORY})
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${SC_EXTENSION_DIRECTORY})
-endforeach(OUTPUTCONFIG CMAKE_CONFIGURATION_TYPES)
+foreach(OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES})
+    string(TOUPPER ${OUTPUT_CONFIG} OUTPUT_CONFIG)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${SC_EXTENSIONS_DIRECTORY})
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${SC_EXTENSIONS_DIRECTORY})
+endforeach(OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES)
 
 macro(subdir_list result current_dir)
     file(GLOB children RELATIVE ${current_dir} ${current_dir}/*)
