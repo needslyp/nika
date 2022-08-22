@@ -1,7 +1,9 @@
-#prepared
-ostis-web-platform/repo.path
+./ostis-web-platform/repo.path
 
-#not prepared
+# Change start page
+!./ostis-web-platform/ims.ostis.kb/ui/ui_start_sc_element.scs
+!./ostis-web-platform/ims.ostis.kb/ims/knowledge_base_IMS.scs
+
 #components
 kb/ui_menu
 kb/section_subject_domain_of_dialogues
