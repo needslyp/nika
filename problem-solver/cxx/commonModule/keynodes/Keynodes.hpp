@@ -48,6 +48,9 @@ public:
 
   SC_PROPERTY(Keynode("nrel_measurement"), ForceCreate)
   static ScAddr nrel_measurement;
+
+  SC_PROPERTY(Keynode("lang_en"), ForceCreate)
+  static ScAddr lang_en;
 };
 
 } // namespace common
