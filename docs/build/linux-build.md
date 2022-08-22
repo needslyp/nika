@@ -31,27 +31,13 @@ cd idesa/scripts
 ./build_kb.sh
 ```
 
-## Run
+## Run on Linux
 
-### Run server 
+### Run server
 
-There are 2 possible options to run:
-#### Option 1. Run sc-server 
-
-Run on Linux:
 ```sh
-cd idesa/ostis-web-platform/scripts
+cd idesa/scripts
 ./run_sc_server.sh
-```
-
-#### Option 2. Run sctp-server
-
-The *sctp-server* is needed for *sc-web* interface processing. 
-
-Run on Linux:
-```sh
-cd idesa/ostis-web-platform/scripts
-./run_sctp.sh
 ```
 
 ## Run sc-web interface
@@ -62,4 +48,4 @@ cd idesa/ostis-web-platform/scripts
 ```
 
 Then open localhost:8000 in your browser.
-![Run sctp-server and sc-web screenshot](images/runSctpServerScWeb.png)
+![Run sc-server and sc-web screenshot](images/runScServerScWeb.png)
