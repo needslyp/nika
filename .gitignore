@@ -15,6 +15,10 @@ ostis
 ostis-web-platform
 kb.bin
 
-client/node_modules
-client/assets/aide-web.js
-client/assets/index.html
+__pycache__
+
+cmake-build-debug
+cmake-build-release
+
+kb.bin
+subsystems
