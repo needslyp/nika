@@ -25,12 +25,6 @@ build_problem_solver()
 	./build_problem_solver.sh
 }
 
-build_interface()
-{
-	cd "${APP_ROOT_PATH}"/scripts
-	./build_interface.sh
-}
-
 set -eo pipefail
 
 cd "${APP_ROOT_PATH}"
@@ -43,12 +37,10 @@ if [ -d "${PLATFORM_PATH}" ];
 		git submodule update --init --recursive
 		prepare_platform
 		build_kb
-		build_interface
   else
 		prepare_platform_without_build
 		build_problem_solver
 		build_kb
-		build_interface
 fi
 
 cd "${WORKING_PATH}"
