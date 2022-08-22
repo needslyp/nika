@@ -31,7 +31,7 @@ include_directories(
 )
 
 add_library(messageClassification SHARED ${SOURCES} ${HEADERS})
-target_link_libraries(messageClassification sc-memory common sc-agents-common dialogControlModule messageReply cpr::cpr)
+target_link_libraries(messageClassification sc-memory common sc-agents-common dialogControlModule messageReply)
 
 sc_codegen_ex(messageClassification ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 

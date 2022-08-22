@@ -1,0 +1,46 @@
+concept_wit_datetime
+<-sc_node_class;
+=>nrel_main_idtf:
+	[дата и время Wit.ai]
+	(* <- lang_ru;; *);
+	[Wit.ai date and time]
+	(* <- lang_en;; *);
+	[Datum und Uhrzeit aus Wit.ai]
+	(* <- lang_de;; *);
+=> nrel_wit_ai_idtf:
+	[wit$datetime];
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (дата и время Wit.ai)]
+		(* <- lang_ru;; *);
+		[Def. (Wit.ai date and time)]
+		(* <- lang_en;; *);
+		[Def. (Datum und Uhrzeit aus Wit.ai)]
+		(* <- lang_de;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Дата и время Wit.ai - множество дат со временем, выделенных в сообщении с помощью Wit.ai.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Wit.ai date and time is a set of dates with time, defined in the message using Wit.ai.]
+			(* <- lang_en;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Datum und Uhrzeit aus Wit.ai ist eine Menge von Daten mit Uhrzeit, die in der Nachricht mithilfe von Wit.ai hervorgehoben werden.]
+			(* <- lang_de;; *);;
+		*);;
+	*);
+=>nrel_entity_possible_role: 
+	{
+		rrel_datetime
+	};;

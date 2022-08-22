@@ -1,0 +1,47 @@
+concept_entity_possible_class
+<-sc_node_class;
+=>nrel_main_idtf:
+	[возможный класс сущности Wit.ai]
+	(* <- lang_ru;; *);
+	[Wit.ai entity possible class]
+	(* <- lang_en;; *);
+	[mögliche Klasse der Entität aus Wit.ai]
+	(* <- lang_de;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (возможный класс сущности Wit.ai)]
+		(* <- lang_ru;; *);
+		[Def. (Wit.ai entity possible class)]
+		(* <- lang_en;; *);
+		[Def. (mögliche Klasse der Entität aus Wit.ai)]
+		(* <- lang_de;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Возможный класс сущности Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как сущности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Wit.ai entity possible class is a class whose elements can be identified by Wit.ai as entities.]
+			(* <- lang_en;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Mögliche Klasse der Entität aus Wit.ai ist eine Klasse, deren Elemente durch Wit.ai als Entitäten identifiziert werden können.]
+			(* <- lang_de;; *);;
+		*);;
+	*);
+-> concept_wit_feeling;
+-> concept_wit_health_state;
+-> concept_wit_season;
+-> concept_human;
+-> concept_wit_datetime;
+-> concept_wit_temperature;
+-> concept_color;;

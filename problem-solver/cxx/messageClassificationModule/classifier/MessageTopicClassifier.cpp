@@ -30,6 +30,7 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
   std::string const messageText = getMessageText(messageAddr);
 
   json const witResponse = client->getWitResponse(messageText);
+  SC_LOG_ERROR(witResponse);
 
   ScAddrVector const messageIntentElements = getMessageIntentClass(messageAddr, witResponse);
   messageClassificationElements.insert(
@@ -42,6 +43,11 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
   ScAddrVector const messageEntitiesElements = getMessageEntity(messageAddr, witResponse);
   messageClassificationElements.insert(
       messageClassificationElements.cend(), messageEntitiesElements.cbegin(), messageEntitiesElements.cend());
+
+  for (auto const & item : messageClassificationElements)
+  {
+    SC_LOG_ERROR(context->HelperGetSystemIdtf(item));
+  }
 
   return messageClassificationElements;
 }

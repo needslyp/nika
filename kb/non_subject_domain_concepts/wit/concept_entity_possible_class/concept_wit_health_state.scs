@@ -1,0 +1,46 @@
+concept_wit_health_state
+<-sc_node_class;
+=>nrel_main_idtf:
+	[состояние здоровья Wit.ai]
+	(* <- lang_ru;; *);
+	[Wit.ai health state]
+	(* <- lang_en;; *);
+	[Gesundheitszustand aus Wit.ai]
+	(* <- lang_de;; *);
+=> nrel_wit_ai_idtf:
+	[health_state];
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (состояние здоровья Wit.ai)]
+		(* <- lang_ru;; *);
+		[Def. (Wit.ai health state)]
+		(* <- lang_en;; *);
+		[Def. (Gesundheitszustand aus Wit.ai)]
+		(* <- lang_de;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Состояние здоровья Wit.ai - множество состояний здоровья, выделенных в сообщении с помощью Wit.ai.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A Wit.ai health state is a set of health states defined in the message using Wit.ai.]
+			(* <- lang_en;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Ein Gesundheitszustand aus Wit.ai ist eine Menge von Gesundheitszuständen, die in der Nachricht mithilfe von Wit.ai hervorgehoben werden.]
+			(* <- lang_de;; *);;
+		*);;
+	*);
+=>nrel_entity_possible_role: 
+	{
+		rrel_health_state
+	};;

@@ -1,10 +1,12 @@
 concept_trait_possible_class
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[возможный класс признака Wit.ai]
 	(* <- lang_ru;; *);
 	[Wit.ai trait possible class]
 	(* <- lang_en;; *);
+	[mögliche Klasse des Merkmals aus Wit.ai]
+	(* <- lang_de;; *);
 <- rrel_key_sc_element:
 	...
 	(*
@@ -12,12 +14,14 @@ concept_trait_possible_class
 		[Опр. (возможный класс признака Wit.ai)]
 		(* <- lang_ru;; *);
 		[Def. (Wit.ai trait possible class)]
-		(* <- lang_en;; *);;
+		(* <- lang_en;; *);
+		[Def. (mögliche Klasse des Merkmals aus Wit.ai)]
+		(* <- lang_de;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
 		(*
-		->rrel_example:
+		-> rrel_example:
 			[Возможный класс признака Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как признаки.]
 			(* <- lang_ru;; *);;
 		*);
@@ -26,5 +30,15 @@ concept_trait_possible_class
 		-> rrel_example: 
 			[A Wit.ai trait possible class is a class whose elements can be identified by Wit.ai as traits.]
 			(* <- lang_en;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Eine mögliche Klasse des Merkmals aus Wit.ai ist eine Klasse, deren Elemente durch Wit.ai als Merkmale identifiziert werden können.]
+			(* <- lang_de;; *);;
 		*);;
-	*);;
+	*);
+
+-> concept_message_with_negative_emotional_coloring;
+-> concept_message_with_neutral_emotional_coloring;
+-> concept_message_with_positive_emotional_coloring;;

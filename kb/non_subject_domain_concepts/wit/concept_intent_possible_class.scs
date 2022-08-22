@@ -1,31 +1,54 @@
 concept_intent_possible_class
-<- sc_node_not_relation;
-=> nrel_main_idtf:
+<-sc_node_class;
+=>nrel_main_idtf:
 	[возможный класс цели Wit.ai]
 	(* <- lang_ru;; *);
 	[Wit.ai intent possible class]
 	(* <- lang_en;; *);
+	[mögliche Klasse der Absicht aus Wit.ai]
+	(* <- lang_de;; *);
 <- rrel_key_sc_element:
 	...
 	(*
-	=> nrel_main_idtf:
+	=>nrel_main_idtf:
 		[Опр. (возможный класс цели Wit.ai)]
 		(* <- lang_ru;; *);
 		[Def. (Wit.ai intent possible class)]
-		(* <- lang_en;; *);;
+		(* <- lang_en;; *);
+		[Def. (mögliche Klasse der Absicht aus Wit.ai)]
+		(* <- lang_de;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
 		(*
-		-> rrel_example:
+		->rrel_example:
 			[Возможный класс цели Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как цели.]
 			(* <- lang_ru;; *);;
 		*);
 		...
 		(*
 		-> rrel_example: 
-			[A Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
+			[Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
 			(* <- lang_en;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Mögliche Klasse der Absicht aus Wit.ai ist eine Klasse, deren Elemente durch Wit.ai als Absichten identifiziert werden können.]
+			(* <- lang_de;; *);;
 		*);;
 	*);
--> concept_greeting_message;;
+-> concept_greeting_message;
+-> concept_interrogative_message;
+-> concept_interruption_message;
+-> concept_dialog_end_message;
+-> concept_dialog_finish_message;
+-> concept_message_about_mental_status;
+-> concept_general_message_about_weather;
+-> concept_weather_request_message;
+-> concept_time_request_message;
+-> concept_politeness_phrase;
+-> concept_play_guess_what_i_see_request_message;
+-> concept_guess_an_object_by_color_in_the_game_guess_what_i_see_request_message;
+-> concept_agreement_message;
+-> concept_rejection_message;;
