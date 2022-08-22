@@ -1,3 +1,4 @@
 [submodule "subsystems/ostis-inference"]
 	path = subsystems/ostis-inference
-	url = https://github.com/ostis-apps/ostis-inference.git
+	url = https://github.com/ostis-apps/ostis-inference
+	branch = master
