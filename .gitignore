@@ -3,6 +3,7 @@
 cmake-build-debug
 cmake-build-release
 build
+bin
 
 .venv
 *.pyc
@@ -17,7 +18,4 @@ kb.bin
 
 __pycache__
 
-cmake-build-debug
-cmake-build-release
-
-kb.bin
+sc-server.log
