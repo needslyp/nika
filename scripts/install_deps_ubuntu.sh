@@ -5,6 +5,6 @@ packagelist=(
 	cmake
 	libgtk-3-dev
 	libboost-all-dev
-	libpython3-dev
+  nlohmann-json3-dev
 )
 sudo apt-get install "${packagelist[@]}"
