@@ -7,7 +7,7 @@ export const WrapperMessage = styled.div<{ isLeft: boolean }>`
     margin: 0px 18px 8px 16px;
     padding: 8px 8px 8px 8px;
     align-self: ${(props) => (props.isLeft ? 'start' : 'end')};
-    background: ${(props) => (props.isLeft ? '#cbd4e3' : '#b5b3c4')};
+    background: ${(props) => (props.isLeft ? '#DFDBD0' : '#E2E9E7')};
     border-radius: 10px;
     word-break: break-word;
 
