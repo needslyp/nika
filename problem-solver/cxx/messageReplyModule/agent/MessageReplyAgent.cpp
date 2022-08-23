@@ -3,13 +3,15 @@
 * Author Nikiforov Sergei
 */
 
-#include "sc-memory/sc_link.hpp"
 #include "sc-agents-common/utils/AgentUtils.hpp"
+#include "sc-agents-common/utils/GenerationUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "utils/ActionUtils.hpp"
 #include "keynodes/Keynodes.hpp"
+
+#include "generator/MessageHistoryGenerator.hpp"
 
 #include "keynodes/MessageReplyKeynodes.hpp"
 
@@ -28,9 +30,10 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
 
   SC_LOG_DEBUG("MessageReplyAgent started");
 
-  ScAddr linkAddr = utils::IteratorUtils::getFirstByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_1);
+  ScAddr linkAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_1);
+  ScAddr chatAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_2);
   ScAddr processingProgramAddr = getMessageProcessingProgram();
-  ScAddr authorAddr = utils::IteratorUtils::getFirstByOutRelation(&m_memoryCtx, actionAddr, MessageReplyKeynodes::nrel_authors);
+  ScAddr authorAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, MessageReplyKeynodes::nrel_authors);
   if (!processingProgramAddr.IsValid())
   {
     SC_LOG_ERROR("Message processing program not found.");
@@ -43,16 +46,26 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
+  if (!chatAddr.IsValid())
+  {
+    SC_LOG_ERROR("Message chat not found.");
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
+    return SC_RESULT_ERROR;
+  }
   if (!authorAddr.IsValid())
   {
     SC_LOG_ERROR("Message author not found.");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
+
+  MessageHistoryGenerator generator = MessageHistoryGenerator(&m_memoryCtx);
+
   ScAddr messageAddr;
   try
   {
     messageAddr = generateMessage(authorAddr, linkAddr);
+    generator.addMessageToDialog(chatAddr, messageAddr);
   }
   catch (std::runtime_error & exception)
   {
@@ -76,6 +89,22 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
   try
   {
     answerAddr = generateAnswer(messageAddr);
+
+    ScTemplate replySearchTemplate;
+    replySearchTemplate.TripleWithRelation(
+        messageAddr,
+        ScType::EdgeDCommonVar,
+        ScType::NodeVar >> "_reply_message",
+        ScType::EdgeAccessVarPosPerm,
+        MessageReplyKeynodes::nrel_reply);
+    ScTemplateSearchResult searchResult;
+    m_memoryCtx.HelperSearchTemplate(replySearchTemplate, searchResult);
+
+    ScAddr const & replyMessageAddr = searchResult[0]["_reply_message"];
+    utils::GenerationUtils::generateRelationBetween(
+        &m_memoryCtx, replyMessageAddr, MessageReplyKeynodes::myself, MessageReplyKeynodes::nrel_authors);
+
+    generator.addMessageToDialog(chatAddr, replyMessageAddr);
   }
   catch (std::runtime_error & exception)
   {
