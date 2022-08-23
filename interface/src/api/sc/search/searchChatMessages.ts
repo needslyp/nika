@@ -4,33 +4,24 @@ import { client } from "@api";
 const rrel1 = 'rrel_1';
 const nrelAuth = 'nrel_authors';
 const nrelScTextTranslation = 'nrel_sc_text_translation';
-const conceptUser = 'concept_user';
 const nrelMessageSequence = 'nrel_message_sequence';
 const rrelLast = 'rrel_last';
-const exactValue = 'exact_value';
-const begin = 'begin';
-const nrelTimestampMeasurement = 'nrel_timestamp_measurement';
 
 const baseKeynodes = [
     { id: rrel1, type: ScType.NodeConstRole },
     { id: nrelAuth, type: ScType.NodeConstNoRole },
     { id: nrelScTextTranslation, type: ScType.NodeConstNoRole },
-    { id: conceptUser, type: ScType.NodeConstClass },
     { id: nrelMessageSequence, type: ScType.NodeConstNoRole },
     { id: rrelLast, type: ScType.NodeConstRole },
-    { id: exactValue, type: ScType.NodeConstClass },
-    { id: begin, type: ScType.NodeConstClass },
-    { id: nrelTimestampMeasurement, type: ScType.NodeConstNoRole },
 ];
 
 interface IMessage {
+    addr: ScAddr;
     text: string | number;
-    author: ScAddr;
     id: number;
     time: string | number;
     date: string;
-    attachment?: string;
-    addr: ScAddr;
+    author: ScAddr;
 }
 
 const findLastMessageNode = async (chatNode: ScAddr, keynodes: Record<string, ScAddr>) => {
@@ -100,10 +91,8 @@ const findPreviousEdge = async (chatNode: ScAddr, keynodes: Record<string, ScAdd
 
 export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<string, ScAddr>) => {
     const messageNodeAlias = '_message_node';
-    const authorNodeAlias = '_author_node';
     const textNodeAlias = '_text_node';
-    const timeNodeAlias = '_time_node';
-    const timeAlias = '_time';
+    const authorNodeAlias = '_author_node';
 
     const template = new ScTemplate();
 
@@ -115,25 +104,12 @@ export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<stri
         keynodes[nrelScTextTranslation],
     );
     template.triple(messageNodeAlias, ScType.EdgeAccessVarPosPerm, [ScType.LinkVar, textNodeAlias]);
-
     template.tripleWithRelation(
         messagesNode,
         ScType.EdgeDCommonVar,
         [ScType.NodeVar, authorNodeAlias],
         ScType.EdgeAccessVarPosPerm,
         keynodes[nrelAuth],
-    );
-
-    template.triple([ScType.NodeVarClass, timeNodeAlias], ScType.EdgeAccessVarPosPerm, messagesNode);
-    template.triple(keynodes[exactValue], ScType.EdgeAccessVarPosPerm, timeNodeAlias);
-    template.triple(keynodes[begin], ScType.EdgeAccessVarPosPerm, timeNodeAlias);
-
-    template.tripleWithRelation(
-        timeNodeAlias,
-        ScType.EdgeDCommonVar,
-        [ScType.LinkVar, timeAlias],
-        ScType.EdgeAccessVarPosPerm,
-        keynodes[nrelTimestampMeasurement],
     );
 
     const result = await client.templateSearch(template);
@@ -147,16 +123,18 @@ export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<stri
 
     const author = result[0].get(authorNodeAlias);
 
-    const nodeTime = result[0].get(timeAlias);
-    const infoTime = await client.getLinkContents([nodeTime]);
+    const date = new Date();
 
-    const [, fullTime] = infoTime[0].data.toString().split(' ');
-    const [hour, minute] = fullTime.split(':');
-    const time = `${hour}:${minute}`;
-
-    const [date] = infoTime[0].data.toString().split(' ');
-
-    return { id: linkNode.value, text, author, time, date, addr: messagesNode };
+    return {
+        id: linkNode.value,
+        text,
+        time: `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`,
+        date: `${date.getFullYear()}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date
+            .getDate()
+            .toString()
+            .padStart(2, '0')}`,
+        author: author,
+        addr: messagesNode };
 };
 
 const checkRrel1 = async (keynodes: Record<string, ScAddr>, chatNode: ScAddr, messageNode: ScAddr) => {

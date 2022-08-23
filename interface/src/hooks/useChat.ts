@@ -6,12 +6,12 @@ import { getInfoMessage, searchChatMessages } from '@api/sc/search/searchChatMes
 import { newMessageAgent, createLinkText } from '@api/sc/agents/newMessageAgent';
 
 interface IMessage {
+    addr: ScAddr;
     text: string | number;
-    author: ScAddr;
     id: number;
     time: string | number;
     date: string;
-    addr: ScAddr;
+    author: ScAddr;
     isLoading?: boolean;
 }
 
@@ -28,16 +28,10 @@ export const useChat = (user: ScAddr | null) => {
 
         const nrelAuthors = 'nrel_authors';
         const nrelScTextTranslation = 'nrel_sc_text_translation';
-        const exactValue = 'exact_value';
-        const begin = 'begin';
-        const nrelTimestampMeasurement = 'nrel_timestamp_measurement';
 
         const baseKeynodes = [
             { id: nrelAuthors, type: ScType.NodeConstNoRole },
             { id: nrelScTextTranslation, type: ScType.NodeConstNoRole },
-            { id: exactValue, type: ScType.NodeConstClass },
-            { id: begin, type: ScType.NodeConstClass },
-            { id: nrelTimestampMeasurement, type: ScType.NodeConstNoRole },
         ];
 
         const keynodes = await client.resolveKeynodes(baseKeynodes);
