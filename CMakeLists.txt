@@ -1,6 +1,8 @@
 project(nika)
 cmake_minimum_required(VERSION 2.8)
 
+include(dependencies.cmake)
+
 set(PLATFORM_PATH "${CMAKE_CURRENT_LIST_DIR}/ostis-web-platform")
 set(SC_MACHINE_PATH "${PLATFORM_PATH}/sc-machine")
 include("${SC_MACHINE_PATH}/CMakeLists.txt")
@@ -26,8 +28,6 @@ macro(subdir_list result current_dir)
     endforeach()
     set(${result} ${dirlist})
 endmacro()
-
-include(dependencies.cmake)
 
 set(SUBSYSTEMS_PATH "${CMAKE_CURRENT_LIST_DIR}/subsystems")
 subdir_list(SUBDIRS ${SUBSYSTEMS_PATH})
