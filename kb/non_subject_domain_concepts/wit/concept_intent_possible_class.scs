@@ -1,5 +1,5 @@
 concept_intent_possible_class
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[возможный класс цели Wit.ai]
 	(* <- lang_ru;; *);
@@ -24,7 +24,7 @@ concept_intent_possible_class
 		...
 		(*
 		-> rrel_example: 
-			[A Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
+			[Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
 			(* <- lang_en;; *);;
 		*);;
 	*);

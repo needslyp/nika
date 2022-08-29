@@ -27,7 +27,7 @@ set(HEADERS
 include_directories(${CMAKE_CURRENT_LIST_DIR} ${SC_MEMORY_SRC} ${SC_KPM_SRC} ${SC_TOOLS_SRC})
 
 add_library(common SHARED ${SOURCES} ${HEADERS})
-target_link_libraries(common sc-memory sc-agents-common)
+target_link_libraries(common sc-memory sc-agents-common nlohmann_json::nlohmann_json cpr::cpr)
 
 sc_codegen_ex(common ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 

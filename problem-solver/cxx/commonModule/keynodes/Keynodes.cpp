@@ -19,3 +19,4 @@ ScAddr Keynodes::nrel_goto;
 ScAddr Keynodes::file;
 ScAddr Keynodes::power_of_set;
 ScAddr Keynodes::nrel_measurement;
+ScAddr Keynodes::lang_en;

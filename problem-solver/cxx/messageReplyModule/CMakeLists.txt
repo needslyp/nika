@@ -2,12 +2,16 @@ set(SOURCES
 		"MessageReplyModule.cpp"
 		"keynodes/MessageReplyKeynodes.cpp"
 		"agent/MessageReplyAgent.cpp"
+		"generator/MessageHistoryGenerator.cpp"
+		"templates/MessageReplyTemplates.cpp"
 )
 
 set(HEADERS
 		"MessageReplyModule.hpp"
 		"keynodes/MessageReplyKeynodes.hpp"
 		"agent/MessageReplyAgent.hpp"
+		"generator/MessageHistoryGenerator.hpp"
+		"templates/MessageReplyTemplates.hpp"
 )
 
 include_directories(

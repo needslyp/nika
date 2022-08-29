@@ -1,7 +1,0 @@
-concept_standard_synthesizer_voice
-<-sc_node_not_relation;
-=>nrel_main_idtf:
-	[стандартный голос синтезатора] 
-	(* <- lang_ru;; *);
-	[standard synthesizer voice]
-	(* <- lang_en;; *);;

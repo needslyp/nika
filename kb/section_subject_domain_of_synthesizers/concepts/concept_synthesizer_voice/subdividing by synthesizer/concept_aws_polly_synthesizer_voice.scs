@@ -1,8 +1,0 @@
-concept_aws_polly_synthesizer_voice
-<-sc_node_not_relation;
-=>nrel_main_idtf:
-	[голос синтезатора "Aws Polly"] 
-	(* <- lang_ru;; *);
-	[Aws Polly synthesizer voice]
-	(* <- lang_en;; *);;
-

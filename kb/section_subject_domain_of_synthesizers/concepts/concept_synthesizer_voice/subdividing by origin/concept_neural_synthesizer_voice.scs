@@ -1,7 +1,0 @@
-concept_neural_synthesizer_voice
-<-sc_node_not_relation;
-=>nrel_main_idtf:
-	[нейронный голос синтезатора] 
-	(* <- lang_ru;; *);
-	[neural synthesizer voice]
-	(* <- lang_en;; *);;

@@ -18,7 +18,6 @@ _compound_action_message_processing
     _-> rrel_1:: _message;;
 
 .._standard_message_reply
-    _=> nrel_goto:: .._synthesize_speech;
     _<- action_standard_message_reply;
     _<- question;
     _-> rrel_1:: _message;

@@ -1,5 +1,5 @@
 concept_trait_possible_class
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[возможный класс признака Wit.ai]
 	(* <- lang_ru;; *);
@@ -17,7 +17,7 @@ concept_trait_possible_class
 	<= nrel_sc_text_translation:
 		...
 		(*
-		->rrel_example:
+		-> rrel_example:
 			[Возможный класс признака Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как признаки.]
 			(* <- lang_ru;; *);;
 		*);

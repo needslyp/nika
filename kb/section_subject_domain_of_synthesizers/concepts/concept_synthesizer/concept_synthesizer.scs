@@ -1,7 +1,0 @@
-concept_synthesizer
-<-sc_node_not_relation;
-=>nrel_main_idtf:
-	[синтезатор] 
-	(* <- lang_ru;; *);
-	[synthesizer]
-	(* <- lang_en;; *);;

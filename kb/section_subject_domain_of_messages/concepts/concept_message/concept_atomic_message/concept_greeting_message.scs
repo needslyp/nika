@@ -7,7 +7,7 @@ concept_greeting_message
 	[greeting message]
 	(* <- lang_en;; *);
 => nrel_wit_ai_idtf:
-	[concept_greeting_message];
+	[greeting];
 <- rrel_key_sc_element:
 	...
 	(*

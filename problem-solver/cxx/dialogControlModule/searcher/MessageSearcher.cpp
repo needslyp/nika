@@ -3,13 +3,15 @@
 * Author Ruslan Korshunov
 */
 
+#include <algorithm>
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
+#include "sc-agents-common/utils/IteratorUtils.hpp"
+
 #include "keynodes/MessageKeynodes.hpp"
 
 #include "MessageSearcher.hpp"
 
 using namespace scAgentsCommon;
-using namespace std;
 using namespace dialogControlModule;
 
 MessageSearcher::MessageSearcher(ScMemoryContext * ms_context)
@@ -147,3 +149,41 @@ ScAddr MessageSearcher::getMessageTheme(const ScAddr & messageNode)
 
   return resultThemeNode;
 }
+
+ScAddrVector MessageSearcher::getMessageLinks(ScAddr const & message, ScAddrVector const & linkClasses)
+{
+  ScAddrVector messageLinks;
+  ScAddr const translationNode =
+      utils::IteratorUtils::getAnyByInRelation(context, message, CoreKeynodes::nrel_sc_text_translation);
+  if (!translationNode.IsValid())
+  {
+    SC_LOG_WARNING("MessageSearcher: text translation node not found");
+    return {};
+  }
+
+  ScIterator3Ptr const linkIterator =
+      context->Iterator3(translationNode, ScType::EdgeAccessConstPosPerm, ScType::LinkConst);
+  while (linkIterator->Next())
+  {
+    ScAddr const & linkAddr = linkIterator->Get(2);
+    bool result = std::all_of(linkClasses.cbegin(), linkClasses.cend(), [this, &linkAddr](auto const & addr) {
+      return context->HelperCheckEdge(addr, linkAddr, ScType::EdgeAccessConstPosPerm);
+    });
+
+    if (result == SC_TRUE)
+    {
+      messageLinks.push_back(linkAddr);
+    }
+  }
+  return messageLinks;
+}
+
+ScAddr MessageSearcher::getMessageLink(ScAddr const & message, ScAddrVector const & linkClasses)
+{
+  ScAddr messageLink;
+  ScAddrVector messageLinks = getMessageLinks(message, linkClasses);
+  if (!messageLinks.empty())
+    messageLink = messageLinks.at(0);
+  return messageLink;
+}
+

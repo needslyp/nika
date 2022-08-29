@@ -50,8 +50,8 @@ const textLoad = {
     ru: 'Загрузка сообщений',
 };
 const textAgentAnswer = {
-    en: 'message is being typed',
-    ru: 'Сообщение печатается',
+    en: 'typing',
+    ru: 'Печатаю',
 };
 
 export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(

@@ -23,6 +23,10 @@ public:
 
   ScAddr getMessageTheme(const ScAddr & messageNode);
 
+  ScAddrVector getMessageLinks(ScAddr const & message, ScAddrVector const & linkClasses = {});
+
+  ScAddr getMessageLink(ScAddr const & message, ScAddrVector const & linkClasses = {});
+
 private:
   ScMemoryContext * context;
 };
