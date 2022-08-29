@@ -67,7 +67,7 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
           false);
     if(it5->Next())
     {
-        m_memoryCtx.EraseElement(it5->Get(1));
+      m_memoryCtx.EraseElement(it5->Get(1));
     }
 
     SC_LOG_DEBUG("StandardMessageReplyAgent finished");

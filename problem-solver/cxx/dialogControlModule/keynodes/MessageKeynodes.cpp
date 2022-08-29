@@ -28,4 +28,5 @@ ScAddr MessageKeynodes::template_reply_target;
 ScAddr MessageKeynodes::rrel_entity;
 ScAddr MessageKeynodes::nrel_semantic_equivalent;
 ScAddr MessageKeynodes::answer_structure;
+
 }
