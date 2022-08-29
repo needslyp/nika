@@ -68,7 +68,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
   std::string const messageIntent = getMessageIntent(witResponse);
   if (messageIntent.empty())
   {
-    ScAddr messageIntentCLassEdge =
+    ScAddr const & messageIntentCLassEdge =
         context->CreateEdge(
             ScType::EdgeAccessConstPosPerm,
             MessageClassificationKeynodes::concept_not_classified_by_intent_message,
@@ -143,7 +143,7 @@ ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & message
   json const messageTrait = getMessageTrait(witResponse);
   if (messageTrait.empty())
   {
-    ScAddr messageIntentCLassEdge =
+    ScAddr const & messageIntentCLassEdge =
         context->CreateEdge(
             ScType::EdgeAccessConstPosPerm,
             MessageClassificationKeynodes::concept_not_classified_by_trait_message,
