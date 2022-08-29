@@ -35,6 +35,12 @@ public:
 
   SC_PROPERTY(Keynode("nrel_entity_possible_role"), ForceCreate)
   static ScAddr nrel_entity_possible_role;
+
+  SC_PROPERTY(Keynode("concept_not_classified_by_intent_message"), ForceCreate)
+  static ScAddr concept_not_classified_by_intent_message;
+
+  SC_PROPERTY(Keynode("concept_not_classified_by_trait_message"), ForceCreate)
+  static ScAddr concept_not_classified_by_trait_message;
 };
 
 }  // namespace messageClassificationModule

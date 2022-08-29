@@ -20,7 +20,7 @@ concept_greeting_message
         <= nrel_sc_text_translation:
             ...
             (*
-                ->rrel_example:
+                -> rrel_example:
                     [Приветственное сообщение - атомарное сообщение, являющееся приветствием.]
                     (* <- lang_ru;; *);;
             *);

@@ -7,7 +7,6 @@
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
 #include "keynodes/MessageClassificationKeynodes.hpp"
-#include "keynodes/Keynodes.hpp"
 
 #include "searcher/MessageSearcher.hpp"
 
@@ -69,6 +68,13 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
   std::string const messageIntent = getMessageIntent(witResponse);
   if (messageIntent.empty())
   {
+    ScAddr const & messageIntentCLassEdge =
+        context->CreateEdge(
+            ScType::EdgeAccessConstPosPerm,
+            MessageClassificationKeynodes::concept_not_classified_by_intent_message,
+            messageAddr);
+    messageIntentCLassElements.push_back(MessageClassificationKeynodes::concept_not_classified_by_intent_message);
+    messageIntentCLassElements.push_back(messageIntentCLassEdge);
     return messageIntentCLassElements;
   }
 
@@ -137,6 +143,13 @@ ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & message
   json const messageTrait = getMessageTrait(witResponse);
   if (messageTrait.empty())
   {
+    ScAddr const & messageIntentCLassEdge =
+        context->CreateEdge(
+            ScType::EdgeAccessConstPosPerm,
+            MessageClassificationKeynodes::concept_not_classified_by_trait_message,
+            messageAddr);
+    messageTraitClassElements.push_back(MessageClassificationKeynodes::concept_not_classified_by_trait_message);
+    messageTraitClassElements.push_back(messageIntentCLassEdge);
     return messageTraitClassElements;
   }
 
@@ -342,7 +355,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
       while (entityClassIterator->Next())
       {
         entityAddr = entityClassIterator->Get(2);
-        if (utils::CommonUtils::getMainIdtf(context, entityAddr, {commonModule::Keynodes::lang_en}) == entityIdtf)
+        if (utils::CommonUtils::getMainIdtf(context, entityAddr, {scAgentsCommon::CoreKeynodes::lang_ru}) == entityIdtf)
         {
           SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
           ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
