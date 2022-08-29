@@ -1,11 +1,11 @@
-# IDESA
-IDESA private repository
+# NIKA
+NIKA private repository
 
 ## Run documentation
 Run on Linux:
 ```sh
 #Terminal
-cd idesa
+cd nika
 pip3 install mkdocs markdown-include mkdocs-material
 mkdocs serve
 ```

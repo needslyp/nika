@@ -44,7 +44,7 @@ target_link_libraries(
 
 sc_codegen_ex(messageClassification ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
-add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${NIKA_ROOT}/idesa.ini")
+add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${NIKA_ROOT}/nika.ini")
 
 if(${SC_BUILD_TESTS})
 	include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)

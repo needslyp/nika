@@ -1,7 +1,7 @@
 ### Initialize
 Use ssh for cloning repo:
 ```sh
-git clone git@github.com:ostis-apps/idesa.git
+git clone git@github.com:ostis-apps/nika.git
 ```
 **We use repo forks**
 

@@ -5,8 +5,8 @@ This instruction made for Ubuntu.
 Install all project:
 
 ```sh
-git clone git@github.com:ostis-apps/idesa.git
-cd idesa
+git clone git@github.com:ostis-apps/nika.git
+cd nika
 git submodule update --init --recursive
 cd scripts/
 ./install_deps_ubuntu.sh
@@ -27,7 +27,7 @@ git submodule update --init --recursive
 
 ## Build
 ```sh
-cd idesa/scripts
+cd nika/scripts
 ./build_kb.sh
 ```
 
@@ -36,14 +36,14 @@ cd idesa/scripts
 ### Run server
 
 ```sh
-cd idesa/scripts
+cd nika/scripts
 ./run_sc_server.sh
 ```
 
 ## Run sc-web interface
 
 ```sh
-cd idesa/ostis-web-platform/scripts
+cd nika/ostis-web-platform/scripts
 ./run_scweb.sh
 ```
 
