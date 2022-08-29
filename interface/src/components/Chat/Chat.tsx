@@ -50,7 +50,7 @@ const textLoad = {
     ru: 'Загрузка сообщений',
 };
 const textAgentAnswer = {
-    en: 'message is being typed',
+    en: 'typing',
     ru: 'Печатаю',
 };
 

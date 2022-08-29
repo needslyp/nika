@@ -25,17 +25,26 @@ include_directories(
 		${CMAKE_CURRENT_LIST_DIR}
 		${SC_MEMORY_SRC}
 		${SC_KPM_SRC}
-		${SC_TOOLS_SRC}
 		${SC_COMMON_MODULE_SRC}
 		${DIALOG_CONTROL_MODULE_SRC}
+		${SC_TOOLS_SRC}/sc-config-utils
+		${GLIB2_INCLUDE_DIRS}
 )
 
 add_library(messageClassification SHARED ${SOURCES} ${HEADERS})
-target_link_libraries(messageClassification sc-memory common sc-agents-common dialogControlModule messageReply)
+target_link_libraries(
+		messageClassification
+		sc-memory
+		common
+		sc-agents-common
+		dialogControlModule
+		messageReply
+		sc-config-utils
+)
 
 sc_codegen_ex(messageClassification ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
-add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${APP_ROOT_PATH}/idesa.ini")
+add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${NIKA_ROOT}/idesa.ini")
 
 if(${SC_BUILD_TESTS})
 	include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)
