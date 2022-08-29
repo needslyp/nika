@@ -5,6 +5,16 @@ answer_structure = [*
 	=> nrel_knowledge_base: ui_start_sc_element;;
 *];;
 
+nika
+    => nrel_aim:
+        [расширить круг решаемых задач, устранить недостатки ранее использованного своего аналога, упростить и
+        автоматизировать процесс обучения студентов, изучающих интеллектуальные экспертные системы.] (* <- lang_ru;; *);
+    => nrel_main_idtf:
+        [Ника]
+            (* <- lang_ru;; *);
+        [Nika]
+            (* <- lang_en;; *);;
+
 concept_study_system
 <- sc_node_class;
 => nrel_main_idtf:
@@ -36,3 +46,10 @@ nrel_knowledge_base
 	(* <- lang_ru;; *);
 	[knowledge base*]
 	(* <- lang_en;; *);;
+
+nrel_aim
+    => nrel_main_idtf:
+	    [цель*]
+	        (* <- lang_ru;; *);
+	    [aim*]
+	        (* <- lang_en;; *);;
