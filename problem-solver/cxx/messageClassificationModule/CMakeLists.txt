@@ -35,7 +35,7 @@ target_link_libraries(messageClassification sc-memory common sc-agents-common di
 
 sc_codegen_ex(messageClassification ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
-add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${CMAKE_CURRENT_LIST_DIR}/config/config.ini")
+add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${APP_ROOT_PATH}/idesa.ini")
 
 if(${SC_BUILD_TESTS})
 	include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)

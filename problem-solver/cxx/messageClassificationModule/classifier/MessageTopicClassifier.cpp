@@ -54,7 +54,6 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
 
 std::string MessageTopicClassifier::getMessageText(ScAddr const & messageAddr)
 {
-  // TODO: add concept_text_file and lang_en to getMessageLink vector parameter after implementing
   ScAddr const messageLink = messageSearcher->getMessageLink(messageAddr);
   if (!messageLink.IsValid())
   {
@@ -85,7 +84,6 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
     possibleMessageCLass = possibleIntentIterator->Get(2);
     witAiIdtfs = getWitAiIdtfs(possibleMessageCLass);
 
-    // TODO: must be only one wit ai idtf, remove vector and cycle after retraining wit
     for (std::string const & witAiIdtf : witAiIdtfs)
     {
       if (messageIntent == witAiIdtf)
@@ -344,7 +342,6 @@ ScAddrVector MessageTopicClassifier::processEntities(
       while (entityClassIterator->Next())
       {
         entityAddr = entityClassIterator->Get(2);
-        // TODO: move lang_en keynode to scAgentsCommon::coreKeynodes
         if (utils::CommonUtils::getMainIdtf(context, entityAddr, {commonModule::Keynodes::lang_en}) == entityIdtf)
         {
           SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");

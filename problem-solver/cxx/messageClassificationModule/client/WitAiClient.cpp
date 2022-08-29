@@ -10,8 +10,8 @@
 messageClassificationModule::WitAiClient::WitAiClient()
 {
   Config config(MESSAGE_CLASSIFICATION_CONFIG_PATH);
-  witAiServerToken = config.getByKey("WitAiServerToken");
-  witAiUrl = config.getByKey("WitAiUrl");
+  witAiServerToken = config.getByKey("token");
+  witAiUrl = config.getByKey("url");
 }
 
 json messageClassificationModule::WitAiClient::getWitResponse(std::string const & messageText)

@@ -1,4 +1,3 @@
-# TODO group up lib cpr installing
 set(CPR_FORCE_USE_SYSTEM_CURL ON)
 set(CPR_BUILD_TESTS OFF)
 set(CPR_BUILD_TESTS_SSL OFF)

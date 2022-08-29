@@ -1,7 +1,0 @@
-concept_sound_file
-<-sc_node_not_relation;
-=>nrel_main_idtf:
-    [звуковой файл]
-    (* <-lang_ru;; *);
-    [sound file]
-    (* <-lang_en;; *);;
