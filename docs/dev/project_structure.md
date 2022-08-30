@@ -13,22 +13,22 @@ Some tips:
 
 - After update c++ code you need to rebuild problem-solver. Just run:
 ```
-cd idesa/scripts
+cd nika/scripts
 ./build_problem_solver.sh
 ```
 For a full rebuild with the deleting of the *bin* and *build* folders run:
 ```
-cd idesa/scripts
+cd nika/scripts
 ./build_problem_solver.sh -f
 ```
 For build tests run:
 ```
-cd idesa/scripts
+cd nika/scripts
 ./build_problem_solver.sh -t
 ```
 For a full rebuild with build tests and the deleting of the *bin* and *build* folders run:
 ```
-cd idesa/scripts
+cd nika/scripts
 ./build_problem_solver.sh -f -t
 ```
 
@@ -52,7 +52,7 @@ sc_result MyModule::InitializeImpl()
 ```
 
 ### Logging
-You can change log mode and level in idesa.ini configuration file.
+You can change log mode and level in nika.ini configuration file.
 
 ## interface
 Place for your interface modules.
