@@ -5,6 +5,8 @@ concept_wit_entity
 	(* <- lang_ru;; *);
 	[Wit.ai entity]
 	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+    [rrel_entity];
 <- rrel_key_sc_element:
 	...
 	(*
