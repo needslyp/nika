@@ -10,6 +10,7 @@ const rrel2 = 'rrel_2';
 const nrelAuthors = 'nrel_authors';
 const conceptTextFile = 'concept_text_file';
 const langEn = 'lang_en';
+const langRu = 'lang_ru';
 const questionFinished = 'question_finished';
 const answer = 'nrel_answer';
 
@@ -22,6 +23,7 @@ const baseKeynodes = [
     { id: nrelAuthors, type: ScType.NodeConstNoRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
     { id: langEn, type: ScType.NodeConstClass },
+    { id: langRu, type: ScType.NodeConstClass },
     { id: questionFinished, type: ScType.NodeConstClass },
     { id: answer, type: ScType.NodeConstNoRole },
 ];
@@ -71,7 +73,7 @@ const describeAgent = async (
         keynodes[nrelAuthors],
     );
     template.triple(keynodes[conceptTextFile], ScType.EdgeAccessVarPosPerm, linkAddr);
-    template.triple(keynodes[langEn], ScType.EdgeAccessVarPosPerm, linkAddr);
+    template.triple(keynodes[langRu], ScType.EdgeAccessVarPosPerm, linkAddr);
 
     return [template, actionNodeAlias] as const;
 };
