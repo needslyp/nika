@@ -6,7 +6,8 @@
 
 #components
 kb/ui_menu
+kb/section_subject_domain_of_intelligent_study_systems
+kb/section_subject_domain_of_messages
 kb/section_subject_domain_of_dialogues
 kb/section_subject_domain_of_actions_and_tasks
 kb/non_subject_domain_concepts
-kb/section_subject_domain_of_messages
