@@ -281,7 +281,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResult & 
 
   for (auto & phraseElement : phraseElements)
   {
-    if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
+    //if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
   }
 
