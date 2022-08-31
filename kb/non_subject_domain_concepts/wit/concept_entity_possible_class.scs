@@ -1,5 +1,5 @@
 concept_entity_possible_class
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[возможный класс сущности Wit.ai]
 	(* <- lang_ru;; *);
@@ -24,7 +24,7 @@ concept_entity_possible_class
 		...
 		(*
 		-> rrel_example: 
-			[A Wit.ai entity possible class is a class whose elements can be identified by Wit.ai as entities.]
+			[Wit.ai entity possible class is a class whose elements can be identified by Wit.ai as entities.]
 			(* <- lang_en;; *);;
 		*);;
 	*);
