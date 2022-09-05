@@ -67,6 +67,8 @@ private:
 
   void updateSemanticAnswer(const ScTemplateSearchResult & phraseSemanticResult);
 
+  void updateSemanticAnswer(const ScAddr & phraseAddr);
+
   void addToRemoveNodes(
         const ScAddr & structNode,
         const ScAddr & conceptNode,

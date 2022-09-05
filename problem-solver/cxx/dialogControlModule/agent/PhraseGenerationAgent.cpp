@@ -83,6 +83,10 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   {
     SC_LOG_DEBUG("Language link isn't found.");
   }
+  if (!templateNode.IsValid())
+  {
+    updateSemanticAnswer(phraseLink);
+  }
   generateSemanticEquivalent(replyMessageNode, templateNode);
 
   AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, linkResult, true);
@@ -286,6 +290,41 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResult & 
   }
 
   m_memoryCtx.EraseElement(phraseStruct);
+}
+
+void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
+{
+  ScAddrVector phraseElements;
+  phraseElements.push_back(phraseAddr);
+
+  ScIterator3Ptr const classesIt3 = m_memoryCtx.Iterator3(
+      ScType::NodeConstClass,
+      ScType::EdgeAccessConstPosPerm,
+      phraseAddr);
+  while (classesIt3->Next())
+  {
+    phraseElements.push_back(classesIt3->Get(0));
+    phraseElements.push_back(classesIt3->Get(1));
+  }
+
+  ScIterator5Ptr const relationsIt5 = m_memoryCtx.Iterator5(
+      phraseAddr,
+      ScType::Unknown,
+      ScType::Unknown,
+      ScType::EdgeAccessConstPosPerm,
+      ScType::NodeConst);
+  while (relationsIt5->Next())
+  {
+    phraseElements.push_back(relationsIt5->Get(1));
+    phraseElements.push_back(relationsIt5->Get(2));
+    phraseElements.push_back(relationsIt5->Get(3));
+    phraseElements.push_back(relationsIt5->Get(4));
+  }
+
+  for (auto & phraseElement : phraseElements)
+  {
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
+  }
 }
 
 void PhraseGenerationAgent::addToRemoveNodes(
