@@ -2,6 +2,4 @@ concept_expert_system
 <- sc_node_class;
 => nrel_main_idtf:
 	[экспертная система]
-	(* <- lang_ru;; *);
-	[expert system]
-	(* <- lang_en;; *);;
+	(* <- lang_ru;; *);;
