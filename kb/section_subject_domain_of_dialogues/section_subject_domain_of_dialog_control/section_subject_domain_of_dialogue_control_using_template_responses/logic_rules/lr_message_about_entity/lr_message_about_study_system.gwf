@@ -45,7 +45,7 @@
         <node type="node/const/perm/group" idtf="concept_message_about_entity" shapeColor="193" id="93837003220896" parent="93836999455040" left="0" top="0" right="173.266" bottom="23" textColor="244" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="164.622" y="69.4092" haveBus="false" idtf_pos="2">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_study_system" shapeColor="193" id="93837005082896" parent="93836999455040" left="0" top="0" right="125.609" bottom="23" textColor="244" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="348.8" y="69.4" haveBus="false" idtf_pos="2">
+        <node type="node/const/perm/group" idtf="concept_intelligent_study_system" shapeColor="193" id="93837005082896" parent="93836999455040" left="0" top="0" right="125.609" bottom="23" textColor="244" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="348.8" y="69.4" haveBus="false" idtf_pos="2">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
         <node type="node/const/perm/role" idtf="rrel_entity" shapeColor="193" id="93836996999248" parent="93836999455040" left="0" top="0" right="63.5469" bottom="23" textColor="244" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="199.4" y="91.4" haveBus="false" idtf_pos="0">
