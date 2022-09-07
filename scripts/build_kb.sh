@@ -1,8 +1,8 @@
 #!/bin/bash
-if [[ -z ${PLATFORM_PATH+1} ]];
+if [[ -z ${APP_ROOT_PATH+1} ]];
 then
   source set_vars.sh
 fi
-
 set -e -o pipefail
-python3 "${PLATFORM_PATH}"/sc-machine/scripts/build_kb.py "${APP_ROOT_PATH}/repo$1.path" -c "${APP_ROOT_PATH}/nika.ini" -b "${APP_ROOT_PATH}"/bin
+echo "${SC_MACHINE_PATH}"/scripts/build_kb.py 
+python3 "${SC_MACHINE_PATH}"/scripts/build_kb.py -c "${APP_ROOT_PATH}/nika.ini" -b "${APP_ROOT_PATH}"/bin "${@:-"${APP_ROOT_PATH}/repo.path"}"
