@@ -9,7 +9,7 @@ source set_vars.sh
 if [ "$1" == "--full" ] || [ "$1" == "-f" ];
 	then
 		rm -rf "${APP_ROOT_PATH}"/build
-		rm -rf "${APP_ROOT_PATH}"/bin
+		rm -rf "${APP_ROOT_PATH:?}"/bin
 		find "${APP_ROOT_PATH}"/problem-solver/cxx/ -type d -name generated -exec rm -rf {} +
 fi
 
