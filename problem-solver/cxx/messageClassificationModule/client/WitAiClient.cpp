@@ -3,9 +3,10 @@
  * Author Maksim Orlov
  */
 
-#include "sc-config/sc_config.hpp"
-
 #include "WitAiClient.hpp"
+
+#include "sc-config/sc_config.hpp"
+#include "sc-memory/utils/sc_log.hpp"
 
 messageClassificationModule::WitAiClient::WitAiClient()
 {
@@ -17,7 +18,16 @@ messageClassificationModule::WitAiClient::WitAiClient()
 
 json messageClassificationModule::WitAiClient::getWitResponse(std::string const & messageText)
 {
-  auto response = cpr::Get(cpr::Url{witAiUrl}, cpr::Bearer{witAiServerToken}, cpr::Parameters{{"q", messageText}});
+  json jsonResponse;
+  try
+  {
+    auto response = cpr::Get(cpr::Url{witAiUrl}, cpr::Bearer{witAiServerToken}, cpr::Parameters{{"q", messageText}});
+    jsonResponse = json::parse(response.text);
+  }
+  catch (...)
+  {
+    SC_LOG_ERROR("WitAiClient: Internet connection error.");
+  }
 
-  return json::parse(response.text);
+  return jsonResponse;
 }
