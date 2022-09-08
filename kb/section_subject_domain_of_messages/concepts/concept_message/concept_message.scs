@@ -1,6 +1,6 @@
 concept_message
-<-sc_node_not_relation;
-=>nrel_main_idtf:
+<- sc_node_class;
+=> nrel_main_idtf:
 	[сообщение]
 	(* <- lang_ru;; *);
 	[message]

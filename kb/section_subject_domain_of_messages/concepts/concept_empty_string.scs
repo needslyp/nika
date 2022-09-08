@@ -1,6 +1,6 @@
 concept_empty_string
-<-sc_node_not_relation;
-=>nrel_main_idtf:
+<- sc_node_class;
+=> nrel_main_idtf:
 	[пустая строка]
 	(* <- lang_ru;; *);
 	[empty string]

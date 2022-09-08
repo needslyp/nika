@@ -1,5 +1,5 @@
 action_standard_message_reply
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[действие. ответить на сообщение с использованием логических правил](* <- lang_ru;; *);
 	[action. answer message with logic rules](* <- lang_en;; *);

@@ -1,5 +1,5 @@
 action_message_topic_classification
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[действие. классифицировать сообщение по теме](* <- lang_ru;; *);
 	[action. classify a message by topic](* <- lang_en;; *);
