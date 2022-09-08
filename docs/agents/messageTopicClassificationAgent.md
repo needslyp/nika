@@ -1,4 +1,6 @@
-Is an agent that performs the message classification by topic with extracted arguments.
+This is an agent that performs the message classification by topic (greeting, about lab work condition, about entity etc.).
+Also, the agent classifies message by trait (neutral, positive, negative emotional coloring) and gets message entities.
+The agent classifies a message using Wit.ai.
 
 **Action class:**
 
@@ -10,8 +12,7 @@ Is an agent that performs the message classification by topic with extracted arg
 
 **Libraries used:**
 
-* [Wit.ai](https://wit.ai/) - to classify message and get entities;
-* [pymorphy2](https://pymorphy2.readthedocs.io/en/stable/user/guide.html) - to get entity word normal form.
+* [Wit.ai](https://wit.ai/) - to classify message and get entities.
 
 **Comment:**
 
@@ -28,27 +29,31 @@ Examples of an output structure:
 
 <img src="../images/messageTopicClassificationAgentOutput.png"></img>
 
+Example of a structure needed to classify message by intent:
+
+<img src="../images/messageTopicClassificationAgentIntentFormalization.png"></img>
+
+Example of a structure needed to classify message by trait:
+
+<img src="../images/messageTopicClassificationAgentTraitFormalization.png"></img>
+
+Example of a structure needed to get message entity:
+
+<img src="../images/messageTopicClassificationAgentEntityFormalization.png"></img>
+
 **Message classes:**
 
-1. `concept_message_about_entity`
-2. `concept_message_about_work`
-3. `concept_message_about_process`
-4. `concept_message_about_part`
-5. `concept_message_about_process_order`
-6. `concept_message_about_responsibility`
-7. `concept_message_about_available_resource`
-8. `concept_message_about_required_resource`
-9. `concept_message_about_condition`
-10. `concept_message_about_characteristic`
-11. `concept_greeting_message`
+1. `concept_greeting_message`
+2. `concept_message_about_entity`
+3. `concept_message_about_lab_work_condition`
+4. `concept_message_about_lab_work_deadline`
 
-**Argument:**
-
-`rrel_entity` - Relation that connects an atomic message with the message entity
+### Agent implementation language
+C++
 
 ### Result
 
 Possible result codes:
 
-* `sc_result_ok` - the message is successfully classified or the action doesn't belong to the action_message_topic_classification.
-* `sc_result_error`- internal error.
+* `SC_RESULT_OK` - the message is successfully classified (or there is empty classification) or the action doesn't belong to the action_message_topic_classification.
+* `SC_RESULT_ERROR`- internal error.
