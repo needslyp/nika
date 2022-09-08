@@ -1,5 +1,5 @@
 action_phrase_generation
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[действие. сгенерировать фразу](* <- lang_ru;; *);
 	[Action. generate a phrase](* <- lang_en;; *);

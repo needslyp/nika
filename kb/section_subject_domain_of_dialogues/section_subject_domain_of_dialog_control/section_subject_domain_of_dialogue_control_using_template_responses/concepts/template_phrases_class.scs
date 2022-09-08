@@ -2,7 +2,7 @@ template_phrases_class
 	=> nrel_main_idtf:
 		[класс шаблонных фраз] (* <- lang_ru;; *);
 		[template phrases class] (* <- lang_en;; *);
-	<- sc_node_not_relation;
+	<- sc_node_class;
 	<= nrel_inclusion:
 		...
 		(* 

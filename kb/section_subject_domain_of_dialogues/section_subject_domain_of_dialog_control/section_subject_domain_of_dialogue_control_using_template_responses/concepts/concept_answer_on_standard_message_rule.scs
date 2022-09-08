@@ -2,7 +2,7 @@ concept_answer_on_standard_message_rule
     => nrel_main_idtf:
         [правило ответов на стандартные сообщения] (* <- lang_ru;; *);
         [answer on standard message rule] (* <- lang_en;; *);
-    <- sc_node_not_relation;
+    <- sc_node_class;
     <= nrel_inclusion:
         logical_formula;
     => nrel_subdividing:

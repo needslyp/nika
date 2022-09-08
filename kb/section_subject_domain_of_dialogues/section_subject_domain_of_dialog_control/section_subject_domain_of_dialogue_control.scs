@@ -2,7 +2,7 @@ section_subject_domain_of_dialogue_control
 	=> nrel_main_idtf:
 		[Раздел. Предметная область управления диалогом] (* <- lang_ru;; *);
 		[Section. Subject domain of dialogue control] (* <- lang_en;; *);
-	<- sc_node_not_relation;
+	<- sc_node_class;
 	<- non_atomic_section;
 	<= nrel_section_decomposition:
 		{

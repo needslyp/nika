@@ -1,5 +1,5 @@
 concept_message_processing_program
-<- sc_node_not_relation;
+<- sc_node_class;
 => nrel_main_idtf:
 	[программа обработки сообщения](* <- lang_ru;; *);
 	[message processing program](* <- lang_en;; *);
