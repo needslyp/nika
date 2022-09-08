@@ -11,7 +11,7 @@ messageClassificationModule::WitAiClient::WitAiClient()
 {
   ScConfig config{MESSAGE_CLASSIFICATION_CONFIG_PATH};
   ScConfigGroup group{config["wit-ai"]};
-  witAiServerToken = group["token"];
+  witAiServerToken = group["server_token"];
   witAiUrl = group["url"];
 }
 
