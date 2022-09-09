@@ -7,6 +7,8 @@ services:
     restart: unless-stopped
     ports:
       - "8000:8000"
+    expose:
+      - 8000
     networks:
       - nika
     command:
@@ -30,6 +32,8 @@ services:
       - nika
     ports:
       - "8090:8090"
+    expose:
+      - 8090
     healthcheck:
       test: "python3 /nika/problem-solver/sc-machine/scripts/healthcheck.py"
       interval: 5s
@@ -50,7 +54,7 @@ services:
       dockerfile: ./Dockerfile
     restart: unless-stopped
     ports: 
-      - "3033:3033"
+      - "3033:8080"
     networks:
       - nika
     environment:

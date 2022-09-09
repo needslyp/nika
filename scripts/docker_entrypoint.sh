@@ -12,7 +12,7 @@ function usage() {
 
     Options:
         build <PATH>:       rebuilds KB from sources (provide absolute path to the source folder or repo.path file)
-        serve <args>:       Starts sc-server. Arguments passed to this command will be redirected to sc-server binary. If no arguments were given, uses "-h 0.0.0.0 -c /sc-machine/config/sc-machine.ini" as default sc-server arguments. Add these settings yourself if you are planning to use custom arguments.
+        serve <args>:       Starts sc-server. Arguments passed to this command will be redirected to sc-server binary. If no arguments were given, uses "-c /nika/nika.ini -h 0.0.0.0" as default sc-server arguments. Add host argument yourself if you are planning to use custom arguments.
 
         Setting REBUILD_KB evironment variable inside the container will trigger a KB rebuild. Setting custom starting point for build_kb.py can be done using KB_PATH environment variable, "/kb" is used as a default KB_PATH.
 
@@ -45,7 +45,7 @@ if [ -e "$1" ]; then
     /nika/scripts/run_sc_server.sh "$@"
 else
     echo "Using default arguments."
-    /nika/scripts/run_sc_server.sh
+    /nika/scripts/run_sc_server.sh -h 0.0.0.0
 fi
 }
 
