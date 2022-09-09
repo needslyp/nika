@@ -7,6 +7,7 @@
 
 #include "sc-config/sc_config.hpp"
 #include "sc-memory/utils/sc_log.hpp"
+#include "http/sc_http_request.hpp"
 
 messageClassificationModule::WitAiClient::WitAiClient()
 {
@@ -21,8 +22,12 @@ json messageClassificationModule::WitAiClient::getWitResponse(std::string const 
   json jsonResponse;
   try
   {
-    auto response = cpr::Get(cpr::Url{witAiUrl}, cpr::Bearer{witAiServerToken}, cpr::Parameters{{"q", messageText}});
-    jsonResponse = json::parse(response.text);
+    ScHttpRequest request{witAiUrl, {{"q", messageText}}};
+    request.SetType(ScHttpRequest::Type::GET);
+    request.AddHeader("Authorization: Bearer " + witAiServerToken);
+    ScHttpResponsePtr const response = request.Perform();
+
+    jsonResponse = json::parse(response->GetData());
   }
   catch (...)
   {

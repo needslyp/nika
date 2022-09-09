@@ -9,6 +9,9 @@ set(SOURCES
 		"utils/RelationUtils.cpp"
 		"utils/ActionUtils.cpp"
 		"utils/ScTemplateUtils.cpp"
+		"http/sc_http.cpp"
+		"http/sc_http_request.cpp"
+		"http/sc_http_response.cpp"
 		)
 
 set(HEADERS
@@ -22,12 +25,17 @@ set(HEADERS
 		"utils/RelationUtils.hpp"
 		"utils/ActionUtils.hpp"
 		"utils/ScTemplateUtils.hpp"
+		"http/sc_http.hpp"
+		"http/sc_http_request.hpp"
+		"http/sc_http_response.hpp"
 		)
 
 include_directories(${CMAKE_CURRENT_LIST_DIR} ${SC_MEMORY_SRC} ${SC_KPM_SRC} ${SC_TOOLS_SRC})
 
 add_library(common SHARED ${SOURCES} ${HEADERS})
-target_link_libraries(common sc-memory sc-agents-common nlohmann_json::nlohmann_json cpr::cpr)
+
+find_package(nlohmann_json 3.7.3 REQUIRED)
+target_link_libraries(common sc-memory sc-agents-common nlohmann_json::nlohmann_json)
 
 sc_codegen_ex(common ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 

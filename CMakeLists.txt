@@ -2,8 +2,6 @@ project(nika)
 set(NIKA_ROOT ${CMAKE_CURRENT_LIST_DIR})
 cmake_minimum_required(VERSION 2.8)
 
-include(dependencies.cmake)
-
 set(PROBLEM_SOLVER_PATH "${CMAKE_CURRENT_LIST_DIR}/problem-solver")
 set(SC_MACHINE_PATH "${PROBLEM_SOLVER_PATH}/sc-machine")
 include("${SC_MACHINE_PATH}/CMakeLists.txt")
