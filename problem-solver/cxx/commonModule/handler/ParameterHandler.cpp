@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Kovalev Mikhail
-*/
-
 #include "sc-agents-common/utils/CommonUtils.hpp"
 
 #include "utils//RelationUtils.hpp"

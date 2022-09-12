@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2021 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Ruslan Korshunov
-*/
-
 #include <vector>
 
 #include "sc-memory/sc_addr.hpp"

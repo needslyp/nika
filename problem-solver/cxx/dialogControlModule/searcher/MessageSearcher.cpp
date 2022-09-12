@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2021 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Ruslan Korshunov
-*/
-
 #include <algorithm>
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"

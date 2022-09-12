@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
- * Author Maksim Orlov
- */
-
 #include "sc_test.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "scs_loader.hpp"

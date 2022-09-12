@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
- * Author Kseniya Bantsevich
- */
-
 #pragma once
 
 #include <memory>

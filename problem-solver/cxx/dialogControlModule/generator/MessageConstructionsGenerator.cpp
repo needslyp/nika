@@ -1,7 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-*/
-
 #include "handler/LinkHandler.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"

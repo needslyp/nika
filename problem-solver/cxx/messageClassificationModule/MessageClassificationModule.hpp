@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
- * Author Maksim Orlov
- */
-
 #pragma once
 
 #include "sc-memory/sc_module.hpp"

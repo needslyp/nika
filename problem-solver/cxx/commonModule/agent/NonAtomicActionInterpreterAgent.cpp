@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Nikiforov Sergei 
-*/
-
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-agents-common/utils/AgentUtils.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"

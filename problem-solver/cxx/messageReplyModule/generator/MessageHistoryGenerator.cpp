@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
- * Author Kseniya Bantsevich
- */
-
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
 #include "keynodes/MessageReplyKeynodes.hpp"

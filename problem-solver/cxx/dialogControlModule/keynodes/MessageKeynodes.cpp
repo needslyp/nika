@@ -1,7 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-*/
-
 #include "MessageKeynodes.hpp"
 
 #include "sc-memory/sc_memory.hpp"

@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2021 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Ruslan Korshunov
-*/
-
 #include "agent/PhraseGenerationAgent.hpp"
 #include "sc-builder/src/scs_loader.hpp"
 #include "handler/LinkHandler.cpp"

@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Nikiforov Sergei
-*/
-
 #include "sc_test.hpp"
 #include "sc-builder/src/scs_loader.hpp"
 #include "sc-memory/kpm/sc_agent.hpp"

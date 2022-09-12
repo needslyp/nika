@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2021 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Ruslan Korshunov
-*/
-
 #include "agent/DirectInferenceAgent.hpp"
 #include "agent/StandardMessageReplyAgent.hpp"
 #include "agent/PhraseGenerationAgent.hpp"

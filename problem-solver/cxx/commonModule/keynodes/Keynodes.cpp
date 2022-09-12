@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Alexandr Zagorskiy
-*/
-
 #include "Keynodes.hpp"
 
 #include "sc-memory/sc_memory.hpp"

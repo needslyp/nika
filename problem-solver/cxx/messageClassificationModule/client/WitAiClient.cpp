@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
- * Author Maksim Orlov
- */
-
 #include "WitAiClient.hpp"
 
 #include "sc-config/sc_config.hpp"

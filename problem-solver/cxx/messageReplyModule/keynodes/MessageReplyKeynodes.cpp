@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Nikiforov Sergei
-*/
-
 #include "MessageReplyKeynodes.hpp"
 
 #include "sc-memory/sc_memory.hpp"

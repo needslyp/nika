@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2022 Intelligent Semantic Systems LLC, All rights reserved.
- * Author Maksim Orlov
- */
-
 #include "sc-memory/sc_memory.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
 #include "agent/MessageTopicClassificationAgent.hpp"

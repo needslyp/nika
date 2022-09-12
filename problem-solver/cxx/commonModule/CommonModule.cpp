@@ -1,8 +1,3 @@
-/*
-* Copyright (c) 2020 Intelligent Semantic Systems LLC, All rights reserved.
-* Author Alexandr Zagorskiy
-*/
-
 #include "CommonModule.hpp"
 
 using namespace commonModule;
