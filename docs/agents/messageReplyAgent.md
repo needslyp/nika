@@ -13,8 +13,7 @@ Is an agent that generates the response message, associates with the original re
 **Workflow:**
 
 * The agent generates a message node in the knowledge base, identifying the author of the action as the author of the message and the received sound/text file as the sound/text of that message;
-* Then the necessary construction is generated to call the agent of non-atomic action interpretation. An example of this construction is shown below;
-* If non-atomic action interpreter fails ErrorMessageReplyAgent is called.
+* Then the necessary construction is generated to call the agent of non-atomic action interpretation. An example of this construction is shown below.
 
 <img src="../images/messageReplyAgentGener.png"></img>
 
