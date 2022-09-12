@@ -1,10 +1,11 @@
+#!/usr/bin/env bash
+source set_vars.sh
 packagelist=(
 	python3-pip
 	python3-setuptools
 	build-essential
 	cmake
-	libgtk-3-dev
-	libboost-all-dev
 	nlohmann-json3-dev
+	libssl-dev
 )
-sudo apt-get install "${packagelist[@]}"
+sudo apt-get install -y --no-install-recommends "${packagelist[@]}"

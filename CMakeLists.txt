@@ -1,11 +1,9 @@
 project(nika)
 set(NIKA_ROOT ${CMAKE_CURRENT_LIST_DIR})
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.12)
 
-include(dependencies.cmake)
-
-set(PLATFORM_PATH "${CMAKE_CURRENT_LIST_DIR}/ostis-web-platform")
-set(SC_MACHINE_PATH "${PLATFORM_PATH}/sc-machine")
+set(PROBLEM_SOLVER_PATH "${CMAKE_CURRENT_LIST_DIR}/problem-solver")
+set(SC_MACHINE_PATH "${PROBLEM_SOLVER_PATH}/sc-machine")
 include("${SC_MACHINE_PATH}/CMakeLists.txt")
 project_version(NIKA_PROJECT "0.1.0")
 

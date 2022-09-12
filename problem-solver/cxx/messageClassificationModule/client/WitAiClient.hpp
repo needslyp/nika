@@ -7,8 +7,6 @@
 
 #include <memory>
 
-#include "cpr/cpr.h"
-
 #include "client/WitAiClientInterface.hpp"
 
 namespace messageClassificationModule
