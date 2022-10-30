@@ -162,7 +162,7 @@ json MessageTopicClassifier::getMessageTrait(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("MessageTopicClassifier: Message intent class is not found.");
+    SC_LOG_WARNING("MessageTopicClassifier: Message trait class is not found.");
   }
 
   return messageIntent;
@@ -266,7 +266,7 @@ json MessageTopicClassifier::getMessageEntities(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("MessageTopicClassifier: Message entity is not found.");
+    SC_LOG_WARNING("MessageTopicClassifier: Message entities are not found.");
   }
 
   return messageEntity;
@@ -305,6 +305,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
     ScAddr const & messageAddr)
 {
   std::string entityIdtf;
+  std::set<std::string> entitySameRoleIdtfs;
 
   ScTemplate entityTemplate;
   ScAddr possibleEntityClass;
@@ -331,7 +332,12 @@ ScAddrVector MessageTopicClassifier::processEntities(
 
       try
       {
-        entityIdtf = messageEntity.at(entitiesKey).at(0).at(WitAiConstants::VALUE);
+        json const & messageEntitiesArray = messageEntity.at(entitiesKey);
+        for (size_t i = 0; i < messageEntitiesArray.size(); i++)
+        {
+          entityIdtf = messageEntity.at(entitiesKey).at(i).at(WitAiConstants::VALUE);
+          entitySameRoleIdtfs.insert(entityIdtf);
+        }
       }
       catch (...)
       {
@@ -344,18 +350,21 @@ ScAddrVector MessageTopicClassifier::processEntities(
       while (entityClassIterator->Next())
       {
         entityAddr = entityClassIterator->Get(2);
-        std::string const & idtf = utils::CommonUtils::getMainIdtf(context, entityAddr, {scAgentsCommon::CoreKeynodes::lang_ru});
-
-        if (idtf == entityIdtf)
+        std::string const & idtf =
+            utils::CommonUtils::getMainIdtf(context, entityAddr, {scAgentsCommon::CoreKeynodes::lang_ru});
+        for (std::string const & entitySameRoleIdtf : entitySameRoleIdtfs)
         {
-          SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
-          ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
-          ScAddr messageEntityRoleEdge =
-              context->CreateEdge(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
-          messageEntitiesElements.push_back(entityAddr);
-          messageEntitiesElements.push_back(entityRole);
-          messageEntitiesElements.push_back(messageEntityEdge);
-          messageEntitiesElements.push_back(messageEntityRoleEdge);
+          if (idtf == entitySameRoleIdtf)
+          {
+            SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
+            ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
+            ScAddr messageEntityRoleEdge =
+                context->CreateEdge(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
+            messageEntitiesElements.push_back(entityAddr);
+            messageEntitiesElements.push_back(entityRole);
+            messageEntitiesElements.push_back(messageEntityEdge);
+            messageEntitiesElements.push_back(messageEntityRoleEdge);
+          }
         }
       }
     }

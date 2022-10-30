@@ -122,6 +122,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 
   ScTemplateSearchResult classificationTemplateResult;
   context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
+  SC_LOG_WARNING(classificationTemplateResult.Size());
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
 
   shutdown();
@@ -180,6 +181,62 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
 
   ScTemplateSearchResult classificationTemplateResult;
   context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
+
+  EXPECT_TRUE(classificationTemplateResult.Size() == 1);
+
+  shutdown();
+}
+
+TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTest)
+{
+  ScMemoryContext & context = *m_ctx;
+
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hobby_message_with_two_same_role_entities.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
+  initialize();
+
+  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
+  ScAddr hobbyAddr = context.HelperFindBySystemIdtf("concept_hobby");
+  ScAddr theatreAddr = context.HelperFindBySystemIdtf("concept_theatre");
+  ScAddr rrelEntityAddr = context.HelperFindBySystemIdtf("rrel_entity");
+
+  EXPECT_TRUE(messageAddr.IsValid());
+  EXPECT_TRUE(hobbyAddr.IsValid());
+  EXPECT_TRUE(theatreAddr.IsValid());
+  EXPECT_TRUE(rrelEntityAddr.IsValid());
+
+  auto * client = new WitAiClientMock();
+  // Four entities with the same role "rrel_entity", some entities are duplicated. Expected to get two unique entities
+  std::string witResponse =
+    R"({"rrel_entity:rrel_entity":
+    [
+     {"body":"хобби","confidence":1,"end":27,"entities":{},"id":"454915576488202",
+     "name":"rrel_entity","role":"rrel_entity","start":22,"type":"value","value":"хобби"},
+     {"body":"театр","confidence":1,"end":38,"entities":{},"id":"454915576488202",
+     "name":"rrel_entity","role":"rrel_entity","start":33,"type":"value","value":"театр"},
+     {"body":"хобби","confidence":0.9616397948452406,"end":49,"entities":{},"id":"454915576488202",
+     "name":"rrel_entity","role":"rrel_entity","start":39,"suggested":true,"type":"value","value":"хобби"},
+     {"body":"театр","confidence":0.9967311536328475,"end":69,"entities":{},"id":"454915576488202",
+     "name":"rrel_entity","role":"rrel_entity","start":58,"suggested":true,"type":"value","value":"театр"}
+    ]})";
+  EXPECT_CALL(*client, getWitResponse(testing::_))
+      .Times(testing::Exactly(1))
+      .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
+
+  MessageTopicClassifier classifier(&context, client);
+
+  ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
+
+  EXPECT_FALSE(messageClassificationItems.empty());
+
+  ScTemplate entitiesTemplate;
+  entitiesTemplate.TripleWithRelation(
+      messageAddr, ScType::EdgeAccessVarPosPerm, hobbyAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
+  entitiesTemplate.TripleWithRelation(
+      messageAddr, ScType::EdgeAccessVarPosPerm, theatreAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
+
+  ScTemplateSearchResult classificationTemplateResult;
+  context.HelperSearchTemplate(entitiesTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
 
