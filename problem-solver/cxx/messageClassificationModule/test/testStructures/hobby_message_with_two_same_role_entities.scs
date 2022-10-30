@@ -4,7 +4,8 @@ action_node
 
 ...
     => nrel_sc_text_translation: message;
-    -> [Hello Maksim from summer.] (* <- lang_en;;  <- concept_text_file;; *);;
+    -> [What do you know about such hobby as a theatre?] (* <- lang_en;;  <- concept_text_file;; *);
+    -> [Что ты знаешь о таком хобби, как театр?] (* <- lang_ru;;  <- concept_text_file;; *);;
 
 message
     <- concept_message;
@@ -12,11 +13,15 @@ message
 
 concept_theatre
     => nrel_main_idtf: [театр]
-                        (* <- lang_ru;; *);;
+                        (* <- lang_ru;; *);
+    => nrel_main_idtf: [theatre]
+                        (* <- lang_en;; *);;
 
 concept_hobby
     => nrel_main_idtf: [хобби]
-                        (* <- lang_ru;; *);;
+                        (* <- lang_ru;; *);
+    => nrel_main_idtf: [hobby]
+                        (* <- lang_en;; *);;
 
 concept_wit_entity
     -> concept_theatre;

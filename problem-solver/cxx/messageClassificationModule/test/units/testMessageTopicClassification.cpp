@@ -100,9 +100,9 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 
   auto * client = new WitAiClientMock();
   std::string witResponse =
-      R"({"entities":{"wit$contact:contact":[{"body":"Maksim","confidence":0.9059,"end":12,"entities":{},
+      R"({"entities":{"wit$contact:contact":[{"body":"Максим","confidence":0.9059,"end":12,"entities":{},
               "id":"210261890968181","name":"wit$contact", "role":"contact","start":6,"suggested":true,
-              "type":"value","value":"Maksim"}]},"intents":[{"confidence":0.9994,"id":"4251337931554570",
+              "type":"value","value":"Максим"}]},"intents":[{"confidence":0.9994,"id":"4251337931554570",
               "name":"start_greeting"}],"text":"Hello Maksim","traits":{"wit$sentiment":[{"confidence":0.6224,
               "id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c","value":"neutral"}]}})";
   EXPECT_CALL(*client, getWitResponse(testing::_))
@@ -122,7 +122,6 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 
   ScTemplateSearchResult classificationTemplateResult;
   context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
-  SC_LOG_WARNING(classificationTemplateResult.Size());
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
 
   shutdown();
@@ -154,11 +153,11 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   auto * client = new WitAiClientMock();
   std::string witResponse =
       R"({"entities":
-              {"season:season":[{"body":"summer","confidence":0.9995,"end":24,"entities":{},"id":"530932871575541",
-              "name":"season","role":"season","start":18,"type":"value","value":"summer"}],"wit$contact:contact":
-              [{"body":"Maksim","confidence":0.9356,"end":12,"entities":{},"id":"210261890968181","name":"wit$contact",
-              "role":"contact","start":6,"suggested":true,"type":"value","value":"Maksim"}]},"intents":
-              [{"confidence":0.6678,"id":"607208973598157","name":"weather"}],"text":"Hello Maksim from summer.",
+              {"season:season":[{"body":"лето","confidence":0.9995,"end":24,"entities":{},"id":"530932871575541",
+              "name":"season","role":"season","start":18,"type":"value","value":"лето"}],"wit$contact:contact":
+              [{"body":"Максим","confidence":0.9356,"end":12,"entities":{},"id":"210261890968181","name":"wit$contact",
+              "role":"contact","start":6,"suggested":true,"type":"value","value":"Максим"}]},"intents":
+              [{"confidence":0.6678,"id":"607208973598157","name":"weather"}],"text":"Привет Максиму из лета.",
               "traits":{"wit$sentiment":[{"confidence":0.5628,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
               "value":"neutral"}]}})";
   EXPECT_CALL(*client, getWitResponse(testing::_))
@@ -208,7 +207,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
   auto * client = new WitAiClientMock();
   // Four entities with the same role "rrel_entity", some entities are duplicated. Expected to get two unique entities
   std::string witResponse =
-    R"({"rrel_entity:rrel_entity":
+    R"({"entities": {"rrel_entity:rrel_entity":
     [
      {"body":"хобби","confidence":1,"end":27,"entities":{},"id":"454915576488202",
      "name":"rrel_entity","role":"rrel_entity","start":22,"type":"value","value":"хобби"},
@@ -218,7 +217,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
      "name":"rrel_entity","role":"rrel_entity","start":39,"suggested":true,"type":"value","value":"хобби"},
      {"body":"театр","confidence":0.9967311536328475,"end":69,"entities":{},"id":"454915576488202",
      "name":"rrel_entity","role":"rrel_entity","start":58,"suggested":true,"type":"value","value":"театр"}
-    ]})";
+    ]}})";
   EXPECT_CALL(*client, getWitResponse(testing::_))
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
