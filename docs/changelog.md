@@ -8,3 +8,4 @@
 * Train Wit.ai for message classification and excluding message entities
 * Add SCg view of semantic equivalent
 * Dockerize system
+* Add excluding many entities with the same role in message classification agent
