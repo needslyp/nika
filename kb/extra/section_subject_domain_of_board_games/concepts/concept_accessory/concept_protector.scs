@@ -1,0 +1,36 @@
+concept_protector
+<- sc_node_class;
+=> nrel_main_idtf:
+	[протектор]
+	(* <- lang_ru;; *);
+	[protector]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (протектор)]
+        (* <- lang_ru;; *);
+        [Def. (protector)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Протектор - это аксессуар для настольных игр, которые используются для защиты карт от повреждения.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A protector is a board game accessory that is used to protect cards from damage.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_accessory;
+                concept_game_card
+            };;
+	*);;

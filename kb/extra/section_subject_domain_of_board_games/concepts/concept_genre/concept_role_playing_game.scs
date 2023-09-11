@@ -1,0 +1,35 @@
+concept_role_playing_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[ролевая игра]
+	(* <- lang_ru;; *);
+	[role-playing game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (ролевая игра)]
+        (* <- lang_ru;; *);
+        [Def. (role-playing game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Ролевая игра – жанр настольных игр, где основой игрового процесса является отогревание определенной роли.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Role-playing is a genre of board games where the basis of the gameplay is to warm up a certain role.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

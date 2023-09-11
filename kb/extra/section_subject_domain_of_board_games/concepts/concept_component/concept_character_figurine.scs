@@ -1,0 +1,35 @@
+concept_character_figurine
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фигурка персонажа]
+	(* <- lang_ru;; *);
+	[character figurine]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (фигурка персонажа)]
+        (* <- lang_ru;; *);
+        [Def. (character figurine)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Фигурка персонажа - это компонент настольной игры, который используется для обозначения персонажа, которым управляет игрок.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A character figurine is a board game component that is used to represent the character that the player controls.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component
+            };;
+	*);;

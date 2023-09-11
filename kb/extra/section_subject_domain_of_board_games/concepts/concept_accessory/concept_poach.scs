@@ -1,0 +1,38 @@
+concept_poach
+<- sc_node_class;
+=> nrel_main_idtf:
+	[мешочек]
+	(* <- lang_ru;; *);
+	[poach]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (мешочек)]
+        (* <- lang_ru;; *);
+        [Def. (poach)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Мешочек - это аксессуар для настольных игр, которые используется для хранения ресурсов, фишек и фигурок персонажей.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The pouch is a board game accessory that is used to store resources, tokens, and character figurines.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_accessory;
+                concept_token;
+                concept_character_figurine;
+                concept_resource
+            };;
+	*);;

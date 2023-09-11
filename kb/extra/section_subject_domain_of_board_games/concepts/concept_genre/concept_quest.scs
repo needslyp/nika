@@ -1,0 +1,35 @@
+concept_quest
+<- sc_node_class;
+=> nrel_main_idtf:
+	[квест]
+	(* <- lang_ru;; *);
+	[quest]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (квест)]
+        (* <- lang_ru;; *);
+        [Def. (quest)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Квест — жанр настольных игр, представляющий собой интерактивную историю с главным героем, управляемым игроком.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The quest is a board game genre that is an interactive story with the main character controlled by the player.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

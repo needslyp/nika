@@ -1,0 +1,54 @@
+nrel_annotation
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[аннотация*]
+	(* <- lang_ru;; *);
+	[annotation*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: sc_link;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			sc_link
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (аннотация*)]
+    	(* <- lang_ru;; *);
+    	[Def. (annotation*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Аннотация* - это ориентированное бинарное отношение, связывающее настольную игру с sc-ссылкой, в которой содержится краткое описание настольной игры.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Annotation* is a oriented binary relation that links a board game to an sc-link that contains a short description of the board game.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_board_game;
+            sc_link
+        };;
+    *);;

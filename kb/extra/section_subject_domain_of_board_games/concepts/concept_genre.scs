@@ -1,0 +1,47 @@
+concept_genre
+<- sc_node_class;
+=> nrel_main_idtf:
+	[жанр]
+	(* <- lang_ru;; *);
+	[genre]
+	(* <- lang_en;; *);
+<= nrel_subdividing:
+{
+    concept_strategy;
+    concept_card_game;
+    concept_educational_game;
+    concept_logic_game;
+    concept_economic_game;
+    concept_party_game;
+    concept_role_playing_game;
+    concept_quest;
+    concept_detective_game;
+    concept_legacy_game
+};
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (жанр)]
+        (* <- lang_ru;; *);
+        [Def. (genre)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Жанр - понятие, отражающее свойства и связи явлений в настольных играх, совокупность формальных и содержательных особенностей игры.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Genre - a concept that reflects the properties and connections of phenomena in board games, a set of formal and meaningful features of the game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

@@ -1,0 +1,54 @@
+nrel_component_count
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[количество компонентов*]
+	(* <- lang_ru;; *);
+	[component count*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_component;
+=> nrel_second_domain: sc_link;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_component;
+			sc_link
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (количество компонентов*)]
+    	(* <- lang_ru;; *);
+    	[Def. (component count*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Количество компонентов* - это ориентированное бинарное отношение, связывающее компоненты с sc-ссылкой, в которой описано их количество.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Component count* is a oriented binary relation that links components to an sc reference that describes their quantity.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_component;
+            sc_link
+        };;
+    *);;

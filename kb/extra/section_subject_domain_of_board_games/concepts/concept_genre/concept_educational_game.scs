@@ -1,0 +1,35 @@
+concept_educational_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[развивающая игра]
+	(* <- lang_ru;; *);
+	[educational game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (развивающая игра)]
+        (* <- lang_ru;; *);
+        [Def. (educational game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Развивающая игра — жанр игры, в процессе которого происходит развитие или усовершенствование различных навыков.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Educational game - a genre of game, in the process of which the development or improvement of various skills.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

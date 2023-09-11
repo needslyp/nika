@@ -1,0 +1,45 @@
+concept_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компонент]
+	(* <- lang_ru;; *);
+	[component]
+	(* <- lang_en;; *);
+<= nrel_subdividing:
+{
+    concept_game_card;
+    concept_playing_field;
+    concept_resource;
+    concept_token;
+    concept_character_figurine;
+    concept_rules;
+    concept_dice;
+    concept_scenario
+};
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (компонент)]
+        (* <- lang_ru;; *);
+        [Def. (component)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Компонент — это один из фрагментов, который находится в настольной игре.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A component is one of the pieces that is composed in a board game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

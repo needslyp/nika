@@ -1,0 +1,35 @@
+concept_strategy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[стратегия]
+	(* <- lang_ru;; *);
+	[strategy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (стратегия)]
+        (* <- lang_ru;; *);
+        [Def. (strategy)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Стратегия - это жанр настольной игры, в котором игроку для победы необходимо применять стратегическое мышление.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Strategy is a board game genre in which the player needs strategic thinking to win.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

@@ -1,0 +1,35 @@
+concept_logic_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[логическая игра]
+	(* <- lang_ru;; *);
+	[logic game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (логическая игра)]
+        (* <- lang_ru;; *);
+        [Def. (logic game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Логическая игра - это жанр настольной игры, в котором игроку для победы необходимо применять стратегическое мышление.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Logic game is a board game genre in which the player needs strategic thinking to win.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

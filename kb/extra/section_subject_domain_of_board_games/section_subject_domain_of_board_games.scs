@@ -1,0 +1,260 @@
+section_subject_domain_of_board_games
+=> nrel_main_idtf:
+    [Раздел. Предметная область настольных игр] 
+    (* <- lang_ru;; *);
+    [Section. Subject domain of board games]
+    (* <- lang_en;; *);
+<- sc_node_class;
+<- atomic_section;;
+
+subject_domain_of_board_games
+<- structure;
+<- subject_domain;
+=> nrel_main_idtf:
+    [Предметная область настольных игр] 
+    (* <- lang_ru;; *);
+    [Subject domain of board games] 
+    (* <- lang_en;; *);
+
+-> rrel_maximum_studied_object_class:
+    concept_board_game;
+-> rrel_explored_relation:
+	nrel_author;
+    nrel_artist;
+    nrel_publisher;
+    nrel_annotation;
+    rrel_components;
+    nrel_player_age;
+    nrel_player_amount;
+    nrel_recomended_player_amount;
+    nrel_rule_learning_time;
+    nrel_game_time;
+    nrel_game_rules;
+    nrel_creation_year;
+    nrel_weight;
+    nrel_box_size;
+    nrel_card_size;
+    nrel_game_cost;
+    nrel_component_material;
+    nrel_player_rating;
+    nrel_core_mechanics;
+    nrel_revision_number;
+    nrel_existing_extensions;
+    rrel_awards;
+    nrel_game_theme;
+    nrel_component_count;
+-> rrel_not_maximum_studied_object_class:
+	concept_genre;
+    concept_cooperative_board_game;
+    concept_competitive_board_game;
+    concept_single_player_board_game;
+    concept_stand_alone_board_game;
+    concept_optional_board_game;
+    concept_strategy;
+    concept_card_game;
+    concept_educational_game;
+    concept_logic_game;
+    concept_economic_game;
+    concept_party_game;
+    concept_role_playing_game;
+    concept_quest;
+    concept_detective_game;
+    concept_legacy_game;
+    concept_playing_field;
+    concept_integral_playing_field;
+    concept_fragmental_playing_field;
+    concept_game_card;
+    concept_resource_card;
+    concept_action_card;
+    concept_creature_card;
+    concept_token;
+    concept_character_figurine;
+    concept_rules;
+    concept_dice;
+    concept_scenario;
+    concept_accessory;
+    concept_protector;
+    concept_poach;
+    concept_mechanics;
+    concept_award;;
+
+rrel_key_sc_element -> (section_subject_domain_of_board_games -> subject_domain_of_board_games)
+(*
+	=> nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_board_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_genre)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_cooperative_board_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_competitive_board_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_single_player_board_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_optional_board_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_stand_alone_board_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_strategy)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_card_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_educational_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_logic_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_economic_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_party_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_role_playing_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_quest)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_detective_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_legacy_game)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_playing_field)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_fragmental_playing_field)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_integral_playing_field)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_game_card)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_resource_card)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_action_card)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_creature_card)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_token)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_character_figurine)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_rules)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_dice)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_scenario)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_accessory)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_protector)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_poach)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_mechanics)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> concept_award)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_author)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_artist)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_publisher)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_annotation)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> rrel_components)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_player_age)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_player_amount)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_recomended_player_amount)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_rule_learning_time)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_game_time)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_game_rules)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_creation_year)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_weight)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_box_size)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_card_size)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_component_material)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_game_cost)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_player_rating)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_core_mechanics)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_revision_number)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_existing_extensions)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> rrel_awards)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_game_theme)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_of_board_games -> nrel_component_count)
+(*
+    <- rrel_key_sc_element;;
+*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;

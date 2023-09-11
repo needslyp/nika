@@ -1,0 +1,35 @@
+concept_economic_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[экономическая игра]
+	(* <- lang_ru;; *);
+	[economic game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (экономическая игра)]
+        (* <- lang_ru;; *);
+        [Def. (economic game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Экономическая игра — жанр настольных игр, разновидность жанров строительства и управления, основанный на отображении экономических, рыночных процессов.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Economic game - a genre of board games, a kind of genres of construction and management, based on the representation of economic, market processes.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

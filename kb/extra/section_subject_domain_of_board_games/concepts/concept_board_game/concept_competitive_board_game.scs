@@ -1,0 +1,34 @@
+concept_competitive_board_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[соревновательная настольная игра]
+	(* <- lang_ru;; *);
+	[competitive board game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (соревновательная настольная игра)]
+        (* <- lang_ru;; *);
+        [Def. (competitive board game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Соревновательная настольная игра - это настольная игра, в игровом процессе которой игроки противостоят друг другу.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A competitive board game is a board game in which the players oppose each other in the gameplay.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

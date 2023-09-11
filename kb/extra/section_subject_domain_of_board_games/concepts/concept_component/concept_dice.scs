@@ -1,0 +1,36 @@
+concept_dice
+<- sc_node_class;
+=> nrel_main_idtf:
+	[кубик]
+	(* <- lang_ru;; *);
+	[dice]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (кубик)]
+        (* <- lang_ru;; *);
+        [Def. (dice)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Кубик - это компонент настольной игры, который используется для реализации некоторых механик.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Dice is a board game component that is used to implement some of the mechanics.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component;
+                concept_mechanics
+            };;
+	*);;

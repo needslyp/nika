@@ -1,0 +1,54 @@
+rrel_components
+<- sc_node_role_relation;
+=> nrel_main_idtf:
+	[компоненты']
+	(* <- lang_ru;; *);
+	[components']
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: concept_component;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			concept_component
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (компоненты')]
+    	(* <- lang_ru;; *);
+    	[Def. (components')]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Компоненты' - это ориентированное бинарное отношение, связывающее настольную игру с компонентами, которые содержатся в этой настольной игре.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Components' is a oriented binary relation that links a board game to the components contained in that board game.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_board_game;
+            concept_component
+        };;
+    *);;

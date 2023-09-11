@@ -1,0 +1,59 @@
+nrel_player_amount
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[количество игроков*]
+	(* <- lang_ru;; *);
+	[player amount*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: sc_link;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			sc_link
+		};;
+	*);
+<= nrel_inclusion:
+{
+	nrel_recomended_player_amount
+};
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (количество игроков*)]
+    	(* <- lang_ru;; *);
+    	[Def. (player amount*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Количество игроков* - это ориентированное бинарное отношение, связывающее настольную игру с sc-ссылкой, которая содержит иформацию о том, какое количество людей подходит для данной игры.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Player amount* is a oriented binary relation that links a board game to sc-link that contains information about how many people are suitable for this game.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_human;
+            concept_board_game;
+			sc_link
+        };;
+    *);;

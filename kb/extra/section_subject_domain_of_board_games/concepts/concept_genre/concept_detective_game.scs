@@ -1,0 +1,35 @@
+concept_detective_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[детективная игра]
+	(* <- lang_ru;; *);
+	[detective game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (детективная игра)]
+        (* <- lang_ru;; *);
+        [Def. (detective game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Детективная игра — жанр настольных игр, представляющий собой интерактивную историю в которой нужно решать много различных задач и расследовать какую-то цель.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Detective game - a genre of board games, an interactive history in which you need to solve many different tasks and investigate some purpose.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_genre
+            };;
+	*);;

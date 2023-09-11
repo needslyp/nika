@@ -1,0 +1,34 @@
+concept_fragmental_playing_field
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сборное игровое поле]
+	(* <- lang_ru;; *);
+	[fragmental playing field]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сборное игровое поле)]
+        (* <- lang_ru;; *);
+        [Def. (fragmental playing field)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сборное игровое поле — игровое поле, которое состоит из нескольких фрагментов.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [An fragmental playing field is a playing field that consists of a few fragments.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_playing_field
+            };;
+	*);;

@@ -1,0 +1,40 @@
+concept_optional_board_game
+<- sc_node_class;
+=> nrel_main_idtf:
+	[дополненительная настольная игра]
+	(* <- lang_ru;; *);
+	[optional board game]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[дополнение]
+	(* <- lang_ru;; *);
+	[optional board game]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (дополненительная настольная игра)]
+        (* <- lang_ru;; *);
+        [Def. (optional board game)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Дополнительная настольная игра - это настольная игра, которую нельзя использовать самостоятельно и нужна основная игра.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [An optional board game is a board game that cannot be used on its own and requires the main game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_stand_alone_board_game
+            };;
+	*);;

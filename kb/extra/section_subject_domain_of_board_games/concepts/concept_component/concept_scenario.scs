@@ -1,0 +1,35 @@
+concept_scenario
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сценарий]
+	(* <- lang_ru;; *);
+	[scenario]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сценарий)]
+        (* <- lang_ru;; *);
+        [Def. (scenario)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сценарий - это компонент настольных игр, в котором описаны игровые ситуации и как им следовать.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A scenario is a component of board games that describes game situations and how to follow them.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component
+            };;
+	*);;

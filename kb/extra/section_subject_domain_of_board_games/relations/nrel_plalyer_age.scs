@@ -1,0 +1,55 @@
+nrel_player_age
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[возраст игроков*]
+	(* <- lang_ru;; *);
+	[player age*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: sc_link;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			sc_link
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (возраст игроков*)]
+    	(* <- lang_ru;; *);
+    	[Def. (player age*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Возраст игроков* - это ориентированное бинарное отношение, связывающее настольную игру с sc-ссылкой, которая содержит иформацию о том, людям какого возраста подходит данная игра.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Player age* is a oriented binary relation that links a board game to sc-link that contains information about what age people the game is suitable for.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_human;
+            concept_board_game;
+			sc_link
+        };;
+    *);;

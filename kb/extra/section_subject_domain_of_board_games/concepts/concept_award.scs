@@ -1,0 +1,34 @@
+concept_award
+<- sc_node_class;
+=> nrel_main_idtf:
+	[награда]
+	(* <- lang_ru;; *);
+	[award]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (награда)]
+        (* <- lang_ru;; *);
+        [Def. (award)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Награда - это особый почётный знак, который выдается настольной игре или издательству за ее качество.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [An award is a special badge of honor given to a board game or publisher for its quality.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

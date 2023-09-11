@@ -1,0 +1,54 @@
+rrel_awards
+<- sc_node_role_relation;
+=> nrel_main_idtf:
+	[награды']
+	(* <- lang_ru;; *);
+	[awards']
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: concept_award;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			concept_award
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (награды')]
+    	(* <- lang_ru;; *);
+    	[Def. (awards')]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Награды' - это ориентированное бинарное отношение, связывающее настольную игру с наградами, которые она получила.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Awards' is a oriented binary relation that links a board game to the awards it has received.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_board_game;
+            concept_award
+        };;
+    *);;

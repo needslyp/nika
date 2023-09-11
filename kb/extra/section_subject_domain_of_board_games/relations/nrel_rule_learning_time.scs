@@ -1,0 +1,55 @@
+nrel_rule_learning_time
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[время освоения правил*]
+	(* <- lang_ru;; *);
+	[rule learning time*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: sc_link;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			sc_link
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (время освоения правил*)]
+    	(* <- lang_ru;; *);
+    	[Def. (rule learning time*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Время освоения правил* - это ориентированное бинарное отношение, связывающее настольную игру с sc-ссылкой, которая содержит иформацию о том, сколько потребуется времени человеку, чтобы прочитать и усвоить правила.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Rule learning time* is a oriented binary relation that links a board game to sc-link that contains information about how long it takes a person to read and learn the rules.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_board_game;
+			concept_rules;
+            sc_link
+        };;
+    *);;

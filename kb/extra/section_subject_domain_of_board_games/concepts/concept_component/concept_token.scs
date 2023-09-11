@@ -1,0 +1,35 @@
+concept_token
+<- sc_node_class;
+=> nrel_main_idtf:
+	[игровая фишка]
+	(* <- lang_ru;; *);
+	[token]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (игровая фишка)]
+        (* <- lang_ru;; *);
+        [Def. (token)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Игровая фишка - это компонент настольной игры, который используется в определенных игровых ситуациях.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A token is a component of a board game that is used in certain game situations.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component
+            };;
+	*);;

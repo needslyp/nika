@@ -1,0 +1,36 @@
+concept_rules
+<- sc_node_class;
+=> nrel_main_idtf:
+	[правила]
+	(* <- lang_ru;; *);
+	[rules]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (правила)]
+        (* <- lang_ru;; *);
+        [Def. (rules)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Правила - это компонент настольной игры, который используется для описания всех механик, которые доступны в настольной игре.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Rules is a board game component that is used to describe all the mechanics that are available in a board game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component;
+                concept_mechanics
+            };;
+	*);;

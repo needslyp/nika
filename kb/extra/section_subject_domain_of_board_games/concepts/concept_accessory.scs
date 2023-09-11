@@ -1,0 +1,40 @@
+concept_accessory
+<- sc_node_class;
+=> nrel_main_idtf:
+	[аксессуар]
+	(* <- lang_ru;; *);
+	[accessory]
+	(* <- lang_en;; *);
+<= nrel_subdividing:
+{
+    concept_protector;
+    concept_poach
+};
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (аксессуар)]
+        (* <- lang_ru;; *);
+        [Def. (accessory)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Аксессуар - это дополнительный предмет для хранения или бережного использования компонента настольных игр.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [An accessory is an additional item for storing or carefully using a board game component.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component
+            };;
+	*);;

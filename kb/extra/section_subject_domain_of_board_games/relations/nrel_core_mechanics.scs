@@ -1,0 +1,54 @@
+nrel_core_mechanics
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+	[основные механики*]
+	(* <- lang_ru;; *);
+	[core mechanics*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_board_game;
+=> nrel_second_domain: concept_mechanics;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_board_game;
+			concept_mechanics
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (основные механики*)]
+    	(* <- lang_ru;; *);
+    	[Def. (core mechanics*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Основные механики* - это ориентированное бинарное отношение, связывающее настольную игру с механиками, которые являются двигателем игры.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Core mechanics* is a oriented binary relationship that links the board game to the mechanics that drive the game.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			oriented_relation;
+			concept_board_game;
+			concept_mechanics
+        };;
+    *);;

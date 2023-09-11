@@ -1,0 +1,42 @@
+concept_game_card
+<- sc_node_class;
+=> nrel_main_idtf:
+	[игровая карта]
+	(* <- lang_ru;; *);
+	[game card]
+	(* <- lang_en;; *);
+<= nrel_subdividing:
+{
+    concept_resource_card;
+    concept_action_card;
+    concept_creature_card
+};
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (игровая карта)]
+        (* <- lang_ru;; *);
+        [Def. (game card)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Игровая карта — это компонент настольной игры, который используется как ресурс во время партии.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A game card is a board game component that is used as a resource during a game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_component;
+                concept_resource
+            };;
+	*);;
