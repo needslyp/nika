@@ -1,5 +1,6 @@
 concept_character_figurine
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[фигурка персонажа]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_character_figurine
             (*
                 -> rrel_example:
                     [Фигурка персонажа - это компонент настольной игры, который используется для обозначения персонажа, которым управляет игрок.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_character_figurine;; 
+                    *);;
             *);
             ...
             (*

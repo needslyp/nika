@@ -1,5 +1,6 @@
 concept_quest
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[квест]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_quest
             (*
                 -> rrel_example:
                     [Квест — жанр настольных игр, представляющий собой интерактивную историю с главным героем, управляемым игроком.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_quest;; 
+                    *);;
             *);
             ...
             (*

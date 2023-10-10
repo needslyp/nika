@@ -1,5 +1,6 @@
 concept_rules
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[правила]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_rules
             (*
                 -> rrel_example:
                     [Правила - это компонент настольной игры, который используется для описания всех механик, которые доступны в настольной игре.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_rules;; 
+                    *);;
             *);
             ...
             (*

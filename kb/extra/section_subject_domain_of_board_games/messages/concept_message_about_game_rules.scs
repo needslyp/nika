@@ -1,0 +1,37 @@
+concept_message_about_game_rules
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о поиске правил игры]
+	(* <- lang_ru;; *);
+	[message about searching game rules]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_game_rules];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о поиске правил игры)]
+        (* <- lang_ru;; *);
+        [Def. (message about searching game rules)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Cообщение о поиске правил игры - атомарное сообщение, в котором говорится о правилах настольной игры.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about searching game rules is an atomic message that tells about the rules of a board game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game;
+                concept_rules
+            };;
+	*);;

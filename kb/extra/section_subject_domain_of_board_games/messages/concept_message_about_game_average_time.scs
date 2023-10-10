@@ -1,0 +1,36 @@
+concept_message_about_game_average_time
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о среднем времени партии игры]
+	(* <- lang_ru;; *);
+	[message about searching game average time]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_average_time];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о среднем времени партии игры)]
+        (* <- lang_ru;; *);
+        [Def. (message about searching game average time)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Cообщение о среднем времени партии игры - атомарное сообщение, в котором говорится о среднем времени партии настольной игры.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about searching game average time is an atomic message that tells about the average time of a board game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

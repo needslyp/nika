@@ -1,5 +1,6 @@
 concept_legacy_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[игра-наследие]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_legacy_game
             (*
                 -> rrel_example:
                     [Игра-наследие - это жанр настольных игр, в которых сама игра, через различные механики, постоянно меняется в течение серии сессий.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_legacy_game;; 
+                    *);;
             *);
             ...
             (*

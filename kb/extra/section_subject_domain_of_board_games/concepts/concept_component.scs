@@ -1,5 +1,6 @@
 concept_component
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[компонент]
 	(* <- lang_ru;; *);
@@ -30,7 +31,10 @@ concept_component
             (*
                 -> rrel_example:
                     [Компонент — это один из фрагментов, который находится в настольной игре.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_component;; 
+                    *);;
             *);
             ...
             (*

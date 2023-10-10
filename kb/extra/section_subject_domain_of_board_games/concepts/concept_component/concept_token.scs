@@ -1,5 +1,6 @@
 concept_token
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[игровая фишка]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_token
             (*
                 -> rrel_example:
                     [Игровая фишка - это компонент настольной игры, который используется в определенных игровых ситуациях.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_token;; 
+                    *);;
             *);
             ...
             (*

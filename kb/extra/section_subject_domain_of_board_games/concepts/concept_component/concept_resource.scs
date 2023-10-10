@@ -1,5 +1,6 @@
 concept_resource
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[ресурс]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_resource
             (*
                 -> rrel_example:
                     [Ресурс - это компонент настольной игры, который используется для различных действий.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_resource;; 
+                    *);;
             *);
             ...
             (*

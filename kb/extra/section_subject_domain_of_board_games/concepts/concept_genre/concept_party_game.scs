@@ -1,5 +1,6 @@
 concept_party_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[игра для вечеринок]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_party_game
             (*
                 -> rrel_example:
                     [Игра для вечеринок — жанр настольных игр, которые созданы для больших компаний в развлекательных целях.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_party_game;; 
+                    *);;
             *);
             ...
             (*

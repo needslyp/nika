@@ -1,5 +1,6 @@
 concept_role_playing_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[ролевая игра]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_role_playing_game
             (*
                 -> rrel_example:
                     [Ролевая игра – жанр настольных игр, где основой игрового процесса является отогревание определенной роли.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_role_playing_game;; 
+                    *);;
             *);
             ...
             (*

@@ -1,0 +1,7 @@
+{
+    "version": 20200513,
+    "zip-command": "zip board_games.zip board_games\/app.json board_games\/entities\/*.json board_games\/intents\/*.json board_games\/traits\/*.json board_games\/utterances\/*.json board_games\/composer\/*.json",
+    "name": "board_games",
+    "lang": "ru",
+    "timezone": "America\/Los_Angeles"
+}

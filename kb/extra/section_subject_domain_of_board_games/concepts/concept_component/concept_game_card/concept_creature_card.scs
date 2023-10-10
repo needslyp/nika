@@ -1,5 +1,6 @@
 concept_creature_card
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[карта существа]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_creature_card
             (*
                 -> rrel_example:
                     [Карта существа — это игровая карта, которая используется для разыгрываний существ во время партии.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_creature_card;; 
+                    *);;
             *);
             ...
             (*

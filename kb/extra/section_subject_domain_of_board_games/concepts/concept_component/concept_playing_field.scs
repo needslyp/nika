@@ -1,5 +1,6 @@
 concept_playing_field
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[игровое поле]
 	(* <- lang_ru;; *);
@@ -24,7 +25,10 @@ concept_playing_field
             (*
                 -> rrel_example:
                     [Игровое поле — принадлежность для настольных игр, разметка, рассчитанная на расположение на столе или иной горизонтальной поверхности.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_playing_field;; 
+                    *);;
             *);
             ...
             (*

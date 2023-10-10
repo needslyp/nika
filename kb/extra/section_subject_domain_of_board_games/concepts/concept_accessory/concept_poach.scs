@@ -1,5 +1,6 @@
 concept_poach
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[мешочек]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_poach
             (*
                 -> rrel_example:
                     [Мешочек - это аксессуар для настольных игр, которые используется для хранения ресурсов, фишек и фигурок персонажей.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_poach;; 
+                    *);;
             *);
             ...
             (*

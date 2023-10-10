@@ -1,5 +1,6 @@
 concept_optional_board_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[дополненительная настольная игра]
 	(* <- lang_ru;; *);
@@ -24,7 +25,10 @@ concept_optional_board_game
             (*
                 -> rrel_example:
                     [Дополнительная настольная игра - это настольная игра, которую нельзя использовать самостоятельно и нужна основная игра.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_optional_board_game;; 
+                    *);;
             *);
             ...
             (*

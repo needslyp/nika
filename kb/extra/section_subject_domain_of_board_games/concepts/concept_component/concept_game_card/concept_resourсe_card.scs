@@ -1,5 +1,6 @@
 concept_resource_card
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[ресурсная карта]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_resource_card
             (*
                 -> rrel_example:
                     [Ресурсная карта — это игровая карта, которая используется как ресурс во время партии.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_resource_card;; 
+                    *);;
             *);
             ...
             (*

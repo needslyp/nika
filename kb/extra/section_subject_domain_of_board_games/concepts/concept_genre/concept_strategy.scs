@@ -1,5 +1,6 @@
 concept_strategy
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[стратегия]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_strategy
             (*
                 -> rrel_example:
                     [Стратегия - это жанр настольной игры, в котором игроку для победы необходимо применять стратегическое мышление.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_strategy;; 
+                    *);;
             *);
             ...
             (*

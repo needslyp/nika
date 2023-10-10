@@ -1,5 +1,6 @@
 concept_economic_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[экономическая игра]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_economic_game
             (*
                 -> rrel_example:
                     [Экономическая игра — жанр настольных игр, разновидность жанров строительства и управления, основанный на отображении экономических, рыночных процессов.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_economic_game;; 
+                    *);;
             *);
             ...
             (*

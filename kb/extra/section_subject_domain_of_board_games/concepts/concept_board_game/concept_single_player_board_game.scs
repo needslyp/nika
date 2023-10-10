@@ -1,5 +1,6 @@
 concept_single_player_board_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[одиночная настольная игра]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_single_player_board_game
             (*
                 -> rrel_example:
                     [Одиночная настольная игра - это настольная игра, в игровом процессе которой игрок противостоит игре.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_single_player_board_game;; 
+                    *);;
             *);
             ...
             (*

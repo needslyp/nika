@@ -1,5 +1,6 @@
 concept_mechanics
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[механика]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_mechanics
             (*
                 -> rrel_example:
                     [Механика - это понятие, которое описывает действия, которые чаще всего выполняют в настольной игре.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_mechanics;; 
+                    *);;
             *);
             ...
             (*

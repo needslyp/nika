@@ -1,5 +1,6 @@
 concept_card_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[карточная игра]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_card_game
             (*
                 -> rrel_example:
                     [Карточная игра — жанр игры с применением игральных карт, характеризуется случайным начальным состоянием, для определения которого используется набор карт для игры.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_card_game;; 
+                    *);;
             *);
             ...
             (*

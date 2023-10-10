@@ -1,0 +1,36 @@
+concept_message_about_game_creation
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о создании игры]
+	(* <- lang_ru;; *);
+	[message about searching game creation]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_game_creation];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о создании игры)]
+        (* <- lang_ru;; *);
+        [Def. (message about searching game creation)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Cообщение о создании игры - атомарное сообщение, в котором говорится о создании настольной игры.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about searching game creation is an atomic message that tells about the creation of a board game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

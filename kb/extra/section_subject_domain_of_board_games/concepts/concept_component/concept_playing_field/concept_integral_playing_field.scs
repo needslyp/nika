@@ -1,5 +1,6 @@
 concept_integral_playing_field
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[цельное игровое поле]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_integral_playing_field
             (*
                 -> rrel_example:
                     [Цельное игровое поле — игровое поле, которое состоит из одного фрагмента.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_integral_playing_field;; 
+                    *);;
             *);
             ...
             (*

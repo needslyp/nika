@@ -1,5 +1,6 @@
 concept_action_card
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[карта действия]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_action_card
             (*
                 -> rrel_example:
                     [Карта действия — это игровая карта, которая используется для активации действия во время партии.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_action_card;; 
+                    *);;
             *);
             ...
             (*

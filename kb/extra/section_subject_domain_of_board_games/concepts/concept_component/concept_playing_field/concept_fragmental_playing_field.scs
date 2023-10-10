@@ -1,5 +1,6 @@
 concept_fragmental_playing_field
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[сборное игровое поле]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_fragmental_playing_field
             (*
                 -> rrel_example:
                     [Сборное игровое поле — игровое поле, которое состоит из нескольких фрагментов.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_fragmental_playing_field;; 
+                    *);;
             *);
             ...
             (*

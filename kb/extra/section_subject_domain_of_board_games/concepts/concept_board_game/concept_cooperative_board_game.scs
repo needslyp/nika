@@ -1,5 +1,6 @@
 concept_cooperative_board_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[кооперативная настольная игра]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_cooperative_board_game
             (*
                 -> rrel_example:
                     [Кооперативная настольная игра - это настольная игра, в игровом процессе которой игроки поддерживают друг друга, чтобы сообща победить.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_cooperative_board_game;; 
+                    *);;
             *);
             ...
             (*

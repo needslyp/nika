@@ -1,5 +1,6 @@
 concept_accessory
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[аксессуар]
 	(* <- lang_ru;; *);
@@ -24,7 +25,10 @@ concept_accessory
             (*
                 -> rrel_example:
                     [Аксессуар - это дополнительный предмет для хранения или бережного использования компонента настольных игр.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_accessory;; 
+                    *);;
             *);
             ...
             (*

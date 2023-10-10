@@ -1,5 +1,6 @@
 concept_board_game
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[настольная игра]
 	(* <- lang_ru;; *);
@@ -30,7 +31,10 @@ concept_board_game
             (*
                 -> rrel_example:
                     [Настольная игра - это игра, основанная на манипуляции относительно небольшим набором предметов, которые могут целиком разместиться на столе или в руках играющих.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_board_game;; 
+                    *);;
             *);
             ...
             (*

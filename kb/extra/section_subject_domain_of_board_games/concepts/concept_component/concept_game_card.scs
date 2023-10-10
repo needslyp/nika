@@ -1,5 +1,6 @@
 concept_game_card
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[игровая карта]
 	(* <- lang_ru;; *);
@@ -25,7 +26,10 @@ concept_game_card
             (*
                 -> rrel_example:
                     [Игровая карта — это компонент настольной игры, который используется как ресурс во время партии.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_game_card;; 
+                    *);;
             *);
             ...
             (*

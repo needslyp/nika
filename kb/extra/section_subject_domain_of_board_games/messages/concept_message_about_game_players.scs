@@ -1,0 +1,36 @@
+concept_message_about_game_players
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об игроках настольной игры]
+	(* <- lang_ru;; *);
+	[message about searching game players]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_game_players];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение об игроках настольной игры)]
+        (* <- lang_ru;; *);
+        [Def. (message about searching game players)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Cообщение об игроках настольной игры- атомарное сообщение, в котором говорится об игроках настольной игры.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about searching game players is an atomic message that tells about the players of a board game.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_board_game
+            };;
+	*);;

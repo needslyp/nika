@@ -1,5 +1,6 @@
 concept_award
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[награда]
 	(* <- lang_ru;; *);
@@ -19,7 +20,10 @@ concept_award
             (*
                 -> rrel_example:
                     [Награда - это особый почётный знак, который выдается настольной игре или издательству за ее качество.]
-                    (* <- lang_ru;; *);;
+                    (* 
+                        <- lang_ru;;
+                        <= nrel_definition: concept_award;; 
+                    *);;
             *);
             ...
             (*
